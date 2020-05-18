@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace BD_Proj
 {
@@ -67,6 +68,8 @@ namespace BD_Proj
             this.bttnOK = new System.Windows.Forms.Button();
             this.bttnEdit = new System.Windows.Forms.Button();
             this.cnn_bt = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.SuspendLayout();
@@ -155,11 +158,33 @@ namespace BD_Proj
             this.cnn_bt.UseVisualStyleBackColor = true;
             this.cnn_bt.Click += new System.EventHandler(this.cnn_bt_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(358, 286);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 77);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Show NIF Inquilinos";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Location = new System.Drawing.Point(42, 45);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(209, 340);
+            this.listBox2.TabIndex = 2;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cnn_bt);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -171,9 +196,17 @@ namespace BD_Proj
 
         }
 
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private Button cnn_bt;
+        private Button names_inq;
+        private Button button1;
+        private ListBox listBox2;
     }
 }
 

@@ -13,6 +13,8 @@ namespace BD_Proj
 {
     public partial class Form1 : Form
     {
+
+        private SqlConnection cn;
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace BD_Proj
 
         private void connectToDB()
         {
-            SqlConnection cn = new SqlConnection(Helper.CnnVal("p1g3_bd"));
+            cn = new SqlConnection(Helper.CnnVal("p1g3_bd"));
 
             try
             {
@@ -43,9 +45,24 @@ namespace BD_Proj
             }
         }
 
+
         private void cnn_bt_Click(object sender, EventArgs e)
         {
             connectToDB();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<int> nifs = new List<int>();
+
+            String sql = "SELECT nif FROM proj_inquilino";
+            SqlCommand com = new SqlCommand(sql, cn);
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            while (reader.Read()) {
+                listBox2.Items.Add(reader.GetValue(0));
+            }
+            cn.Close();
         }
     }
 }
