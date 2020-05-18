@@ -1,0 +1,9 @@
+C:\Users\DarioMatos\source\repos\BD_Proj\BD_Proj\bin\Debug\BD_Proj.exe.config
+C:\Users\DarioMatos\source\repos\BD_Proj\BD_Proj\bin\Debug\BD_Proj.exe
+C:\Users\DarioMatos\source\repos\BD_Proj\BD_Proj\bin\Debug\BD_Proj.pdb
+C:\Users\DarioMatos\source\repos\BD_Proj\BD_Proj\obj\Debug\BD_Proj.csprojAssemblyReference.cache
+C:\Users\DarioMatos\source\repos\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Properties.Resources.resources
+C:\Users\DarioMatos\source\repos\BD_Proj\BD_Proj\obj\Debug\BD_Proj.csproj.GenerateResource.cache
+C:\Users\DarioMatos\source\repos\BD_Proj\BD_Proj\obj\Debug\BD_Proj.csproj.CoreCompileInputs.cache
+C:\Users\DarioMatos\source\repos\BD_Proj\BD_Proj\obj\Debug\BD_Proj.exe
+C:\Users\DarioMatos\source\repos\BD_Proj\BD_Proj\obj\Debug\BD_Proj.pdb
