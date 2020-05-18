@@ -66,6 +66,8 @@ namespace BD_Proj
             this.txtZIP = new System.Windows.Forms.TextBox();
             this.bttnOK = new System.Windows.Forms.Button();
             this.bttnEdit = new System.Windows.Forms.Button();
+            this.cnn_bt = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
@@ -143,14 +145,26 @@ namespace BD_Proj
             this.bttnEdit.Size = new System.Drawing.Size(75, 23);
             this.bttnEdit.TabIndex = 0;
             // 
+            // cnn_bt
+            // 
+            this.cnn_bt.Location = new System.Drawing.Point(713, 415);
+            this.cnn_bt.Name = "cnn_bt";
+            this.cnn_bt.Size = new System.Drawing.Size(75, 23);
+            this.cnn_bt.TabIndex = 0;
+            this.cnn_bt.Text = "Connect";
+            this.cnn_bt.UseVisualStyleBackColor = true;
+            this.cnn_bt.Click += new System.EventHandler(this.cnn_bt_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cnn_bt);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -158,6 +172,8 @@ namespace BD_Proj
         }
 
         #endregion
+
+        private Button cnn_bt;
     }
 }
 
