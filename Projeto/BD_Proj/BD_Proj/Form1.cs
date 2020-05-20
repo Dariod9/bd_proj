@@ -13,7 +13,6 @@ namespace BD_Proj
 {
     public partial class Form1 : Form
     {
-
         private SqlConnection cn;
         public Form1()
         {
@@ -44,7 +43,6 @@ namespace BD_Proj
                 MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR", "Connection Test");
             }
         }
-
 
         private void cnn_bt_Click(object sender, EventArgs e)
         {
