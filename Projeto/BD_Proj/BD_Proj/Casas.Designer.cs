@@ -1,4 +1,7 @@
-﻿namespace BD_Proj
+﻿using System;
+using System.Windows.Forms;
+
+namespace BD_Proj
 {
     partial class Casas
     {
@@ -65,6 +68,7 @@
             this.casas_dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.casas_dataGrid.Size = new System.Drawing.Size(799, 416);
             this.casas_dataGrid.TabIndex = 11;
+            this.casas_dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.casas_dataGrid_CellContentClick);
             // 
             // Casas
             // 
@@ -79,6 +83,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.casas_dataGrid)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        private void casas_dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

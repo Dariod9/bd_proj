@@ -13,9 +13,30 @@ namespace BD_Proj
 {
     public partial class Navigation : Form
     {
+        private SqlConnection cn;
         public Navigation()
         {
             InitializeComponent();
+        }
+
+        private void connectToDB()
+        {
+            cn = new SqlConnection(Helper.CnnVal("p1g3_bd"));
+
+            try
+            {
+                cn.Open();
+                if (cn.State == ConnectionState.Open)
+                {
+                    MessageBox.Show("Successful connection to database" + cn.Database + " on the " + cn.DataSource + " server", "Connection Test");
+
+                }
+
+            }
+            catch (Exception execp)
+            {
+                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR", "Connection Test");
+            }
         }
         private void casasBt_Click(object sender, EventArgs e)
         {
@@ -30,11 +51,17 @@ namespace BD_Proj
         private void inquilinoBt_Click(object sender, EventArgs e)
         {
             navpanel.Controls.Clear();
-            Form1 form1 = new Form1();
+            DadosPessoais form1 = new DadosPessoais();
             form1.TopLevel = false;
             navpanel.Controls.Add(form1);
             form1.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             form1.Show();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            connectToDB();
 
         }
     }

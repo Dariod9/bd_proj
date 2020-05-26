@@ -26,7 +26,6 @@ C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.csproj.CoreCompileInputs.cache
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.exe
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.pdb
-C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Form1.resources
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Casas.resources
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Navigation.resources
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddCasa.resources
