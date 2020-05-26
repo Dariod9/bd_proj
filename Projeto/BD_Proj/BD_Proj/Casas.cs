@@ -35,11 +35,11 @@ namespace BD_Proj
             data.close();
         }
 
-        private List<Casa> GetCasas2()
+        private List<CasaModel> GetCasas2()
         {
             data.connectToDB();
 
-            List<Casa> casas = new List<Casa>();
+            List<CasaModel> casas = new List<CasaModel>();
 
             String sql = "SELECT * FROM proj_casa";
             SqlCommand com = new SqlCommand(sql, DataAccess.cn);
@@ -47,14 +47,14 @@ namespace BD_Proj
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                Casa tmp = new Casa();
+                CasaModel tmp = new CasaModel();
 
                 tmp.morada = reader.GetString(0);
                 tmp.n_quartos = reader.GetInt32(1);
                 tmp.cidade = reader.GetString(2);
                 tmp.max_hab = reader.GetInt32(3);
                 tmp.descricao = reader.GetString(4);
-                //tmp.condominio = reader.GetInt32(5);
+                tmp.condominio = reader.GetDecimal(5);
 
                 casas.Add(tmp);
             }
@@ -66,6 +66,14 @@ namespace BD_Proj
         private void fillDataGrid()
         {
             casas_dataGrid.DataSource = GetCasas2();
+            casas_dataGrid.Columns["n_quartos"].HeaderText = "Número de quartos";
+            casas_dataGrid.Columns["max_hab"].HeaderText = "N máximo de habitantes";
+        }
+
+        private void add_bt_Click(object sender, EventArgs e)
+        {
+            AddCasa add = new AddCasa();
+            add.ShowDialog();
         }
     }
 }

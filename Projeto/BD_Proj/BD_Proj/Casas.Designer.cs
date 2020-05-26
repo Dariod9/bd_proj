@@ -51,6 +51,7 @@
             this.add_bt.TabIndex = 3;
             this.add_bt.Text = "Add";
             this.add_bt.UseVisualStyleBackColor = true;
+            this.add_bt.Click += new System.EventHandler(this.add_bt_Click);
             // 
             // casas_dataGrid
             // 

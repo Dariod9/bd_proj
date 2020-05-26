@@ -47,7 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Casa.cs" />
+    <Compile Include="AddCasa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCasa.Designer.cs">
+      <DependentUpon>AddCasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CasaModel.cs" />
     <Compile Include="Casas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddCasa.resx">
+      <DependentUpon>AddCasa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Casas.resx">
       <DependentUpon>Casas.cs</DependentUpon>
     </EmbeddedResource>

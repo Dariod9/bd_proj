@@ -36,5 +36,10 @@ namespace BD_Proj
         {
             cn.Close();
         }
+
+        public SqlConnection connection()
+        {
+            return cn;
+        }
     }
 }
