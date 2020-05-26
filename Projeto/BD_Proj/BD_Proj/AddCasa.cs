@@ -33,9 +33,9 @@ namespace BD_Proj
                 casa.morada = morada_textbox.Text;
                 casa.cidade = cidade_textbox.Text;
                 casa.descricao = descricao_textbox.Text;
-                casa.n_quartos = (int) n_quartos_comboBox.SelectedItem;
-                casa.max_hab = (int) max_hab_comboBox.SelectedItem;
-                casa.condominio = (decimal) n_quartos_comboBox.SelectedItem;
+                casa.n_quartos = Int32.Parse(n_quartos_comboBox.Text.ToString());
+                casa.max_hab = Int32.Parse(max_hab_comboBox.Text.ToString());
+                casa.condominio = Decimal.Parse(condominio_comboBox.Text.ToString());
             }
             catch (Exception ex)
             {
@@ -43,6 +43,8 @@ namespace BD_Proj
             }
             
             saveCasa(casa);
+            MessageBox.Show("Entry Successful!");
+            this.Close();
         }
 
         private void saveCasa(CasaModel c)
@@ -72,6 +74,25 @@ namespace BD_Proj
             {
                 data.close();
             }
+        }
+
+        private void AddCasa_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void condominio_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void n_quartos_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void morada_textbox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
