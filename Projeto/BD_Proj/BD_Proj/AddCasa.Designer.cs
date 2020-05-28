@@ -186,9 +186,6 @@
             // condominio_comboBox
             // 
             this.condominio_comboBox.FormattingEnabled = true;
-            this.condominio_comboBox.Items.AddRange(new object[] {
-            "3520750724",
-            "4019416672"});
             this.condominio_comboBox.Location = new System.Drawing.Point(316, 163);
             this.condominio_comboBox.Name = "condominio_comboBox";
             this.condominio_comboBox.Size = new System.Drawing.Size(121, 24);

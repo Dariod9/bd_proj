@@ -62,7 +62,7 @@ namespace BD_Proj
             // pessoa_dataGrid
             // 
             this.pessoa_dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pessoa_dataGrid.Location = new System.Drawing.Point(22, 0);
+            this.pessoa_dataGrid.Location = new System.Drawing.Point(0, 0);
             this.pessoa_dataGrid.MultiSelect = false;
             this.pessoa_dataGrid.Name = "pessoa_dataGrid";
             this.pessoa_dataGrid.ReadOnly = true;
@@ -70,7 +70,7 @@ namespace BD_Proj
             this.pessoa_dataGrid.RowHeadersWidth = 51;
             this.pessoa_dataGrid.RowTemplate.Height = 24;
             this.pessoa_dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pessoa_dataGrid.Size = new System.Drawing.Size(592, 416);
+            this.pessoa_dataGrid.Size = new System.Drawing.Size(640, 445);
             this.pessoa_dataGrid.TabIndex = 11;
             this.pessoa_dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pessoa_dataGrid_CellContentClick);
             // 

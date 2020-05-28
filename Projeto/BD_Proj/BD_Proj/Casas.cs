@@ -25,7 +25,7 @@ namespace BD_Proj
         {
             data.connectToDB();
             String sql = "SELECT morada FROM proj_casa";
-            SqlCommand com = new SqlCommand(sql, DataAccess.cn);
+            SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
@@ -42,7 +42,7 @@ namespace BD_Proj
             List<CasaModel> casas = new List<CasaModel>();
 
             String sql = "SELECT * FROM proj_casa";
-            SqlCommand com = new SqlCommand(sql, DataAccess.cn);
+            SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
@@ -74,6 +74,13 @@ namespace BD_Proj
         {
             AddCasa add = new AddCasa();
             add.ShowDialog();
+        }
+
+        private void edit_button_Click(object sender, EventArgs e)
+        {
+            string morada = casas_dataGrid.CurrentRow.Cells[0].Value.ToString();
+            
+            // ir buscar à bd a casa com a morada
         }
     }
 }

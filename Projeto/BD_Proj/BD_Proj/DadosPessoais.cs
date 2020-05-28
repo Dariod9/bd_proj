@@ -24,7 +24,7 @@ namespace BD_Proj
         {
             data.connectToDB();
             String sql = "SELECT morada FROM proj_pessoa";
-            SqlCommand com = new SqlCommand(sql, DataAccess.cn);
+            SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
@@ -41,7 +41,7 @@ namespace BD_Proj
             List<PessoaModel> pessoas = new List<PessoaModel>();
 
             String sql = "SELECT * FROM proj_pessoa";
-            SqlCommand com = new SqlCommand(sql, DataAccess.cn);
+            SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
@@ -113,7 +113,7 @@ namespace BD_Proj
             List<FiadorModel> fiadores = new List<FiadorModel>();
 
             String sql = "SELECT * FROM (proj_pessoa join proj_fiador on proj_pessoa.nif=proj_fiador.nif)";
-            SqlCommand com = new SqlCommand(sql, DataAccess.cn);
+            SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
@@ -141,7 +141,7 @@ namespace BD_Proj
             List<ProprietarioModel> props = new List<ProprietarioModel>();
 
             String sql = "SELECT * FROM (proj_pessoa join proj_proprietario on proj_pessoa.nif=proj_proprietario.nif)";
-            SqlCommand com = new SqlCommand(sql, DataAccess.cn);
+            SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
@@ -169,7 +169,7 @@ namespace BD_Proj
             List<InquilinoModel> inqs = new List<InquilinoModel>();
 
             String sql = "SELECT * FROM (proj_pessoa join proj_inquilino on proj_pessoa.nif=proj_inquilino.nif)";
-            SqlCommand com = new SqlCommand(sql, DataAccess.cn);
+            SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())

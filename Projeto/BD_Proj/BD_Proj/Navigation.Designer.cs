@@ -33,7 +33,7 @@
             this.menuLabel = new System.Windows.Forms.Label();
             this.navpanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.condominio_bt = new System.Windows.Forms.Button();
             this.navpanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,25 +80,26 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(171, 90);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Check Connection to DB";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // condominio_bt
             // 
-            this.button2.Location = new System.Drawing.Point(11, 136);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.condominio_bt.Location = new System.Drawing.Point(11, 136);
+            this.condominio_bt.Name = "condominio_bt";
+            this.condominio_bt.Size = new System.Drawing.Size(97, 23);
+            this.condominio_bt.TabIndex = 1;
+            this.condominio_bt.Text = "Condominios";
+            this.condominio_bt.UseVisualStyleBackColor = true;
+            this.condominio_bt.Click += new System.EventHandler(this.condominio_bt_Click);
             // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 522);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.condominio_bt);
             this.Controls.Add(this.navpanel);
             this.Controls.Add(this.menuLabel);
             this.Controls.Add(this.inquilinoBt);
@@ -118,6 +119,6 @@
         private System.Windows.Forms.Label menuLabel;
         private System.Windows.Forms.Panel navpanel;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button condominio_bt;
     }
 }

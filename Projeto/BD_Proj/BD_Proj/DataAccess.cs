@@ -11,16 +11,16 @@ namespace BD_Proj
 {
     public class DataAccess
     {
-        public static SqlConnection cn;
+        private static SqlConnection _cn;
 
         public void connectToDB()
         {
-            cn = new SqlConnection(Helper.CnnVal("p1g3_bd"));
+            _cn = new SqlConnection(Helper.CnnVal("p1g3_bd"));
 
             try
             {
-                cn.Open();
-                if (cn.State == ConnectionState.Open)
+                _cn.Open();
+                if (_cn.State == ConnectionState.Open)
                 {
                     //MessageBox.Show("Successful connection to database" + cn.Database + " on the " + cn.DataSource + " server", "Connection Test");
                 }
@@ -34,12 +34,12 @@ namespace BD_Proj
 
         public void close()
         {
-            cn.Close();
+            _cn.Close();
         }
 
         public SqlConnection connection()
         {
-            return cn;
+            return _cn;
         }
     }
 }

@@ -64,5 +64,15 @@ namespace BD_Proj
             connectToDB();
 
         }
+
+        private void condominio_bt_Click(object sender, EventArgs e)
+        {
+            navpanel.Controls.Clear();
+            Condominios cond = new Condominios();
+            cond.TopLevel = false;
+            navpanel.Controls.Add(cond);
+            cond.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            cond.Show();
+        }
     }
 }

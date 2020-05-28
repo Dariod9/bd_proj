@@ -34,6 +34,7 @@ namespace BD_Proj
             this.casas_listBox = new System.Windows.Forms.ListBox();
             this.add_bt = new System.Windows.Forms.Button();
             this.casas_dataGrid = new System.Windows.Forms.DataGridView();
+            this.edit_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.casas_dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,17 +53,19 @@ namespace BD_Proj
             this.add_bt.Name = "add_bt";
             this.add_bt.Size = new System.Drawing.Size(75, 23);
             this.add_bt.TabIndex = 3;
-            this.add_bt.Text = "Add";
+            this.add_bt.Text = "Adicionar";
             this.add_bt.UseVisualStyleBackColor = true;
             this.add_bt.Click += new System.EventHandler(this.add_bt_Click);
             // 
             // casas_dataGrid
             // 
+            this.casas_dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.casas_dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.casas_dataGrid.Location = new System.Drawing.Point(0, 0);
             this.casas_dataGrid.MultiSelect = false;
             this.casas_dataGrid.Name = "casas_dataGrid";
             this.casas_dataGrid.ReadOnly = true;
+            this.casas_dataGrid.RowHeadersVisible = false;
             this.casas_dataGrid.RowHeadersWidth = 51;
             this.casas_dataGrid.RowTemplate.Height = 24;
             this.casas_dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -70,11 +73,22 @@ namespace BD_Proj
             this.casas_dataGrid.TabIndex = 11;
             this.casas_dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.casas_dataGrid_CellContentClick);
             // 
+            // edit_button
+            // 
+            this.edit_button.Location = new System.Drawing.Point(616, 422);
+            this.edit_button.Name = "edit_button";
+            this.edit_button.Size = new System.Drawing.Size(75, 23);
+            this.edit_button.TabIndex = 12;
+            this.edit_button.Text = "Editar\r\n";
+            this.edit_button.UseVisualStyleBackColor = true;
+            this.edit_button.Click += new System.EventHandler(this.edit_button_Click);
+            // 
             // Casas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.edit_button);
             this.Controls.Add(this.casas_dataGrid);
             this.Controls.Add(this.add_bt);
             this.Controls.Add(this.casas_listBox);
@@ -94,5 +108,6 @@ namespace BD_Proj
         private System.Windows.Forms.ListBox casas_listBox;
         private System.Windows.Forms.Button add_bt;
         private System.Windows.Forms.DataGridView casas_dataGrid;
+        private Button edit_button;
     }
 }

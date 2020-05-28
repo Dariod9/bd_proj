@@ -18,6 +18,7 @@ namespace BD_Proj
         public AddCasa()
         {
             InitializeComponent();
+            FillCondominioComboBox();
         }
 
         private void cancel_bt_Click(object sender, EventArgs e)
@@ -74,6 +75,23 @@ namespace BD_Proj
             {
                 data.close();
             }
+        }
+
+        /// tá a aparecer duplicados, dont know why
+        private void FillCondominioComboBox()
+        {
+            List<Decimal> conds = new List<Decimal>();
+
+            data.connectToDB();
+            String sql = "SELECT condominio FROM proj_casa";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                condominio_comboBox.Items.Add(reader.GetDecimal(0));
+            }
+            data.close();
         }
 
         private void AddCasa_Load(object sender, EventArgs e)
