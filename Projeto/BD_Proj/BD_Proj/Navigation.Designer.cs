@@ -41,7 +41,7 @@
             // 
             this.casasBt.Location = new System.Drawing.Point(12, 41);
             this.casasBt.Name = "casasBt";
-            this.casasBt.Size = new System.Drawing.Size(75, 23);
+            this.casasBt.Size = new System.Drawing.Size(96, 23);
             this.casasBt.TabIndex = 0;
             this.casasBt.Text = "Casas";
             this.casasBt.UseVisualStyleBackColor = true;
@@ -51,7 +51,7 @@
             // 
             this.inquilinoBt.Location = new System.Drawing.Point(12, 79);
             this.inquilinoBt.Name = "inquilinoBt";
-            this.inquilinoBt.Size = new System.Drawing.Size(75, 44);
+            this.inquilinoBt.Size = new System.Drawing.Size(96, 44);
             this.inquilinoBt.TabIndex = 1;
             this.inquilinoBt.Text = "Dados Pessoais";
             this.inquilinoBt.UseVisualStyleBackColor = true;
@@ -69,9 +69,9 @@
             // navpanel
             // 
             this.navpanel.Controls.Add(this.button1);
-            this.navpanel.Location = new System.Drawing.Point(94, 12);
+            this.navpanel.Location = new System.Drawing.Point(114, 12);
             this.navpanel.Name = "navpanel";
-            this.navpanel.Size = new System.Drawing.Size(818, 497);
+            this.navpanel.Size = new System.Drawing.Size(798, 497);
             this.navpanel.TabIndex = 3;
             // 
             // button1
@@ -88,7 +88,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(11, 136);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(97, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;

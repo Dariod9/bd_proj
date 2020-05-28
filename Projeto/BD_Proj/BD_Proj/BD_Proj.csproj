@@ -47,18 +47,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFiador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFiador.Designer.cs">
+      <DependentUpon>AddFiador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddProprietario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProprietario.Designer.cs">
+      <DependentUpon>AddProprietario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddInquilino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddInquilino.Designer.cs">
+      <DependentUpon>AddInquilino.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddCasa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddCasa.Designer.cs">
       <DependentUpon>AddCasa.cs</DependentUpon>
     </Compile>
-    <Compile Include="FiadorModel.cs" />
     <Compile Include="DadosPessoais.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DadosPessoais.Designer.cs">
       <DependentUpon>DadosPessoais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FiadorModel.cs" />
+    <Compile Include="addPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addPessoa.Designer.cs">
+      <DependentUpon>addPessoa.cs</DependentUpon>
     </Compile>
     <Compile Include="ProprietarioModel.cs" />
     <Compile Include="PessoaModel.cs" />
@@ -80,11 +104,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddFiador.resx">
+      <DependentUpon>AddFiador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProprietario.resx">
+      <DependentUpon>AddProprietario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddInquilino.resx">
+      <DependentUpon>AddInquilino.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddCasa.resx">
       <DependentUpon>AddCasa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DadosPessoais.resx">
+      <DependentUpon>DadosPessoais.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Casas.resx">
       <DependentUpon>Casas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addPessoa.resx">
+      <DependentUpon>addPessoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Navigation.resx">
       <DependentUpon>Navigation.cs</DependentUpon>

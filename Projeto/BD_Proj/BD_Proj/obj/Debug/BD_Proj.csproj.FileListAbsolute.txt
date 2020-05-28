@@ -32,3 +32,8 @@ C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD
 C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddCasa.resources
 C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Casas.resources
 C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Navigation.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.DadosPessoais.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddInquilino.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.addPessoa.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddProprietario.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddFiador.resources
