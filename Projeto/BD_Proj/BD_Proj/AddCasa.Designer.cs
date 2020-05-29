@@ -212,7 +212,7 @@
             this.Controls.Add(this.morada_textbox);
             this.Controls.Add(this.label1);
             this.Name = "AddCasa";
-            this.Text = "AddCasa";
+            this.Text = "Adicionar/Editar Casa";
             this.Load += new System.EventHandler(this.AddCasa_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

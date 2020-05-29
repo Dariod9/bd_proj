@@ -79,8 +79,29 @@ namespace BD_Proj
         private void edit_button_Click(object sender, EventArgs e)
         {
             string morada = casas_dataGrid.CurrentRow.Cells[0].Value.ToString();
-            
+
             // ir buscar à bd a casa com a morada
+            data.connectToDB();
+            CasaModel tmp = new CasaModel();
+
+            String sql = String.Format("SELECT * FROM proj_casa WHERE morada = '" + morada + "'");
+            //MessageBox.Show(sql);
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                tmp.morada = reader.GetString(0);
+                tmp.n_quartos = reader.GetInt32(1);
+                tmp.cidade = reader.GetString(2);
+                tmp.max_hab = reader.GetInt32(3);
+                tmp.descricao = reader.GetString(4);
+                tmp.condominio = reader.GetDecimal(5);
+            }
+            data.close();
+
+            AddCasa addCasa = new AddCasa(tmp);
+            addCasa.ShowDialog();
         }
     }
 }
