@@ -59,7 +59,6 @@
             this.morada_textbox.Name = "morada_textbox";
             this.morada_textbox.Size = new System.Drawing.Size(231, 22);
             this.morada_textbox.TabIndex = 1;
-            this.morada_textbox.TextChanged += new System.EventHandler(this.morada_textbox_TextChanged);
             // 
             // label2
             // 
@@ -181,7 +180,6 @@
             this.n_quartos_comboBox.Name = "n_quartos_comboBox";
             this.n_quartos_comboBox.Size = new System.Drawing.Size(121, 24);
             this.n_quartos_comboBox.TabIndex = 15;
-            this.n_quartos_comboBox.SelectedIndexChanged += new System.EventHandler(this.n_quartos_comboBox_SelectedIndexChanged);
             // 
             // condominio_comboBox
             // 
@@ -190,7 +188,6 @@
             this.condominio_comboBox.Name = "condominio_comboBox";
             this.condominio_comboBox.Size = new System.Drawing.Size(121, 24);
             this.condominio_comboBox.TabIndex = 16;
-            this.condominio_comboBox.SelectedIndexChanged += new System.EventHandler(this.condominio_comboBox_SelectedIndexChanged);
             // 
             // AddCasa
             // 
@@ -213,7 +210,6 @@
             this.Controls.Add(this.label1);
             this.Name = "AddCasa";
             this.Text = "Adicionar/Editar Casa";
-            this.Load += new System.EventHandler(this.AddCasa_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

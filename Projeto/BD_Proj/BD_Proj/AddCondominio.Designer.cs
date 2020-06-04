@@ -61,7 +61,6 @@
             this.gerente_comboBox.Name = "gerente_comboBox";
             this.gerente_comboBox.Size = new System.Drawing.Size(160, 24);
             this.gerente_comboBox.TabIndex = 2;
-            this.gerente_comboBox.SelectedIndexChanged += new System.EventHandler(this.gerente_comboBox_SelectedIndexChanged);
             // 
             // num_fical_TextBox
             // 

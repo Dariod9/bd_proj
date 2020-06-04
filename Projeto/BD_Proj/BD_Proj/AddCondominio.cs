@@ -15,15 +15,32 @@ namespace BD_Proj
     public partial class AddCondominio : Form
     {
         DataAccess data = new DataAccess();
+        private bool adding;
         public AddCondominio()
         {
             InitializeComponent();
             FillGerenteComboBox();
+            adding = true;      // insert
+        }
+
+        public AddCondominio(CondominioModel c)
+        {
+            InitializeComponent();
+            FillGerenteComboBox();
+            FillCondInfo(c);
+            adding = false;     // update
         }
 
         private void cancel_button_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FillCondInfo(CondominioModel c)
+        {
+            num_fical_TextBox.Text = c.num_fiscal.ToString();
+            num_fical_TextBox.ReadOnly = true;
+            gerente_comboBox.Text = c.gerente_nif.ToString();
         }
 
         private void FillGerenteComboBox()
@@ -55,12 +72,22 @@ namespace BD_Proj
                 MessageBox.Show(ex.Message);
             }
 
-            saveCondominio(cond);
-            MessageBox.Show("Entry Successful!");
+            if (adding)
+            {
+                SaveCondominio(cond);
+                MessageBox.Show("Entry Successful!");
+            }
+            else
+            {
+                UpdateCondominio(cond);
+                MessageBox.Show("Update Successful!");
+            }
+            //Condominios parent = (Condominios) Owner;
+            //parent.FillDataGrid();
             this.Close();
         }
 
-        private void saveCondominio(CondominioModel c)
+        private void SaveCondominio(CondominioModel c)
         {
             data.connectToDB();
 
@@ -85,9 +112,29 @@ namespace BD_Proj
             }
         }
 
-        private void gerente_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void UpdateCondominio(CondominioModel c)
         {
+            data.connectToDB();
 
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "UPDATE proj_condominio SET gerente_nif = @gerente_nif WHERE num_fiscal = @num_fiscal";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@num_fiscal", c.num_fiscal);
+            cmd.Parameters.AddWithValue("@gerente_nif", c.gerente_nif);
+            cmd.Connection = data.connection();
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to update in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                data.close();
+            }
         }
     }
 }

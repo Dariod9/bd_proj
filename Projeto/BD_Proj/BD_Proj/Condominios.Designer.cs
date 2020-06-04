@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.cond_dataGridView = new System.Windows.Forms.DataGridView();
-            this.edit_bt = new System.Windows.Forms.Button();
+            this.mudar_gerente_bt = new System.Windows.Forms.Button();
             this.add_cond_bt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cond_dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -48,14 +48,15 @@
             this.cond_dataGridView.Size = new System.Drawing.Size(364, 453);
             this.cond_dataGridView.TabIndex = 0;
             // 
-            // edit_bt
+            // mudar_gerente_bt
             // 
-            this.edit_bt.Location = new System.Drawing.Point(552, 400);
-            this.edit_bt.Name = "edit_bt";
-            this.edit_bt.Size = new System.Drawing.Size(123, 48);
-            this.edit_bt.TabIndex = 1;
-            this.edit_bt.Text = "Mudar gerente";
-            this.edit_bt.UseVisualStyleBackColor = true;
+            this.mudar_gerente_bt.Location = new System.Drawing.Point(552, 400);
+            this.mudar_gerente_bt.Name = "mudar_gerente_bt";
+            this.mudar_gerente_bt.Size = new System.Drawing.Size(123, 48);
+            this.mudar_gerente_bt.TabIndex = 1;
+            this.mudar_gerente_bt.Text = "Mudar gerente";
+            this.mudar_gerente_bt.UseVisualStyleBackColor = true;
+            this.mudar_gerente_bt.Click += new System.EventHandler(this.mudar_gerente_bt_Click);
             // 
             // add_cond_bt
             // 
@@ -73,7 +74,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.add_cond_bt);
-            this.Controls.Add(this.edit_bt);
+            this.Controls.Add(this.mudar_gerente_bt);
             this.Controls.Add(this.cond_dataGridView);
             this.Name = "Condominios";
             this.Text = "Condominios";
@@ -85,7 +86,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView cond_dataGridView;
-        private System.Windows.Forms.Button edit_bt;
+        private System.Windows.Forms.Button mudar_gerente_bt;
         private System.Windows.Forms.Button add_cond_bt;
     }
 }

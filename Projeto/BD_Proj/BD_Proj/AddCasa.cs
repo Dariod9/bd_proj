@@ -139,7 +139,6 @@ namespace BD_Proj
             }
         }
 
-        /// tá a aparecer duplicados, dont know why
         private void FillCondominioComboBox()
         {
             List<Decimal> conds = new List<Decimal>();
@@ -154,25 +153,6 @@ namespace BD_Proj
                 condominio_comboBox.Items.Add(reader.GetDecimal(0));
             }
             data.close();
-        }
-
-        private void AddCasa_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void condominio_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void n_quartos_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void morada_textbox_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

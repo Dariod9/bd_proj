@@ -18,7 +18,7 @@ namespace BD_Proj
         public Condominios()
         {
             InitializeComponent();
-            fillDataGrid();
+            FillDataGrid();
         }
 
         private List<CondominioModel> GetCondominios()
@@ -45,7 +45,7 @@ namespace BD_Proj
             return cond;
         }
 
-        private void fillDataGrid()
+        public void FillDataGrid()
         {
             cond_dataGridView.DataSource = GetCondominios();
             cond_dataGridView.Columns["num_fiscal"].HeaderText = "Número de Condomínio";
@@ -56,6 +56,31 @@ namespace BD_Proj
         {
             AddCondominio add = new AddCondominio();
             add.ShowDialog();
+        }
+
+        private void mudar_gerente_bt_Click(object sender, EventArgs e)
+        {
+            string num_fiscal = cond_dataGridView.CurrentRow.Cells[0].Value.ToString();
+
+            data.connectToDB();
+
+            CondominioModel cond = new CondominioModel();
+
+            String sql = String.Format("SELECT * FROM proj_condominio WHERE num_fiscal = '" + num_fiscal + "'");
+            //MessageBox.Show(sql);
+
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                cond.num_fiscal = reader.GetDecimal(0);
+                cond.gerente_nif = reader.GetDecimal(1);
+            }
+            data.close();
+
+            AddCondominio addCond = new AddCondominio(cond);
+            addCond.ShowDialog(this);
         }
     }
 }
