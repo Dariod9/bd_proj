@@ -74,8 +74,9 @@ namespace BD_Proj
                 UpdateCasa(casa);
                 MessageBox.Show("Update Successful!");
             }
-            
-            
+
+            Navigation parent = (Navigation) Owner;
+            parent.ShowCasas();
             this.Close();
         }
 

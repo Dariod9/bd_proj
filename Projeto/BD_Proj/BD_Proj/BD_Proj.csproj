@@ -53,6 +53,12 @@
     <Compile Include="AddCondominio.Designer.cs">
       <DependentUpon>AddCondominio.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmpresa.Designer.cs">
+      <DependentUpon>AddEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddFiador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,7 +95,15 @@
     <Compile Include="DadosPessoais.Designer.cs">
       <DependentUpon>DadosPessoais.cs</DependentUpon>
     </Compile>
+    <Compile Include="Empresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresas.Designer.cs">
+      <DependentUpon>Empresas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\CondominioModel.cs" />
+    <Compile Include="Models\ContratoModel.cs" />
+    <Compile Include="Models\EmpresaModel.cs" />
     <Compile Include="Models\FiadorModel.cs" />
     <Compile Include="addPessoa.cs">
       <SubType>Form</SubType>
@@ -97,6 +111,7 @@
     <Compile Include="addPessoa.Designer.cs">
       <DependentUpon>addPessoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ObraModel.cs" />
     <Compile Include="Models\ProprietarioModel.cs" />
     <Compile Include="Models\PessoaModel.cs" />
     <Compile Include="Models\InquilinoModel.cs" />
@@ -115,10 +130,19 @@
     <Compile Include="Navigation.Designer.cs">
       <DependentUpon>Navigation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obras.Designer.cs">
+      <DependentUpon>Obras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddCondominio.resx">
       <DependentUpon>AddCondominio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEmpresa.resx">
+      <DependentUpon>AddEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddFiador.resx">
       <DependentUpon>AddFiador.cs</DependentUpon>
@@ -144,8 +168,14 @@
     <EmbeddedResource Include="addPessoa.resx">
       <DependentUpon>addPessoa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Empresas.resx">
+      <DependentUpon>Empresas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Navigation.resx">
       <DependentUpon>Navigation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obras.resx">
+      <DependentUpon>Obras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

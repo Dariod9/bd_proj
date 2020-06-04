@@ -73,7 +73,7 @@ namespace BD_Proj
         private void add_bt_Click(object sender, EventArgs e)
         {
             AddCasa add = new AddCasa();
-            add.ShowDialog();
+            add.ShowDialog(this);
         }
 
         private void edit_button_Click(object sender, EventArgs e)
@@ -101,7 +101,7 @@ namespace BD_Proj
             data.close();
 
             AddCasa addCasa = new AddCasa(tmp);
-            addCasa.ShowDialog();
+            addCasa.ShowDialog(this);
         }
     }
 }

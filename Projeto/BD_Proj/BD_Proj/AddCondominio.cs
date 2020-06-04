@@ -82,8 +82,8 @@ namespace BD_Proj
                 UpdateCondominio(cond);
                 MessageBox.Show("Update Successful!");
             }
-            //Condominios parent = (Condominios) Owner;
-            //parent.FillDataGrid();
+            Navigation parent = (Navigation) Owner;
+            parent.ShowCondominios();
             this.Close();
         }
 
