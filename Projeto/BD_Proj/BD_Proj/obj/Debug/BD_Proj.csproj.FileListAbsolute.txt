@@ -43,3 +43,5 @@ C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.addPessoa.resources
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Condominios.resources
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddCondominio.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddCondominio.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Condominios.resources

@@ -31,7 +31,7 @@ namespace BD_Proj
             List<Decimal> pessoas = new List<Decimal>();
 
             data.connectToDB();
-            String sql = "SELECT nif FROM proj_pessoa";
+            String sql = "SELECT DISTINCT nif FROM proj_pessoa";
             SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
@@ -83,6 +83,11 @@ namespace BD_Proj
             {
                 data.close();
             }
+        }
+
+        private void gerente_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

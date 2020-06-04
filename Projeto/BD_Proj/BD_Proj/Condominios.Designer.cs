@@ -37,6 +37,7 @@
             // cond_dataGridView
             // 
             this.cond_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.cond_dataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.cond_dataGridView.ColumnHeadersHeight = 29;
             this.cond_dataGridView.Location = new System.Drawing.Point(0, 0);
             this.cond_dataGridView.Name = "cond_dataGridView";

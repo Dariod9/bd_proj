@@ -74,5 +74,15 @@ namespace BD_Proj
             cond.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             cond.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
