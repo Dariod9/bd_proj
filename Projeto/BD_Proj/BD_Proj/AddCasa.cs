@@ -145,7 +145,7 @@ namespace BD_Proj
             List<Decimal> conds = new List<Decimal>();
 
             data.connectToDB();
-            String sql = "SELECT DISTINCT condominio FROM proj_casa";
+            String sql = "SELECT DISTINCT condominio FROM proj_condominio";
             SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();

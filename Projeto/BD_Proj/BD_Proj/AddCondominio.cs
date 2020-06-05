@@ -20,6 +20,7 @@ namespace BD_Proj
         {
             InitializeComponent();
             FillGerenteComboBox();
+            FillGerenteLisBox();
             adding = true;      // insert
         }
 
@@ -27,6 +28,7 @@ namespace BD_Proj
         {
             InitializeComponent();
             FillGerenteComboBox();
+            FillGerenteLisBox();
             FillCondInfo(c);
             adding = false;     // update
         }
@@ -135,6 +137,35 @@ namespace BD_Proj
             {
                 data.close();
             }
+        }
+
+        private void FillGerenteLisBox()
+        {
+            gerentes_listBox.DataSource = GetGerentes();
+            gerentes_listBox.DisplayMember = "text";
+            gerentes_listBox.ValueMember = "value";
+        }
+
+        private List<GerenteView> GetGerentes()
+        {
+            List<GerenteView> g = new List<GerenteView>();
+
+            data.connectToDB();
+            String sql = "SELECT * FROM Show_Gerentes";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                GerenteView gv = new GerenteView();
+                gv.value = Decimal.Parse(reader["nif"].ToString());
+                gv.text = reader["name"].ToString();
+
+                g.Add(gv);
+            }
+            data.close();
+
+            return g;
         }
     }
 }

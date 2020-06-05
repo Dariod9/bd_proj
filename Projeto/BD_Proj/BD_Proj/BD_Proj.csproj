@@ -111,6 +111,7 @@
     <Compile Include="addPessoa.Designer.cs">
       <DependentUpon>addPessoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\GerenteView.cs" />
     <Compile Include="Models\ObraModel.cs" />
     <Compile Include="Models\ProprietarioModel.cs" />
     <Compile Include="Models\PessoaModel.cs" />

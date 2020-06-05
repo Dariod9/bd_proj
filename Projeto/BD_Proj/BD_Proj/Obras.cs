@@ -36,7 +36,7 @@ namespace BD_Proj
                 ObraModel tmp = new ObraModel();
 
                 tmp.obra_id = Int32.Parse(reader["obra_id"].ToString());
-                //tmp.data_ini = 
+                //tmp.data_ini = reader["data_ini"].ToString();
                 //tmp.data_fim =                num sei ler as datas xD
                 tmp.orcamento = Int32.Parse(reader["orcamento"].ToString());
                 tmp.condominio = Decimal.Parse(reader["condominio"].ToString());

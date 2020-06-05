@@ -34,6 +34,7 @@
             this.num_fical_TextBox = new System.Windows.Forms.TextBox();
             this.addCond_button = new System.Windows.Forms.Button();
             this.cancel_button = new System.Windows.Forms.Button();
+            this.gerentes_listBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -71,7 +72,7 @@
             // 
             // addCond_button
             // 
-            this.addCond_button.Location = new System.Drawing.Point(300, 112);
+            this.addCond_button.Location = new System.Drawing.Point(460, 270);
             this.addCond_button.Name = "addCond_button";
             this.addCond_button.Size = new System.Drawing.Size(84, 23);
             this.addCond_button.TabIndex = 4;
@@ -81,7 +82,7 @@
             // 
             // cancel_button
             // 
-            this.cancel_button.Location = new System.Drawing.Point(205, 112);
+            this.cancel_button.Location = new System.Drawing.Point(348, 270);
             this.cancel_button.Name = "cancel_button";
             this.cancel_button.Size = new System.Drawing.Size(85, 23);
             this.cancel_button.TabIndex = 5;
@@ -89,11 +90,21 @@
             this.cancel_button.UseVisualStyleBackColor = true;
             this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
             // 
+            // gerentes_listBox
+            // 
+            this.gerentes_listBox.FormattingEnabled = true;
+            this.gerentes_listBox.ItemHeight = 16;
+            this.gerentes_listBox.Location = new System.Drawing.Point(36, 114);
+            this.gerentes_listBox.Name = "gerentes_listBox";
+            this.gerentes_listBox.Size = new System.Drawing.Size(236, 180);
+            this.gerentes_listBox.TabIndex = 6;
+            // 
             // AddCondominio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 144);
+            this.ClientSize = new System.Drawing.Size(620, 305);
+            this.Controls.Add(this.gerentes_listBox);
             this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.addCond_button);
             this.Controls.Add(this.num_fical_TextBox);
@@ -115,5 +126,6 @@
         private System.Windows.Forms.TextBox num_fical_TextBox;
         private System.Windows.Forms.Button addCond_button;
         private System.Windows.Forms.Button cancel_button;
+        private System.Windows.Forms.ListBox gerentes_listBox;
     }
 }
