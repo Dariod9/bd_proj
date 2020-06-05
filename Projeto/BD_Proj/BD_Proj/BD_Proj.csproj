@@ -53,6 +53,24 @@
     <Compile Include="AddCondominio.Designer.cs">
       <DependentUpon>AddCondominio.cs</DependentUpon>
     </Compile>
+    <Compile Include="addContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addContrato.Designer.cs">
+      <DependentUpon>addContrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addContratoCondo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addContratoCondo.Designer.cs">
+      <DependentUpon>addContratoCondo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addContratoRenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addContratoRenda.Designer.cs">
+      <DependentUpon>addContratoRenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +113,12 @@
     <Compile Include="Condominios.Designer.cs">
       <DependentUpon>Condominios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contratos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contratos.Designer.cs">
+      <DependentUpon>Contratos.cs</DependentUpon>
+    </Compile>
     <Compile Include="DadosPessoais.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,7 +132,9 @@
       <DependentUpon>Empresas.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CondominioModel.cs" />
+    <Compile Include="Models\ContratoCondominioModel.cs" />
     <Compile Include="Models\ContratoModel.cs" />
+    <Compile Include="Models\ContratoREndaModel.cs" />
     <Compile Include="Models\EmpresaModel.cs" />
     <Compile Include="Models\FiadorModel.cs" />
     <Compile Include="addPessoa.cs">
@@ -148,6 +174,15 @@
     <EmbeddedResource Include="AddCondominio.resx">
       <DependentUpon>AddCondominio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="addContrato.resx">
+      <DependentUpon>addContrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addContratoCondo.resx">
+      <DependentUpon>addContratoCondo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addContratoRenda.resx">
+      <DependentUpon>addContratoRenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEmpresa.resx">
       <DependentUpon>AddEmpresa.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Condominios.resx">
       <DependentUpon>Condominios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contratos.resx">
+      <DependentUpon>Contratos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DadosPessoais.resx">
       <DependentUpon>DadosPessoais.cs</DependentUpon>

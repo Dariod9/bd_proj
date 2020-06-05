@@ -49,3 +49,11 @@ C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Obras.resources
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddEmpresa.resources
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddObra.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.addContrato.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.addContratoCondo.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.addContratoRenda.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddEmpresa.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddObra.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Contratos.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Empresas.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Obras.resources

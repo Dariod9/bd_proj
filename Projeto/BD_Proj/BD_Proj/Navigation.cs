@@ -117,17 +117,17 @@ namespace BD_Proj
 
         private void contratos_bt_Click(object sender, EventArgs e)
         {
-            //ShowContratos();
+            ShowContratos();
         }
 
-        //public void ShowContratos()
-        //{
-        //    navpanel.Controls.Clear();
-        //    Contratos c = new Contratos();
-        //    c.TopLevel = false;
-        //    navpanel.Controls.Add(c);
-        //    c.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-        //    c.Show();
-        //}
+        public void ShowContratos()
+        {
+            navpanel.Controls.Clear();
+            Contratos c = new Contratos();
+            c.TopLevel = false;
+            navpanel.Controls.Add(c);
+            c.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            c.Show();
+        }
     }
 }
