@@ -36,16 +36,16 @@
             // 
             // cond_dataGridView
             // 
-            this.cond_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.cond_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.cond_dataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.cond_dataGridView.ColumnHeadersHeight = 29;
+            this.cond_dataGridView.ColumnHeadersHeight = 35;
             this.cond_dataGridView.Location = new System.Drawing.Point(0, 0);
             this.cond_dataGridView.Name = "cond_dataGridView";
             this.cond_dataGridView.RowHeadersVisible = false;
             this.cond_dataGridView.RowHeadersWidth = 51;
             this.cond_dataGridView.RowTemplate.Height = 24;
             this.cond_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cond_dataGridView.Size = new System.Drawing.Size(364, 453);
+            this.cond_dataGridView.Size = new System.Drawing.Size(546, 448);
             this.cond_dataGridView.TabIndex = 0;
             // 
             // mudar_gerente_bt

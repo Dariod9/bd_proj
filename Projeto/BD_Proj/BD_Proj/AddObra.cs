@@ -35,26 +35,11 @@ namespace BD_Proj
         {
             id_textBox.Text = o.obra_id.ToString();
             id_textBox.ReadOnly = true;
-
-            string[] ini = o.data_ini.ToString().Split(' ');
-            string[] fim = o.data_fim.ToString().Split(' ');
-
-            dia_comboBox.Text = partir_data(ini[0])[0];
-            mes_comboBox.Text = partir_data(ini[0])[1];
-            ano_comboBox.Text = partir_data(ini[0])[2];
-
-            diaf_comboBox.Text = partir_data(fim[0])[0];
-            mesf_comboBox.Text = partir_data(fim[0])[1];
-            anof_comboBox.Text = partir_data(fim[0])[2];
-
+            ini_dateTimePicker.Text = o.data_ini.ToString();
+            fim_dateTimePicker.Text = o.data_fim.ToString();
             orcamento_textBox.Text = o.orcamento.ToString();
             condominio_comboBox.Text = o.condominio.ToString();
 
-        }
-
-        private string[] partir_data(string d)
-        {
-            return d.Split('/');
         }
 
         private void cancel_bt_Click(object sender, EventArgs e)
@@ -68,19 +53,9 @@ namespace BD_Proj
             try
             {
                 obra.obra_id = Int32.Parse(id_textBox.Text);
-
-                string dia = dia_comboBox.Text.ToString();
-                string mes = mes_comboBox.Text.ToString();
-                string ano = ano_comboBox.Text.ToString();
-                obra.data_ini = DateTime.Parse(String.Format(dia + "/" + mes + "/" + ano));
-
-                string diaf = diaf_comboBox.Text.ToString();
-                string mesf = mesf_comboBox.Text.ToString();
-                string anof = anof_comboBox.Text.ToString();
-                obra.data_fim = DateTime.Parse(String.Format(diaf + "/" + mesf + "/" + anof));
-
+                obra.data_ini = DateTime.Parse(ini_dateTimePicker.Text.ToString());
+                obra.data_fim = DateTime.Parse(fim_dateTimePicker.Text.ToString());
                 obra.orcamento = Int32.Parse(orcamento_textBox.Text.ToString());
-
                 obra.condominio = Decimal.Parse(condominio_comboBox.Text.ToString());
             }
             catch (Exception ex)

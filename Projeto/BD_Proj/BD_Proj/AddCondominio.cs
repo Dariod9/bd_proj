@@ -47,18 +47,19 @@ namespace BD_Proj
 
         private void FillGerenteComboBox()
         {
-            List<Decimal> pessoas = new List<Decimal>();
+            //List<Decimal> pessoas = new List<Decimal>();
 
-            data.connectToDB();
-            String sql = "SELECT DISTINCT nif FROM proj_pessoa";
-            SqlCommand com = new SqlCommand(sql, data.connection());
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
-            while (reader.Read())
-            {
-                gerente_comboBox.Items.Add(reader.GetDecimal(0));
-            }
-            data.close();
+            //data.connectToDB();
+            //String sql = "SELECT DISTINCT nif FROM proj_pessoa";
+            //SqlCommand com = new SqlCommand(sql, data.connection());
+            //SqlDataReader reader;
+            //reader = com.ExecuteReader();
+            //while (reader.Read())
+            //{
+            //    gerente_comboBox.Items.Add(reader.GetDecimal(0));
+            //}
+            //data.close();
+            gerente_comboBox.Enabled = false;
         }
 
         private void addCond_button_Click(object sender, EventArgs e)
@@ -67,7 +68,8 @@ namespace BD_Proj
             try
             {
                 cond.num_fiscal = Decimal.Parse(num_fical_TextBox.Text.ToString());
-                cond.gerente_nif = Decimal.Parse(gerente_comboBox.Text.ToString());
+                //cond.gerente_nif = Decimal.Parse(gerente_comboBox.Text.ToString());
+                cond.gerente_nif = (gerentes_listBox.SelectedItem as GerenteView).value;
             }
             catch (Exception ex)
             {

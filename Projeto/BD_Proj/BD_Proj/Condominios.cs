@@ -18,7 +18,8 @@ namespace BD_Proj
         public Condominios()
         {
             InitializeComponent();
-            FillDataGrid();
+            //FillDataGrid();
+            FillDataGrid2();            
         }
 
         private List<CondominioModel> GetCondominios()
@@ -27,7 +28,7 @@ namespace BD_Proj
 
             List<CondominioModel> cond = new List<CondominioModel>();
 
-            String sql = "SELECT * FROM proj_condominio";
+            String sql = "SELECT * FROM proj_condominio;";
             SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
@@ -43,6 +44,28 @@ namespace BD_Proj
             data.close();
 
             return cond;
+        }
+
+        private void FillDataGrid2()
+        {
+            data.connectToDB();
+
+            String sql = "SELECT num_fiscal, nome, gerente_nif, sg.name FROM proj_condominio AS cond JOIN Show_Gerentes AS sg ON cond.gerente_nif = sg.nif";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataAdapter objSqlDataAdapter = new SqlDataAdapter(com);
+            DataTable objDataTable = new DataTable();
+            objSqlDataAdapter.Fill(objDataTable);
+            BindingSource objBindingSource = new BindingSource();
+            objBindingSource.DataSource = objDataTable;
+            cond_dataGridView.DataSource = objBindingSource;
+            objSqlDataAdapter.Update(objDataTable);
+
+            cond_dataGridView.Columns["num_fiscal"].HeaderText = "Número de Condomínio";
+            cond_dataGridView.Columns["gerente_nif"].HeaderText = "Gerente de Condomínio";
+            cond_dataGridView.Columns["nome"].HeaderText = "Nome do Condomínio";
+            cond_dataGridView.Columns["name"].HeaderText = "Nome do Gerente";
+
+            data.close();
         }
 
         public void FillDataGrid()
