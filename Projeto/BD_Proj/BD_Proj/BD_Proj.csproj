@@ -65,6 +65,12 @@
     <Compile Include="AddFiador.Designer.cs">
       <DependentUpon>AddFiador.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddObra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddObra.Designer.cs">
+      <DependentUpon>AddObra.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddProprietario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddFiador.resx">
       <DependentUpon>AddFiador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddObra.resx">
+      <DependentUpon>AddObra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddProprietario.resx">
       <DependentUpon>AddProprietario.cs</DependentUpon>
