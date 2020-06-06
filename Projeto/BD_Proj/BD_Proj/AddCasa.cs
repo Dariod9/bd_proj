@@ -161,8 +161,10 @@ namespace BD_Proj
         private decimal getNIF(string cond)
         {
             data.connectToDB();
-            String sql = "SELECT num_fiscal FROM proj_condominio where nome='"+cond+"' ";
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            //String sql = "SELECT num_fiscal FROM proj_condominio where nome='"+cond+"' ";
+            SqlCommand com = new SqlCommand("getNumFiscalCond", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@nome", cond);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             reader.Read();

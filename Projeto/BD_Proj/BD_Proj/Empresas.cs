@@ -66,9 +66,11 @@ namespace BD_Proj
             data.connectToDB();
             EmpresaModel tmp = new EmpresaModel();
 
-            String sql = String.Format("SELECT * FROM proj_empresa WHERE nif = '" + nif + "'");
-            MessageBox.Show(sql);
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            //String sql = String.Format("SELECT * FROM proj_empresa WHERE nif = '" + nif + "'");
+            //MessageBox.Show(sql);
+            SqlCommand com = new SqlCommand("getEmpresaByNif", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@nif", nif);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())

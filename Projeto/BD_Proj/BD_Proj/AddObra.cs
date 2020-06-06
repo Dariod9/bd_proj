@@ -157,8 +157,10 @@ namespace BD_Proj
         private string getNomeCond(decimal nif)
         {
             data.connectToDB();
-            String sql = "SELECT nome FROM proj_condominio where num_fiscal=" + nif + "";
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            //String sql = "SELECT nome FROM proj_condominio where num_fiscal=" + nif + "";
+            SqlCommand com = new SqlCommand("getNomeCond", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@num_fiscal", nif);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             reader.Read();
@@ -172,8 +174,10 @@ namespace BD_Proj
         {
             data.connectToDB();
             String[] tmp = nome.Split(' ');
-            String sql = "SELECT num_fiscal FROM proj_condominio where nome='" + nome + "'";
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            //String sql = "SELECT num_fiscal FROM proj_condominio where nome='" + nome + "'";
+            SqlCommand com = new SqlCommand("getNumFiscalCond", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@nome", nome);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             reader.Read();
