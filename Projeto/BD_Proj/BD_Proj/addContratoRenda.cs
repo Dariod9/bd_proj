@@ -62,33 +62,33 @@ namespace BD_Proj
 
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT proj_contrato (codigo, data_ini, data_fim, dia_pagamento, proprietario) values(@cod, @data1, @data2, @dia, @prop)";
+            cmd.CommandText = "exec inserirContratoRenda @cod, @data1, @data2, @dia, @prop, @renda, @caucao, @taxa, @fiador, @inquilino, @empresa"; //"INSERT proj_contrato (codigo, data_ini, data_fim, dia_pagamento, proprietario) values(@cod, @data1, @data2, @dia, @prop)";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@cod", inq.codigo);
             cmd.Parameters.AddWithValue("@data1", inq.data_ini);
             cmd.Parameters.AddWithValue("@data2", inq.data_fim);
             cmd.Parameters.AddWithValue("@dia", inq.dia_pagamento);
             cmd.Parameters.AddWithValue("@prop", inq.proprietario);
+            //cmd.Connection = data.connection();
+
+
+
+            //SqlCommand cmd2 = new SqlCommand();
+            //cmd2.CommandText = "INSERT proj_contrato_renda (codigo, renda, caucao, taxa, fiador, inquilino, empresa) values(@cod, @renda, @caucao, @taxa, @fiador, @inquilino, @empresa)";
+            //cmd2.Parameters.Clear();
+            //cmd2.Parameters.AddWithValue("@cod", inq.codigo);
+            cmd.Parameters.AddWithValue("@renda", inq.renda);
+            cmd.Parameters.AddWithValue("@caucao", inq.caucao);
+            cmd.Parameters.AddWithValue("@taxa", inq.taxa);
+            cmd.Parameters.AddWithValue("@fiador", inq.fiador);
+            cmd.Parameters.AddWithValue("@inquilino", inq.inquilino);
+            cmd.Parameters.AddWithValue("@empresa", inq.empresa);
             cmd.Connection = data.connection();
-
-
-
-            SqlCommand cmd2 = new SqlCommand();
-            cmd2.CommandText = "INSERT proj_contrato_renda (codigo, renda, caucao, taxa, fiador, inquilino, empresa) values(@cod, @renda, @caucao, @taxa, @fiador, @inquilino, @empresa)";
-            cmd2.Parameters.Clear();
-            cmd2.Parameters.AddWithValue("@cod", inq.codigo);
-            cmd2.Parameters.AddWithValue("@renda", inq.renda);
-            cmd2.Parameters.AddWithValue("@caucao", inq.caucao);
-            cmd2.Parameters.AddWithValue("@taxa", inq.taxa);
-            cmd2.Parameters.AddWithValue("@fiador", inq.fiador);
-            cmd2.Parameters.AddWithValue("@inquilino", inq.inquilino);
-            cmd2.Parameters.AddWithValue("@empresa", inq.empresa);
-            cmd2.Connection = data.connection();
 
             try
             {
                 cmd.ExecuteNonQuery();
-                cmd2.ExecuteNonQuery();
+                //cmd2.ExecuteNonQuery();
             }
             catch (Exception ex)
             {

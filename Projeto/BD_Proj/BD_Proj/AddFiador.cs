@@ -52,27 +52,26 @@ namespace BD_Proj
 
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT proj_pessoa (fname, lname, telefone, id, nif) values(@fname, @lname, @telefone, @id, @nif)";
+            cmd.CommandText = "exec inserirFiador @fname, @lname, @telefone, @id, @nif";// "INSERT proj_pessoa (fname, lname, telefone, id, nif) values(@fname, @lname, @telefone, @id, @nif)";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@lname", inq.lname);
             cmd.Parameters.AddWithValue("@fname", inq.fname);
             cmd.Parameters.AddWithValue("@telefone", inq.telefone);
             cmd.Parameters.AddWithValue("@id", inq.id);
             cmd.Parameters.AddWithValue("@nif", inq.nif);
+           // cmd.Connection = data.connection();
+
+
+
+            //SqlCommand cmd2 = new SqlCommand();
+            //cmd2.CommandText = "INSERT proj_fiador (nif) values(@nif)";
+           // cmd2.Parameters.Clear();
+            //cmd2.Parameters.AddWithValue("@nif", inq.nif);
             cmd.Connection = data.connection();
-
-
-
-            SqlCommand cmd2 = new SqlCommand();
-            cmd2.CommandText = "INSERT proj_fiador (nif) values(@nif)";
-            cmd2.Parameters.Clear();
-            cmd2.Parameters.AddWithValue("@nif", inq.nif);
-            cmd2.Connection = data.connection();
 
             try
             {
                 cmd.ExecuteNonQuery();
-                cmd2.ExecuteNonQuery();
             }
             catch (Exception ex)
             {

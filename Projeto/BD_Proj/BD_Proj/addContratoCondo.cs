@@ -61,33 +61,34 @@ namespace BD_Proj
         {
             data.connectToDB();
 
-
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT proj_contrato (codigo, data_ini, data_fim, dia_pagamento, proprietario) values(@cod, @data1, @data2, @dia, @prop)";
+            cmd.CommandText = "exec inserirContratoCond @cod, @data1, @data2, @dia, @prop, @despesa, @seguro, @area, @condo ";
+
+           // SqlCommand cmd = new SqlCommand();
+            //cmd.CommandText = "INSERT proj_contrato (codigo, data_ini, data_fim, dia_pagamento, proprietario) values(@cod, @data1, @data2, @dia, @prop)";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@cod", inq.codigo);
             cmd.Parameters.AddWithValue("@data1", inq.data_ini);
             cmd.Parameters.AddWithValue("@data2", inq.data_fim);
             cmd.Parameters.AddWithValue("@dia", inq.dia_pagamento);
             cmd.Parameters.AddWithValue("@prop", inq.proprietario);
+            //cmd.Connection = data.connection();
+
+
+
+            //SqlCommand cmd2 = new SqlCommand();
+            //cmd2.CommandText = "INSERT proj_contrato_condominio (codigo, despesas, seguro, area, condominio) values(@cod, @despesa, @seguro, @area, @condo)";
+            //cmd2.Parameters.Clear();
+            //cmd.Parameters.AddWithValue("@cod", inq.codigo);
+            cmd.Parameters.AddWithValue("@despesa", inq.despesas);
+            cmd.Parameters.AddWithValue("@seguro", inq.seguro);
+            cmd.Parameters.AddWithValue("@area", inq.area);
+            cmd.Parameters.AddWithValue("@condo", inq.condominio);
             cmd.Connection = data.connection();
-
-
-
-            SqlCommand cmd2 = new SqlCommand();
-            cmd2.CommandText = "INSERT proj_contrato_condominio (codigo, despesas, seguro, area, condominio) values(@cod, @despesa, @seguro, @area, @condo)";
-            cmd2.Parameters.Clear();
-            cmd2.Parameters.AddWithValue("@cod", inq.codigo);
-            cmd2.Parameters.AddWithValue("@despesa", inq.despesas);
-            cmd2.Parameters.AddWithValue("@seguro", inq.seguro);
-            cmd2.Parameters.AddWithValue("@area", inq.area);
-            cmd2.Parameters.AddWithValue("@condo", inq.condominio);
-            cmd2.Connection = data.connection();
 
             try
             {
                 cmd.ExecuteNonQuery();
-                cmd2.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
