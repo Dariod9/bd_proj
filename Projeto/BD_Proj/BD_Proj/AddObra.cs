@@ -38,7 +38,7 @@ namespace BD_Proj
             ini_dateTimePicker.Text = o.data_ini.ToString();
             fim_dateTimePicker.Text = o.data_fim.ToString();
             orcamento_textBox.Text = o.orcamento.ToString();
-            condominio_comboBox.Text = o.condominio.ToString();
+            condominio_comboBox.Text = getNomeCond(o.condominio);
 
         }
 
@@ -56,7 +56,7 @@ namespace BD_Proj
                 obra.data_ini = DateTime.Parse(ini_dateTimePicker.Text.ToString());
                 obra.data_fim = DateTime.Parse(fim_dateTimePicker.Text.ToString());
                 obra.orcamento = Int32.Parse(orcamento_textBox.Text.ToString());
-                obra.condominio = Decimal.Parse(condominio_comboBox.Text.ToString());
+                obra.condominio = getNifCond(condominio_comboBox.Text.ToString());
             }
             catch (Exception ex)
             {
@@ -148,9 +148,37 @@ namespace BD_Proj
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                condominio_comboBox.Items.Add(reader.GetDecimal(0));
+                condominio_comboBox.Items.Add(getNomeCond(reader.GetDecimal(0)));
             }
             data.close();
+        }
+        private string getNomeCond(decimal nif)
+        {
+            data.connectToDB();
+            String sql = "SELECT nome FROM proj_condominio where num_fiscal=" + nif + "";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetString(0);
+            reader.Close();
+            data.close();
+            return a;
+        }
+
+        private decimal getNifCond(string nome)
+        {
+            data.connectToDB();
+            String[] tmp = nome.Split(' ');
+            String sql = "SELECT num_fiscal FROM proj_condominio where nome='" + nome + "'";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetDecimal(0);
+            reader.Close();
+            data.close();
+            return a;
         }
     }
 }

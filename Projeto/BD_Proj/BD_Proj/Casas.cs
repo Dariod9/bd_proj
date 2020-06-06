@@ -103,5 +103,19 @@ namespace BD_Proj
             AddCasa addCasa = new AddCasa(tmp);
             addCasa.ShowDialog(this);
         }
+
+        private string getNome(string nif)
+        {
+            data.connectToDB();
+            String sql = "SELECT nome FROM proj_condominio where num_fiscal=" + nif + "";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetString(0);
+            reader.Close();
+            data.close();
+            return a;
+        }
     }
 }

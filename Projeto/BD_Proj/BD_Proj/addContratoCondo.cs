@@ -41,8 +41,8 @@ namespace BD_Proj
                 inq.data_ini = DateTime.Parse(data1.Text.ToString());
                 inq.data_fim = DateTime.Parse(data2.Text.ToString());
                 inq.dia_pagamento = Int32.Parse(diaBox.Text.ToString());
-                inq.proprietario = Decimal.Parse(proprietarioBox.Text.ToString());
-                inq.condominio = Decimal.Parse(condoBox.Text.ToString());
+                inq.proprietario = getNifProp(proprietarioBox.Text.ToString());
+                inq.condominio = getNifCond(condoBox.Text.ToString());
                 inq.despesas = Int32.Parse(despesaBox.Text.ToString());
                 inq.area = Int32.Parse(areaBox.Text.ToString());
                 inq.seguro = seguroBox.Text.ToString();
@@ -113,7 +113,7 @@ namespace BD_Proj
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                condoBox.Items.Add(reader.GetDecimal(0));
+                condoBox.Items.Add(getNomeCond(reader.GetDecimal(0)));
             }
             data.close();
         }
@@ -130,9 +130,69 @@ namespace BD_Proj
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                proprietarioBox.Items.Add(reader.GetDecimal(0));
+                proprietarioBox.Items.Add(getNomeProp(reader.GetDecimal(0)));
             }
             data.close();
         }
+
+        private string getNomeCond(decimal nif)
+        {
+            data.connectToDB();
+            String sql = "SELECT nome FROM proj_condominio where num_fiscal=" + nif + "";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetString(0);
+            reader.Close();
+            data.close();
+            return a;
+        }
+
+        private string getNomeProp(decimal nif)
+        {
+            data.connectToDB();
+            String sql = "SELECT fname, lname FROM proj_pessoa where nif=" + nif + "";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetString(0) + " " + reader.GetString(1);
+            reader.Close();
+            data.close();
+            return a;
+        }
+
+        private decimal getNifProp(string nome)
+        {
+            data.connectToDB();
+            String[] tmp = nome.Split(' ');
+            String sql = "SELECT nif FROM proj_pessoa where lname='" + tmp[1] + "' and fname='"+tmp[0]+"'";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetDecimal(0);
+            reader.Close();
+            data.close();
+            return a;
+        }
+
+        private decimal getNifCond(string nome)
+        {
+            data.connectToDB();
+            String[] tmp = nome.Split(' ');
+            String sql = "SELECT num_fiscal FROM proj_condominio where nome='"+nome+"'";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetDecimal(0);
+            reader.Close();
+            data.close();
+            return a;
+        }
+
+
     }
 }

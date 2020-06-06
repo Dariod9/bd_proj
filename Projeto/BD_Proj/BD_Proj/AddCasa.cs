@@ -57,7 +57,7 @@ namespace BD_Proj
                 casa.descricao = descricao_textbox.Text;
                 casa.n_quartos = Int32.Parse(n_quartos_comboBox.Text.ToString());
                 casa.max_hab = Int32.Parse(max_hab_comboBox.Text.ToString());
-                casa.condominio = Decimal.Parse(condominio_comboBox.Text.ToString());
+                casa.condominio = getNIF(condominio_comboBox.Text.ToString());
             }
             catch (Exception ex)
             {
@@ -83,6 +83,9 @@ namespace BD_Proj
         private void saveCasa(CasaModel c)
         {
             data.connectToDB();
+            //SqlCommand cmdTmp = new SqlCommand();
+            //cmdTmp.CommandText = "Select num_fiscal from proj_condominio WHERE nome= '" + c.condominio + "' ;";
+
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "INSERT proj_casa (morada, n_quartos, cidade, max_hab, descricao, condominio) Values(@morada, @n_quartos, @cidade, @max_hab, @descricao, @condominio)";
@@ -145,15 +148,29 @@ namespace BD_Proj
             List<Decimal> conds = new List<Decimal>();
 
             data.connectToDB();
-            String sql = "SELECT DISTINCT num_fiscal FROM proj_condominio";
+            String sql = "SELECT DISTINCT nome FROM proj_condominio";
             SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                condominio_comboBox.Items.Add(reader.GetDecimal(0));
+                condominio_comboBox.Items.Add(reader.GetString(0));
             }
             data.close();
+        }
+
+        private decimal getNIF(string cond)
+        {
+            data.connectToDB();
+            String sql = "SELECT num_fiscal FROM proj_condominio where nome='"+cond+"' ";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetDecimal(0);
+            reader.Close();
+            data.close();
+            return a;
         }
     }
 }

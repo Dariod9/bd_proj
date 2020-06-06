@@ -33,13 +33,13 @@ namespace BD_Proj
                 inq.data_ini = DateTime.Parse(data1.Text.ToString());
                 inq.data_fim = DateTime.Parse(data2.Text.ToString());
                 inq.dia_pagamento = Int32.Parse(diaBox.Text.ToString());
-                inq.proprietario = Decimal.Parse(proprietarioBox.Text.ToString());
+                inq.proprietario = getNifProp(proprietarioBox.Text.ToString());
                 inq.renda = Int32.Parse(rendaBox.Text.ToString());
                 inq.caucao = Int32.Parse(caucaoBox.Text.ToString());
                 inq.taxa = Int32.Parse(taxaBox.Text.ToString());
-                inq.fiador = Decimal.Parse(fiadorBox.Text.ToString());
-                inq.inquilino = Decimal.Parse(inquilinoBox1.Text.ToString());
-                inq.empresa = Decimal.Parse(empresaBox2.Text.ToString());
+                inq.fiador =getNifProp(fiadorBox.Text.ToString());
+                inq.inquilino =getNifProp(inquilinoBox1.Text.ToString());
+                inq.empresa = getNifEmpresa(empresaBox2.Text.ToString());
             }
             catch (Exception ex)
             {
@@ -113,7 +113,7 @@ namespace BD_Proj
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                fiadorBox.Items.Add(reader.GetDecimal(0));
+                fiadorBox.Items.Add(getNomeProp(reader.GetDecimal(0)));
             }
             data.close();
         }
@@ -130,7 +130,7 @@ namespace BD_Proj
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                proprietarioBox.Items.Add(reader.GetDecimal(0));
+                proprietarioBox.Items.Add(getNomeProp(reader.GetDecimal(0)));
             }
             data.close();
         }
@@ -146,7 +146,7 @@ namespace BD_Proj
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                inquilinoBox1.Items.Add(reader.GetDecimal(0));
+                inquilinoBox1.Items.Add(getNomeProp(reader.GetDecimal(0)));
             }
             data.close();
         }
@@ -162,9 +162,66 @@ namespace BD_Proj
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                empresaBox2.Items.Add(reader.GetDecimal(0));
+                empresaBox2.Items.Add(getNomeEmpresa(reader.GetDecimal(0)));
             }
             data.close();
+        }
+        private string getNomeEmpresa(decimal nif)
+        {
+            data.connectToDB();
+            String sql = "SELECT nome FROM proj_empresa where nif=" + nif + "";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetString(0);
+            reader.Close();
+            data.close();
+            return a;
+        }
+
+        private string getNomeProp(decimal nif)
+        {
+            data.connectToDB();
+            String sql = "SELECT fname, lname FROM proj_pessoa where nif=" + nif + "";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetString(0) + " " + reader.GetString(1);
+            reader.Close();
+            data.close();
+            return a;
+        }
+
+        private decimal getNifProp(string nome)
+        {
+            data.connectToDB();
+            String[] tmp = nome.Split(' ');
+            String sql = "SELECT nif FROM proj_pessoa where lname='" + tmp[1] + "' and fname='" + tmp[0] + "'";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetDecimal(0);
+            reader.Close();
+            data.close();
+            return a;
+        }
+
+        private decimal getNifEmpresa(string nome)
+        {
+            data.connectToDB();
+            String[] tmp = nome.Split(' ');
+            String sql = "SELECT nif FROM proj_empresa where nome='" + nome + "'";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetDecimal(0);
+            reader.Close();
+            data.close();
+            return a;
         }
 
     }
