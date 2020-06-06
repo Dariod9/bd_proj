@@ -61,3 +61,30 @@ C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.addContratoCondo.resources
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.addContratoRenda.resources
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Contratos.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\bin\Debug\BD_Proj.exe.config
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\bin\Debug\BD_Proj.exe
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\bin\Debug\BD_Proj.pdb
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.csprojAssemblyReference.cache
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddCondominio.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.addContrato.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.addContratoCondo.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.addContratoRenda.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddEmpresa.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddFiador.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddObra.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddProprietario.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddInquilino.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.AddCasa.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Condominios.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Contratos.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.DadosPessoais.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Casas.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.addPessoa.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Empresas.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Navigation.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Obras.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Properties.Resources.resources
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.csproj.GenerateResource.cache
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.csproj.CoreCompileInputs.cache
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.exe
+C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.pdb

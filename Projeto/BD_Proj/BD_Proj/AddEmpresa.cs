@@ -79,7 +79,8 @@ namespace BD_Proj
             data.connectToDB();
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT proj_empresa (nome, nif, email, contacto) Values(@nome, @nif, @email, @contacto)";
+            //cmd.CommandText = "INSERT proj_empresa (nome, nif, email, contacto) Values(@nome, @nif, @email, @contacto)";
+            cmd.CommandText = "EXEC insertEmpresa @nome, @nif, @email, @contacto";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@nome", e.nome);
             cmd.Parameters.AddWithValue("@nif", e.nif);
@@ -106,9 +107,10 @@ namespace BD_Proj
             data.connectToDB();
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE proj_empresa SET nome = @nome, "
-                            + "email = @email, contacto = @contacto "
-                            + "WHERE nif = @nif";
+            //cmd.CommandText = "UPDATE proj_empresa SET nome = @nome, "
+            //                + "email = @email, contacto = @contacto "
+            //                + "WHERE nif = @nif";
+            cmd.CommandText = "EXEC updateEmpresa @nome, @nif, @email, @contacto";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@nome", e.nome);
             cmd.Parameters.AddWithValue("@nif", e.nif);

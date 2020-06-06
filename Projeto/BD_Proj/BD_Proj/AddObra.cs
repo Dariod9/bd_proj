@@ -84,7 +84,8 @@ namespace BD_Proj
             data.connectToDB();
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT proj_obras (obra_id, data_ini, data_fim, orcamento, condominio) Values(@obra_id, @data_ini, @data_fim, @orcamento, @condominio)";
+            //cmd.CommandText = "INSERT proj_obras (obra_id, data_ini, data_fim, orcamento, condominio) Values(@obra_id, @data_ini, @data_fim, @orcamento, @condominio)";
+            cmd.CommandText = "EXEC insertObra @obra_id, @data_ini, @data_fim, @orcamento, @condominio";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@obra_id", o.obra_id);
             cmd.Parameters.AddWithValue("@data_ini", o.data_ini);
@@ -112,9 +113,10 @@ namespace BD_Proj
             data.connectToDB();
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE proj_obras SET data_ini = @data_ini, "
-                            + "data_fim = @data_fim, orcamento = @orcamento, "
-                            + "condominio = @condominio WHERE obra_id = @obra_id";
+            //cmd.CommandText = "UPDATE proj_obras SET data_ini = @data_ini, "
+            //                + "data_fim = @data_fim, orcamento = @orcamento, "
+            //                + "condominio = @condominio WHERE obra_id = @obra_id";
+            cmd.CommandText = "EXEC updateObra @obra_id, @data_ini, @data_fim, @orcamento, @condominio";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@obra_id", o.obra_id);
             cmd.Parameters.AddWithValue("@data_ini", o.data_ini);

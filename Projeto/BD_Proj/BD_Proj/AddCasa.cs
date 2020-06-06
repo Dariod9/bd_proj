@@ -83,12 +83,10 @@ namespace BD_Proj
         private void saveCasa(CasaModel c)
         {
             data.connectToDB();
-            //SqlCommand cmdTmp = new SqlCommand();
-            //cmdTmp.CommandText = "Select num_fiscal from proj_condominio WHERE nome= '" + c.condominio + "' ;";
-
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT proj_casa (morada, n_quartos, cidade, max_hab, descricao, condominio) Values(@morada, @n_quartos, @cidade, @max_hab, @descricao, @condominio)";
+            //cmd.CommandText = "INSERT proj_casa (morada, n_quartos, cidade, max_hab, descricao, condominio) Values(@morada, @n_quartos, @cidade, @max_hab, @descricao, @condominio)";
+            cmd.CommandText = "EXEC inserirCasa @morada, @n_quartos, @cidade, @max_hab, @descricao, @condominio";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@morada", c.morada);
             cmd.Parameters.AddWithValue("@n_quartos", c.n_quartos);
@@ -117,9 +115,10 @@ namespace BD_Proj
             data.connectToDB();
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE proj_casa SET n_quartos = @n_quartos, "
-                            + "cidade = @cidade, max_hab = @max_hab, descricao = @descricao, "
-                            + "condominio = @condominio WHERE morada = @morada";
+            //cmd.CommandText = "UPDATE proj_casa SET n_quartos = @n_quartos, "
+            //                + "cidade = @cidade, max_hab = @max_hab, descricao = @descricao, "
+            //                + "condominio = @condominio WHERE morada = @morada";
+            cmd.CommandText = "EXEC updateCasa @morada, @n_quartos, @cidade, @max_hab, @descricao, @condominio";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@morada", c.morada);
             cmd.Parameters.AddWithValue("@n_quartos", c.n_quartos);

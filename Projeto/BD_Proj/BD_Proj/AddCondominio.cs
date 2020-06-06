@@ -19,15 +19,14 @@ namespace BD_Proj
         public AddCondominio()
         {
             InitializeComponent();
-            FillGerenteComboBox();
             FillGerenteLisBox();
             adding = true;      // insert
+            name_cond_label.Hide();
         }
 
         public AddCondominio(CondominioModel c)
         {
             InitializeComponent();
-            FillGerenteComboBox();
             FillGerenteLisBox();
             FillCondInfo(c);
             adding = false;     // update
@@ -42,34 +41,20 @@ namespace BD_Proj
         {
             num_fical_TextBox.Text = c.num_fiscal.ToString();
             num_fical_TextBox.ReadOnly = true;
-            gerente_comboBox.Text = c.gerente_nif.ToString();
+            name_cond_label.Text = c.nome;
+            add_nome_cond_label.Hide();
+            nome_cond_textBox.Hide();
         }
 
-        private void FillGerenteComboBox()
-        {
-            //List<Decimal> pessoas = new List<Decimal>();
-
-            //data.connectToDB();
-            //String sql = "SELECT DISTINCT nif FROM proj_pessoa";
-            //SqlCommand com = new SqlCommand(sql, data.connection());
-            //SqlDataReader reader;
-            //reader = com.ExecuteReader();
-            //while (reader.Read())
-            //{
-            //    gerente_comboBox.Items.Add(reader.GetDecimal(0));
-            //}
-            //data.close();
-            gerente_comboBox.Enabled = false;
-        }
-
+        
         private void addCond_button_Click(object sender, EventArgs e)
         {
             CondominioModel cond = new CondominioModel();
             try
             {
                 cond.num_fiscal = Decimal.Parse(num_fical_TextBox.Text.ToString());
-                //cond.gerente_nif = Decimal.Parse(gerente_comboBox.Text.ToString());
                 cond.gerente_nif = (gerentes_listBox.SelectedItem as GerenteView).value;
+                cond.nome = nome_cond_textBox.Text.ToString();
             }
             catch (Exception ex)
             {
@@ -96,10 +81,11 @@ namespace BD_Proj
             data.connectToDB();
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT proj_condominio (num_fiscal, gerente_nif) Values(@num_fiscal, @gerente_nif)";
+            cmd.CommandText = "INSERT proj_condominio (num_fiscal, gerente_nif, nome) Values(@num_fiscal, @gerente_nif, @nome)";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@num_fiscal", c.num_fiscal);
             cmd.Parameters.AddWithValue("@gerente_nif", c.gerente_nif);
+            cmd.Parameters.AddWithValue("@nome", c.nome);
             cmd.Connection = data.connection();
 
             try

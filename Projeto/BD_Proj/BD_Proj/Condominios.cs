@@ -36,8 +36,9 @@ namespace BD_Proj
             {
                 CondominioModel tmp = new CondominioModel();
 
-                tmp.num_fiscal = reader.GetDecimal(0);
-                tmp.gerente_nif = reader.GetDecimal(1);
+                tmp.num_fiscal = Decimal.Parse(reader["num_fiscal"].ToString());
+                tmp.gerente_nif = Decimal.Parse(reader["gerente_nif"].ToString());
+                tmp.nome = reader["nome"].ToString();
 
                 cond.Add(tmp);
             }
@@ -97,8 +98,9 @@ namespace BD_Proj
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                cond.num_fiscal = reader.GetDecimal(0);
-                cond.gerente_nif = reader.GetDecimal(1);
+                cond.num_fiscal = Decimal.Parse(reader["num_fiscal"].ToString());
+                cond.gerente_nif = Decimal.Parse(reader["gerente_nif"].ToString());
+                cond.nome = reader["nome"].ToString();
             }
             data.close();
 

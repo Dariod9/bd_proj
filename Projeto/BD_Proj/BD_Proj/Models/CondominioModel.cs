@@ -10,5 +10,7 @@ namespace BD_Proj.Models
     {
         public decimal num_fiscal { get; set; }
         public decimal gerente_nif { get; set; }
+
+        public string nome { get; set; }
     }
 }

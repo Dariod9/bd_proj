@@ -81,12 +81,15 @@ namespace BD_Proj
             string morada = casas_dataGrid.CurrentRow.Cells[0].Value.ToString();
 
             // ir buscar à bd a casa com a morada
-            data.connectToDB();
             CasaModel tmp = new CasaModel();
 
-            String sql = String.Format("SELECT * FROM proj_casa WHERE morada = '" + morada + "'");
+            data.connectToDB();
+            //String sql = String.Format("SELECT * FROM proj_casa WHERE morada = '" + morada + "'");
             //MessageBox.Show(sql);
-            SqlCommand com = new SqlCommand(sql, data.connection());
+
+            SqlCommand com = new SqlCommand("getCasaByMorada", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@morada", morada);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
