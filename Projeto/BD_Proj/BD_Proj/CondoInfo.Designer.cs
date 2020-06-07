@@ -35,6 +35,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.condominios_listBox = new System.Windows.Forms.ListBox();
             this.editar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(717, 68);
+            this.button1.Location = new System.Drawing.Point(656, 74);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 66);
             this.button1.TabIndex = 1;
@@ -59,7 +60,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(717, 203);
+            this.button2.Location = new System.Drawing.Point(656, 211);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 73);
             this.button2.TabIndex = 2;
@@ -69,7 +70,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(717, 337);
+            this.button3.Location = new System.Drawing.Point(656, 337);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(150, 74);
             this.button3.TabIndex = 3;
@@ -82,14 +83,14 @@
             this.condominios_listBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.condominios_listBox.FormattingEnabled = true;
             this.condominios_listBox.ItemHeight = 20;
-            this.condominios_listBox.Location = new System.Drawing.Point(286, 87);
+            this.condominios_listBox.Location = new System.Drawing.Point(310, 87);
             this.condominios_listBox.Name = "condominios_listBox";
             this.condominios_listBox.Size = new System.Drawing.Size(254, 324);
             this.condominios_listBox.TabIndex = 4;
             // 
             // editar
             // 
-            this.editar.Location = new System.Drawing.Point(286, 417);
+            this.editar.Location = new System.Drawing.Point(310, 417);
             this.editar.Name = "editar";
             this.editar.Size = new System.Drawing.Size(75, 23);
             this.editar.TabIndex = 5;
@@ -97,11 +98,21 @@
             this.editar.UseVisualStyleBackColor = true;
             this.editar.Click += new System.EventHandler(this.editar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(307, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Escolher Condomínio:";
+            // 
             // CondoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 549);
+            this.ClientSize = new System.Drawing.Size(869, 549);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.editar);
             this.Controls.Add(this.condominios_listBox);
             this.Controls.Add(this.button3);
@@ -112,6 +123,7 @@
             this.Text = "NextHause";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -123,5 +135,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListBox condominios_listBox;
         private System.Windows.Forms.Button editar;
+        private System.Windows.Forms.Label label1;
     }
 }
