@@ -28,5 +28,11 @@ namespace BD_Proj
             Casas casas = new Casas();
             casas.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Contratos contratos = new Contratos();
+            contratos.ShowDialog();
+        }
     }
 }

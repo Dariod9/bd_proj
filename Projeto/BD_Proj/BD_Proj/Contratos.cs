@@ -21,19 +21,19 @@ namespace BD_Proj
             fillDataGrid();
         }
 
-        private void Fill_listbox()
-        {
-            data.connectToDB();
-            String sql = "SELECT morada FROM proj_contratos";
-            SqlCommand com = new SqlCommand(sql, data.connection());
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
-            while (reader.Read())
-            {
-                pessoas_listBox.Items.Add(reader.GetValue(0));
-            }
-            data.close();
-        }
+        //private void Fill_listbox()
+        //{
+        //    data.connectToDB();
+        //    String sql = "SELECT morada FROM proj_contratos";
+        //    SqlCommand com = new SqlCommand(sql, data.connection());
+        //    SqlDataReader reader;
+        //    reader = com.ExecuteReader();
+        //    while (reader.Read())
+        //    {
+        //        pessoas_listBox.Items.Add(reader.GetValue(0));
+        //    }
+        //    data.close();
+        //}
 
         private List<ContratoModel> GetContratos()
         {
