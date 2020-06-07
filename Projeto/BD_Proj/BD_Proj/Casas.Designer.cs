@@ -101,7 +101,7 @@ namespace BD_Proj
 
         private void casas_dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         #endregion

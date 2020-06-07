@@ -20,19 +20,53 @@ namespace BD_Proj
             GetPessoas();
         }
 
-        private void Fill_listbox()
+        public DadosPessoais(string morada)
+        {
+            InitializeComponent();
+            GetPessoasByCasa(morada);
+        }
+
+        private void GetPessoasByCasa(string morada)
         {
             data.connectToDB();
-            String sql = "SELECT morada FROM proj_pessoa";
+
+            List<PessoaModel> pessoas = new List<PessoaModel>();
+
+            String sql = "SELECT * FROM proj_pessoa join proj_casa_inquilino on proj_pessoa.nif=proj_casa_inquilino.nif where morada='"+morada+"'";
             SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                pessoas_listBox.Items.Add(reader.GetValue(0));
+                PessoaModel tmp = new PessoaModel();
+
+                tmp.fname = reader.GetString(0);
+                tmp.lname = reader.GetString(1);
+                tmp.telefone = reader.GetDecimal(2);
+                tmp.id = reader.GetDecimal(3);
+                tmp.nif = reader.GetDecimal(4);
+
+                pessoas.Add(tmp);
             }
             data.close();
+
+            //return pessoas;
+            fillDataGrid(pessoas);
         }
+
+        //private void Fill_listbox()
+        //{
+        //    data.connectToDB();
+        //    String sql = "SELECT morada FROM proj_pessoa";
+        //    SqlCommand com = new SqlCommand(sql, data.connection());
+        //    SqlDataReader reader;
+        //    reader = com.ExecuteReader();
+        //    while (reader.Read())
+        //    {
+        //        pessoas_listBox.Items.Add(reader.GetValue(0));
+        //    }
+        //    data.close();
+        //}
 
         private void GetPessoas()
         {
@@ -133,6 +167,8 @@ namespace BD_Proj
 
             fillDataGrid(fiadores);
         }
+
+
 
         public void printProprietarios()
         {

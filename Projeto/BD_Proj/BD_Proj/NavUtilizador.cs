@@ -25,7 +25,7 @@ namespace BD_Proj
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Casas casas = new Casas();
+            CasaInfo casas = new CasaInfo();
             casas.ShowDialog();
         }
 
