@@ -95,7 +95,7 @@ namespace BD_Proj
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DadosPessoais dados = new DadosPessoais(casa_selected());
+            Habitantes dados = new Habitantes(casa_selected());
             dados.ShowDialog();
         }
     }

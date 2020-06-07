@@ -14,10 +14,36 @@ namespace BD_Proj
     public partial class AddInquilino : Form
     {
         DataAccess data = new DataAccess();
+        //bool mor;
+        //string moradaGlobal;
 
         public AddInquilino()
         {
             InitializeComponent();
+            fillMoradaBox();
+          //  mor = false;
+        }
+
+        public AddInquilino(string morada)
+        {
+            InitializeComponent();
+            morada_box.Text = morada;
+        }
+
+        private void fillMoradaBox()
+        {
+            List<String> conds = new List<String>();
+
+            data.connectToDB();
+            String sql = "SELECT DISTINCT morada FROM Moradas";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                morada_box.Items.Add(reader.GetString(0));
+            }
+            data.close();
         }
 
         private void cancel_bt_Click(object sender, EventArgs e)
@@ -54,7 +80,7 @@ namespace BD_Proj
 
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "exec inserirInq @fname, @lname, @telefone, @id, @nif, @certificado, @reg_criminal";// INSERT proj_pessoa (fname, lname, telefone, id, nif) values(@fname, @lname, @telefone, @id, @nif)";
+            cmd.CommandText = "exec inserirInq @fname, @lname, @telefone, @id, @nif, @certificado, @reg_criminal, @morada";// INSERT proj_pessoa (fname, lname, telefone, id, nif) values(@fname, @lname, @telefone, @id, @nif)";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@lname", inq.lname);
             cmd.Parameters.AddWithValue("@fname", inq.fname);
@@ -71,12 +97,21 @@ namespace BD_Proj
             //cmd2.Parameters.AddWithValue("@nif", inq.nif);
             cmd.Parameters.AddWithValue("@certificado", inq.certificado);
             cmd.Parameters.AddWithValue("@reg_criminal", inq.reg_criminal);
+            cmd.Parameters.AddWithValue("@morada", morada_box.Text);
             cmd.Connection = data.connection();
+
+            //if (mor)
+            //{
+            //    SqlCommand cmd2 = new SqlCommand();
+            //    cmd2.CommandText = "Insert into proj_casa_inquilino (nif, morada) values( @nif, @morada)";
+            //    cmd2.Parameters.AddWithValue("@nif", inq.nif);
+            //    cmd2.Parameters.AddWithValue("@morada", moradaGlobal);
+            //}
+
 
             try
             {
                 cmd.ExecuteNonQuery();
-               // cmd2.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -123,5 +158,6 @@ namespace BD_Proj
         {
 
         }
+
     }
 }

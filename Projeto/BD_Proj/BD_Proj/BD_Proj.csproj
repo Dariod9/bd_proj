@@ -131,6 +131,12 @@
     <Compile Include="Contratos.Designer.cs">
       <DependentUpon>Contratos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Habitantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Habitantes.Designer.cs">
+      <DependentUpon>Habitantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="DadosPessoais.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Contratos.resx">
       <DependentUpon>Contratos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Habitantes.resx">
+      <DependentUpon>Habitantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DadosPessoais.resx">
       <DependentUpon>DadosPessoais.cs</DependentUpon>

@@ -46,6 +46,8 @@
             this.reg_textBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cert_textBox = new System.Windows.Forms.TextBox();
+            this.morada_box = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,11 +196,30 @@
             this.cert_textBox.Size = new System.Drawing.Size(100, 22);
             this.cert_textBox.TabIndex = 22;
             // 
+            // morada_box
+            // 
+            this.morada_box.FormattingEnabled = true;
+            this.morada_box.Location = new System.Drawing.Point(310, 245);
+            this.morada_box.Name = "morada_box";
+            this.morada_box.Size = new System.Drawing.Size(121, 24);
+            this.morada_box.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(313, 225);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 17);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Morada";
+            // 
             // AddInquilino
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 354);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.morada_box);
             this.Controls.Add(this.cert_textBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.reg_textBox);
@@ -244,5 +265,7 @@
         private System.Windows.Forms.TextBox reg_textBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox cert_textBox;
+        private System.Windows.Forms.ComboBox morada_box;
+        private System.Windows.Forms.Label label8;
     }
 }
