@@ -90,10 +90,12 @@ namespace BD_Proj
 
             CondominioModel cond = new CondominioModel();
 
-            String sql = String.Format("SELECT * FROM proj_condominio WHERE num_fiscal = '" + num_fiscal + "'");
+            //String sql = String.Format("SELECT * FROM proj_condominio WHERE num_fiscal = '" + num_fiscal + "'");
             //MessageBox.Show(sql);
 
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlCommand com = new SqlCommand("getCondominio", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@condomino", num_fiscal);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())

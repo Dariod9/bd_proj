@@ -29,7 +29,7 @@ namespace BD_Proj
             {
                 Navigation nav = new Navigation();
                 this.Hide();
-                nav.ShowDialog();
+                nav.ShowDialog(this);
             }
         }
     }

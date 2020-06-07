@@ -149,6 +149,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CondominioView.cs" />
     <Compile Include="NavUtilizador.cs">
       <SubType>Form</SubType>
     </Compile>

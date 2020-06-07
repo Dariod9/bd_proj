@@ -129,5 +129,12 @@ namespace BD_Proj
             c.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             c.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 f = (Form1)Owner;
+            f.Show();
+            this.Close();
+        }
     }
 }

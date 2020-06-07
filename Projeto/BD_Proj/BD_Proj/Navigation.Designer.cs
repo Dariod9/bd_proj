@@ -41,6 +41,7 @@
             this.contratos_bt = new System.Windows.Forms.Button();
             this.empresa_bt = new System.Windows.Forms.Button();
             this.obras_bt = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.navpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -162,11 +163,22 @@
             this.obras_bt.UseVisualStyleBackColor = true;
             this.obras_bt.Click += new System.EventHandler(this.obras_bt_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(15, 483);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "fecha";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 522);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.obras_bt);
             this.Controls.Add(this.empresa_bt);
             this.Controls.Add(this.contratos_bt);
@@ -200,5 +212,6 @@
         private System.Windows.Forms.Button contratos_bt;
         private System.Windows.Forms.Button empresa_bt;
         private System.Windows.Forms.Button obras_bt;
+        private System.Windows.Forms.Button button2;
     }
 }

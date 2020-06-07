@@ -21,6 +21,12 @@ namespace BD_Proj
             FillObrasDataGrid();
         }
 
+        public Obras(decimal condominio)
+        {
+            InitializeComponent();
+            GetObrassByCondominio(condominio);
+        }
+
         private List<ObraModel> GetObras()
         {
             data.connectToDB();
@@ -51,6 +57,31 @@ namespace BD_Proj
         private void FillObrasDataGrid()
         {
             obras_dataGridView1.DataSource = GetObras();
+            setHeaders();
+        }
+
+        private void GetObrassByCondominio(decimal condominio)
+        {
+            data.connectToDB();
+
+            SqlCommand com = new SqlCommand("getObrassByCondominio", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@condominio", condominio);
+            SqlDataAdapter objSqlDataAdapter = new SqlDataAdapter(com);
+            DataTable objDataTable = new DataTable();
+            objSqlDataAdapter.Fill(objDataTable);
+            BindingSource objBindingSource = new BindingSource();
+            objBindingSource.DataSource = objDataTable;
+            obras_dataGridView1.DataSource = objBindingSource;
+            objSqlDataAdapter.Update(objDataTable);
+
+            setHeaders();
+
+            data.close();
+        }
+
+        private void setHeaders()
+        {
             obras_dataGridView1.Columns["data_ini"].HeaderText = "Data Início";
             obras_dataGridView1.Columns["data_fim"].HeaderText = "Data Fim";
             obras_dataGridView1.Columns["orcamento"].HeaderText = "Orçamento (€)";

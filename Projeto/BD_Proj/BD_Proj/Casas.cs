@@ -17,8 +17,14 @@ namespace BD_Proj
         public Casas()
         {
             InitializeComponent();
-            Fill_listbox();
+            //Fill_listbox();
             fillDataGrid();
+        }
+
+        public Casas(decimal condominio)
+        {
+            InitializeComponent();
+            GetCasasByCondominio(condominio);            
         }
 
         private void Fill_listbox()
@@ -63,9 +69,30 @@ namespace BD_Proj
             return casas;
         }
 
+        private void GetCasasByCondominio(decimal condominio)
+        {
+            data.connectToDB();
+
+            SqlCommand com = new SqlCommand("getCasasByCondominio", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@condominio", condominio);
+            SqlDataAdapter objSqlDataAdapter = new SqlDataAdapter(com);
+            DataTable objDataTable = new DataTable();
+            objSqlDataAdapter.Fill(objDataTable);
+            BindingSource objBindingSource = new BindingSource();
+            objBindingSource.DataSource = objDataTable;
+            casas_dataGrid.DataSource = objBindingSource;
+            objSqlDataAdapter.Update(objDataTable);
+
+            casas_dataGrid.Columns["n_quartos"].HeaderText = "Número de quartos";
+            casas_dataGrid.Columns["max_hab"].HeaderText = "N máximo de habitantes";
+
+            data.close();
+        }
+
         private void fillDataGrid()
         {
-            casas_dataGrid.DataSource = GetCasas2();
+            casas_dataGrid.DataSource = GetCasas2();           
             casas_dataGrid.Columns["n_quartos"].HeaderText = "Número de quartos";
             casas_dataGrid.Columns["max_hab"].HeaderText = "N máximo de habitantes";
         }
@@ -79,14 +106,11 @@ namespace BD_Proj
         private void edit_button_Click(object sender, EventArgs e)
         {
             string morada = casas_dataGrid.CurrentRow.Cells[0].Value.ToString();
-
-            // ir buscar à bd a casa com a morada
             CasaModel tmp = new CasaModel();
 
             data.connectToDB();
             //String sql = String.Format("SELECT * FROM proj_casa WHERE morada = '" + morada + "'");
             //MessageBox.Show(sql);
-
             SqlCommand com = new SqlCommand("getCasaByMorada", data.connection());
             com.CommandType = CommandType.StoredProcedure;
             com.Parameters.AddWithValue("@morada", morada);
