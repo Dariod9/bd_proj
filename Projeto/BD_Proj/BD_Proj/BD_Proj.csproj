@@ -107,6 +107,18 @@
     <Compile Include="AddCasa.Designer.cs">
       <DependentUpon>AddCasa.cs</DependentUpon>
     </Compile>
+    <Compile Include="CasaInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CasaInfo.Designer.cs">
+      <DependentUpon>CasaInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CondoInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CondoInfo.Designer.cs">
+      <DependentUpon>CondoInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Condominios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +142,18 @@
     </Compile>
     <Compile Include="Empresas.Designer.cs">
       <DependentUpon>Empresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavUtilizador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NavUtilizador.Designer.cs">
+      <DependentUpon>NavUtilizador.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CondominioModel.cs" />
     <Compile Include="Models\ContratoCondominioModel.cs" />
@@ -201,6 +225,12 @@
     <EmbeddedResource Include="AddCasa.resx">
       <DependentUpon>AddCasa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CasaInfo.resx">
+      <DependentUpon>CasaInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CondoInfo.resx">
+      <DependentUpon>CondoInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Condominios.resx">
       <DependentUpon>Condominios.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,8 +249,14 @@
     <EmbeddedResource Include="Empresas.resx">
       <DependentUpon>Empresas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Navigation.resx">
       <DependentUpon>Navigation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavUtilizador.resx">
+      <DependentUpon>NavUtilizador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obras.resx">
       <DependentUpon>Obras.cs</DependentUpon>

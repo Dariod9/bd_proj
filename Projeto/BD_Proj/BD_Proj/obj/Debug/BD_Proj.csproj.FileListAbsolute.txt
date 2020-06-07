@@ -88,3 +88,7 @@ C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\o
 C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.csproj.CoreCompileInputs.cache
 C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.exe
 C:\Users\pedra\Ambiente de Trabalho\New folder\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.pdb
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.Form1.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.CasaInfo.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.CondoForm.resources
+C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.NavUtilizador.resources
