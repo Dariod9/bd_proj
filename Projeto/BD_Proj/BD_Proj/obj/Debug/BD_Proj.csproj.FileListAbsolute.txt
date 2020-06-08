@@ -63,3 +63,4 @@ C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.exe
 C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.pdb
 C:\Users\DarioMatos\Desktop\BD\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.EmpInfo.resources
+C:\Users\pedra\Ambiente de Trabalho\bd_proj\Projeto\BD_Proj\BD_Proj\obj\Debug\BD_Proj.EmpInfo.resources

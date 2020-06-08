@@ -24,8 +24,10 @@ namespace BD_Proj
         private void Casas_listBox_SelectedValueChanged(object sender, EventArgs e)
         {
             data.connectToDB();
-            String sql = "SELECT * FROM proj_casa where morada='" + casa_selected() + "'";
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            //String sql = "SELECT * FROM proj_casa where morada='" + casa_selected() + "'";
+            SqlCommand com = new SqlCommand("getCasaByMorada", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@morada", casa_selected());
             SqlDataReader reader;
             reader = com.ExecuteReader();
             reader.Read();
@@ -113,8 +115,10 @@ namespace BD_Proj
         private string getNomeCond(decimal nif)
         {
             data.connectToDB();
-            String sql = "SELECT nome FROM proj_condominio where num_fiscal=" + nif + "";
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            //String sql = "SELECT nome FROM proj_condominio where num_fiscal=" + nif + "";
+            SqlCommand com = new SqlCommand("getNomeCond", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@num_fiscal", nif);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             reader.Read();
@@ -140,8 +144,10 @@ namespace BD_Proj
         private CasaModel getCasa(string morada)
         {
             data.connectToDB();
-            String sql = "SELECT n_quartos, cidade, max_hab, descricao, condominio FROM proj_casa where morada='" + morada + "'";
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            //String sql = "SELECT n_quartos, cidade, max_hab, descricao, condominio FROM proj_casa where morada='" + morada + "'";
+            SqlCommand com = new SqlCommand("getCasaByMorada2", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@morada", morada);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             reader.Read();

@@ -126,7 +126,7 @@ namespace BD_Proj
 
         private void pessoa_dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            throw new NotImplementedException();
+           
         }
 
         #endregion
