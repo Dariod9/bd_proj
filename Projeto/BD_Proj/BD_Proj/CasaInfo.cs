@@ -35,14 +35,21 @@ namespace BD_Proj
             cidade_text.Text = reader.GetString(2);
             habitantes_text.Text = "" +(reader.GetInt32(3));
             descricao_text.Text = reader.GetString(4);
-            condo_box.Text = "" + reader.GetDecimal(5);
+            condo_box.Text = getNomeCond(reader.GetDecimal(5));
 
             data.close();
         }
 
-        private void fillCasaslistbox()
+        public void fillCasaslistbox()
         {
             casas_listBox.DataSource = GetCasas();
+            //casas_listBox.DisplayMember = "morada";
+            //casas_listBox.ValueMember = "morada";
+        }
+
+        public void fillCasaslistbox(List<String> search)
+        {
+            casas_listBox.DataSource = search;
             //casas_listBox.DisplayMember = "morada";
             //casas_listBox.ValueMember = "morada";
         }
@@ -73,25 +80,25 @@ namespace BD_Proj
             return casas_listBox.SelectedItem.ToString();
         }
 
-        private void casas_listBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            data.connectToDB();
-            String sql = "SELECT * FROM proj_casa where morada='" + casa_selected() + "'";
-            SqlCommand com = new SqlCommand(sql, data.connection());
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
+        //private void casas_listBox_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    data.connectToDB();
+        //    String sql = "SELECT * FROM proj_casa where morada='" + casa_selected() + "'";
+        //    SqlCommand com = new SqlCommand(sql, data.connection());
+        //    SqlDataReader reader;
+        //    reader = com.ExecuteReader();
 
-            morada_text.Text = reader.GetString(0);
-            quartos_text.Text = "" + Int32.Parse(reader.GetString(1));
-            cidade_text.Text = reader.GetString(2);
-            habitantes_text.Text = "" + Int32.Parse(reader.GetString(3));
-            descricao_text.Text = reader.GetString(4);
-            condo_box.Text = "" + Decimal.Parse(reader.GetString(5));
+        //    morada_text.Text = reader.GetString(0);
+        //    quartos_text.Text = "" + Int32.Parse(reader.GetString(1));
+        //    cidade_text.Text = reader.GetString(2);
+        //    habitantes_text.Text = "" + Int32.Parse(reader.GetString(3));
+        //    descricao_text.Text = reader.GetString(4);
+        //    condo_box.Text = getNomeCond(reader.GetDecimal(5));
 
-            data.close();
+        //    data.close();
 
 
-        }
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -104,6 +111,67 @@ namespace BD_Proj
             NavUtilizador n = (NavUtilizador)Owner;
             n.Show();
             this.Close();
+        }
+
+        private string getNomeCond(decimal nif)
+        {
+            data.connectToDB();
+            String sql = "SELECT nome FROM proj_condominio where num_fiscal=" + nif + "";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetString(0);
+            reader.Close();
+            data.close();
+            return a;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddCasa add = new AddCasa();
+            add.ShowDialog(this);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            AddCasa add = new AddCasa(getCasa(casa_selected()));
+            add.ShowDialog(this);
+        }
+
+        private CasaModel getCasa(string morada)
+        {
+            data.connectToDB();
+            String sql = "SELECT n_quartos, cidade, max_hab, descricao, condominio FROM proj_casa where morada='" + morada + "'";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            CasaModel c = new CasaModel();
+            c.morada = morada;
+            c.n_quartos = reader.GetInt32(0);
+            c.cidade = reader.GetString(1);
+            c.max_hab = reader.GetInt32(2);
+            c.descricao = reader.GetString(3);
+            c.condominio = reader.GetDecimal(4);
+            reader.Close();
+            data.close();
+            return c;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fillCasaslistbox();
+            }
+            else
+            {
+                var a = GetCasas();
+
+                fillCasaslistbox(a.Where(x => x.ToLower().Contains(textBox1.Text.ToLower())).ToList());
+            }
         }
     }
 }

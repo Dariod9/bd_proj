@@ -39,7 +39,7 @@ namespace BD_Proj
             descricao_textbox.Text = c.descricao;
             n_quartos_comboBox.Text = c.n_quartos.ToString();
             max_hab_comboBox.Text = c.max_hab.ToString();
-            condominio_comboBox.Text = c.condominio.ToString();
+            condominio_comboBox.Text = getNomeCond(c.condominio);
         }
 
         private void cancel_bt_Click(object sender, EventArgs e)
@@ -75,8 +75,8 @@ namespace BD_Proj
                 MessageBox.Show("Update Successful!");
             }
 
-            Navigation parent = (Navigation) Owner;
-            parent.ShowCasas();
+            CasaInfo parent = (CasaInfo) Owner;
+            parent.fillCasaslistbox();
             this.Close();
         }
 
@@ -169,6 +169,20 @@ namespace BD_Proj
             reader = com.ExecuteReader();
             reader.Read();
             var a = reader.GetDecimal(0);
+            reader.Close();
+            data.close();
+            return a;
+        }
+
+        private string getNomeCond(decimal nif)
+        {
+            data.connectToDB();
+            String sql = "SELECT nome FROM proj_condominio where num_fiscal=" + nif + "";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            var a = reader.GetString(0);
             reader.Close();
             data.close();
             return a;
