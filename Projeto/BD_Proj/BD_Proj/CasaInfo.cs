@@ -21,6 +21,14 @@ namespace BD_Proj
             casas_listBox.SelectedValueChanged += new EventHandler(Casas_listBox_SelectedValueChanged);
         }
 
+        public CasaInfo(decimal condomino)
+        {
+            InitializeComponent();
+            fillCasaslistbox(condomino);
+            casas_listBox.SelectedValueChanged += new EventHandler(Casas_listBox_SelectedValueChanged);
+        }
+
+
         private void Casas_listBox_SelectedValueChanged(object sender, EventArgs e)
         {
             data.connectToDB();
@@ -47,6 +55,26 @@ namespace BD_Proj
             casas_listBox.DataSource = GetCasas();
             //casas_listBox.DisplayMember = "morada";
             //casas_listBox.ValueMember = "morada";
+        }
+
+        public void fillCasaslistbox(decimal cond)
+        {
+            data.connectToDB();
+
+            List<string> moradas = new List<string>();
+
+            SqlCommand com = new SqlCommand("getMoradasCasasByCondominio", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@condominio", cond);
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                moradas.Add(reader.GetString(0));
+            }
+            data.close();
+
+            casas_listBox.DataSource = moradas;
         }
 
         public void fillCasaslistbox(List<String> search)
@@ -105,12 +133,6 @@ namespace BD_Proj
             dados.ShowDialog();
         }
 
-        private void CasaInfo_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            NavUtilizador n = (NavUtilizador)Owner;
-            n.Show();
-            this.Close();
-        }
 
         private string getNomeCond(decimal nif)
         {

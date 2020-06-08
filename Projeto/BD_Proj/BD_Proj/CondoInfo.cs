@@ -28,8 +28,9 @@ namespace BD_Proj
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Casas c = new Casas(cond_selected());
-            c.ShowDialog();
+            //Casas c = new Casas(cond_selected());
+            CasaInfo c = new CasaInfo(cond_selected());
+            c.ShowDialog(); 
         }
 
         private void button2_Click(object sender, EventArgs e)

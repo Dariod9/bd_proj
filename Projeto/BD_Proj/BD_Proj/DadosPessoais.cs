@@ -191,102 +191,68 @@ namespace BD_Proj
             GetProprietariosByCondominio(cond);
         }
 
-        private void fiadores_Click(object sender, EventArgs e)
-        {
-            printFiadores();
-        }
-
         private void DadosPessoais_Load(object sender, EventArgs e)
         {
 
         }
 
-        public void printFiadores()
-        {
-            data.connectToDB();
 
-            List<FiadorModel> fiadores = new List<FiadorModel>();
+        //public void printProprietarios()
+        //{
+        //    data.connectToDB();
 
-            String sql = "SELECT * FROM (proj_pessoa join proj_fiador on proj_pessoa.nif=proj_fiador.nif)";
-            SqlCommand com = new SqlCommand(sql, data.connection());
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
-            while (reader.Read())
-            {
-                FiadorModel tmp = new FiadorModel();
+        //    List<ProprietarioModel> props = new List<ProprietarioModel>();
 
-                tmp.fname = reader.GetString(0);
-                tmp.lname = reader.GetString(1);
-                tmp.telefone = reader.GetDecimal(2);
-                tmp.id = reader.GetDecimal(3);
-                tmp.nif = reader.GetDecimal(4);
+        //    String sql = "SELECT * FROM (proj_pessoa join proj_proprietario on proj_pessoa.nif=proj_proprietario.nif)";
+        //    SqlCommand com = new SqlCommand(sql, data.connection());
+        //    SqlDataReader reader;
+        //    reader = com.ExecuteReader();
+        //    while (reader.Read())
+        //    {
+        //        ProprietarioModel tmp = new ProprietarioModel();
 
-
-                fiadores.Add(tmp);
-            }
-            data.close();
-
-            fillDataGrid(fiadores);
-        }
+        //        tmp.fname = reader.GetString(0);
+        //        tmp.lname = reader.GetString(1);
+        //        tmp.telefone = reader.GetDecimal(2);
+        //        tmp.id = reader.GetDecimal(3);
+        //        tmp.nif = reader.GetDecimal(4);
 
 
+        //        props.Add(tmp);
+        //    }
+        //    data.close();
 
-        public void printProprietarios()
-        {
-            data.connectToDB();
+        //    fillDataGrid(props);
+        //}
 
-            List<ProprietarioModel> props = new List<ProprietarioModel>();
+        //public void printInquilinos()
+        //{
+        //    data.connectToDB();
 
-            String sql = "SELECT * FROM (proj_pessoa join proj_proprietario on proj_pessoa.nif=proj_proprietario.nif)";
-            SqlCommand com = new SqlCommand(sql, data.connection());
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
-            while (reader.Read())
-            {
-                ProprietarioModel tmp = new ProprietarioModel();
+        //    List<InquilinoModel> inqs = new List<InquilinoModel>();
 
-                tmp.fname = reader.GetString(0);
-                tmp.lname = reader.GetString(1);
-                tmp.telefone = reader.GetDecimal(2);
-                tmp.id = reader.GetDecimal(3);
-                tmp.nif = reader.GetDecimal(4);
+        //    String sql = "SELECT * FROM (proj_pessoa join proj_inquilino on proj_pessoa.nif=proj_inquilino.nif)";
+        //    SqlCommand com = new SqlCommand(sql, data.connection());
+        //    SqlDataReader reader;
+        //    reader = com.ExecuteReader();
+        //    while (reader.Read())
+        //    {
+        //        InquilinoModel tmp = new InquilinoModel();
 
-
-                props.Add(tmp);
-            }
-            data.close();
-
-            fillDataGrid(props);
-        }
-
-        public void printInquilinos()
-        {
-            data.connectToDB();
-
-            List<InquilinoModel> inqs = new List<InquilinoModel>();
-
-            String sql = "SELECT * FROM (proj_pessoa join proj_inquilino on proj_pessoa.nif=proj_inquilino.nif)";
-            SqlCommand com = new SqlCommand(sql, data.connection());
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
-            while (reader.Read())
-            {
-                InquilinoModel tmp = new InquilinoModel();
-
-                tmp.fname = reader.GetString(0);
-                tmp.lname = reader.GetString(1);
-                tmp.telefone = reader.GetDecimal(2);
-                tmp.id = reader.GetDecimal(3);
-                tmp.nif = reader.GetDecimal(4);
-                tmp.certificado = reader.GetString(6);
-                tmp.reg_criminal = reader.GetString(7);
+        //        tmp.fname = reader.GetString(0);
+        //        tmp.lname = reader.GetString(1);
+        //        tmp.telefone = reader.GetDecimal(2);
+        //        tmp.id = reader.GetDecimal(3);
+        //        tmp.nif = reader.GetDecimal(4);
+        //        tmp.certificado = reader.GetString(6);
+        //        tmp.reg_criminal = reader.GetString(7);
 
 
-                inqs.Add(tmp);
-            }
-            data.close();
+        //        inqs.Add(tmp);
+        //    }
+        //    data.close();
 
-            fillDataGrid(inqs);
-        }
+        //    fillDataGrid(inqs);
+        //}
     }
 }

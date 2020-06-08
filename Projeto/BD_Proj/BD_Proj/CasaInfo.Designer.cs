@@ -244,7 +244,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "CasaInfo";
             this.Text = "CasaInfo";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CasaInfo_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -36,7 +36,6 @@ namespace BD_Proj
             this.pessoa_dataGrid = new System.Windows.Forms.DataGridView();
             this.inquilinos = new System.Windows.Forms.Button();
             this.proprietarios = new System.Windows.Forms.Button();
-            this.fiadores = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pessoa_dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,22 +94,11 @@ namespace BD_Proj
             this.proprietarios.UseVisualStyleBackColor = true;
             this.proprietarios.Click += new System.EventHandler(this.proprietarios_Click);
             // 
-            // fiadores
-            // 
-            this.fiadores.Location = new System.Drawing.Point(646, 202);
-            this.fiadores.Name = "fiadores";
-            this.fiadores.Size = new System.Drawing.Size(118, 25);
-            this.fiadores.TabIndex = 14;
-            this.fiadores.Text = "Fiadores";
-            this.fiadores.UseVisualStyleBackColor = true;
-            this.fiadores.Click += new System.EventHandler(this.fiadores_Click);
-            // 
             // DadosPessoais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.fiadores);
             this.Controls.Add(this.proprietarios);
             this.Controls.Add(this.inquilinos);
             this.Controls.Add(this.pessoa_dataGrid);
@@ -135,6 +123,5 @@ namespace BD_Proj
         private System.Windows.Forms.DataGridView pessoa_dataGrid;
         private Button inquilinos;
         private Button proprietarios;
-        private Button fiadores;
     }
 }

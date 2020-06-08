@@ -117,21 +117,6 @@ namespace BD_Proj
             add.ShowDialog();
         }
 
-        private void inquilinos_Click(object sender, EventArgs e)
-        {
-            printInquilinos();
-        }
-
-        private void proprietarios_Click(object sender, EventArgs e)
-        {
-            printProprietarios();
-        }
-
-        private void fiadores_Click(object sender, EventArgs e)
-        {
-            printFiadores();
-        }
-
         private void DadosPessoais_Load(object sender, EventArgs e)
         {
 
