@@ -136,5 +136,12 @@ namespace BD_Proj
             f.Show();
             this.Close();
         }
+
+        private void Navigation_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1 f = (Form1)Owner;
+            f.Show();
+            this.Close();
+        }
     }
 }

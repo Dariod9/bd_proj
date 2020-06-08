@@ -190,6 +190,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Navigation";
             this.Text = "Navigation";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Navigation_FormClosed);
             this.navpanel.ResumeLayout(false);
             this.navpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
