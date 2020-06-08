@@ -48,6 +48,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +108,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(837, 416);
+            this.button1.Location = new System.Drawing.Point(889, 416);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 41);
             this.button1.TabIndex = 11;
@@ -218,11 +219,22 @@
             this.label4.TabIndex = 23;
             this.label4.Text = "Search:";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(759, 416);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(124, 41);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "Ver Proprietários";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // CasaInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 469);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
@@ -271,5 +283,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button4;
     }
 }

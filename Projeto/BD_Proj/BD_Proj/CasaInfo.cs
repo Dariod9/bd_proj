@@ -198,5 +198,11 @@ namespace BD_Proj
                 fillCasaslistbox(a.Where(x => x.ToLower().Contains(textBox1.Text.ToLower())).ToList());
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Proprietario proprietario = new Proprietario(casa_selected());
+            proprietario.ShowDialog();
+        }
     }
 }
