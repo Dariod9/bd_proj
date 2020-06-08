@@ -34,7 +34,7 @@ namespace BD_Proj
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DadosPessoais dadosPessoais = new DadosPessoais();
+            DadosPessoais dadosPessoais = new DadosPessoais((condominios_listBox.SelectedItem as CondominioView).value);
             dadosPessoais.ShowDialog();
         }
 
@@ -44,7 +44,7 @@ namespace BD_Proj
             obras.ShowDialog();
         }
 
-        private void FillCondominiosLisBox()
+        public void FillCondominiosLisBox()
         {
             condominios_listBox.DataSource = GetCondominios();
             condominios_listBox.DisplayMember = "text";

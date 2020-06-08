@@ -71,8 +71,9 @@ namespace BD_Proj
                 UpdateCondominio(cond);
                 MessageBox.Show("Update Successful!");
             }
-            Navigation parent = (Navigation) Owner;
-            parent.ShowCondominios();
+            CondoForm parent = (CondoForm)Owner;
+            parent.FillCondominiosLisBox();
+            parent.Show();
             this.Close();
         }
 

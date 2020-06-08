@@ -14,6 +14,7 @@ namespace BD_Proj
     public partial class DadosPessoais : Form
     {
         DataAccess data = new DataAccess();
+        decimal cond;
         public DadosPessoais()
         {
             InitializeComponent();
@@ -24,6 +25,64 @@ namespace BD_Proj
         {
             InitializeComponent();
             GetPessoasByCasa(morada);
+        }
+
+        public DadosPessoais(decimal condominio)
+        {
+            InitializeComponent();
+            cond = condominio;
+            GetPessoasByCondominio(cond);
+        }
+
+        private void GetInquilinosByCondominio(decimal condominio)
+        {
+            data.connectToDB();
+
+            SqlCommand com = new SqlCommand("select * from getInquilinosByCond(@condominio)", data.connection());
+            com.Parameters.AddWithValue("@condominio", condominio);
+            SqlDataAdapter objSqlDataAdapter = new SqlDataAdapter(com);
+            DataTable objDataTable = new DataTable();
+            objSqlDataAdapter.Fill(objDataTable);
+            BindingSource objBindingSource = new BindingSource();
+            objBindingSource.DataSource = objDataTable;
+            pessoa_dataGrid.DataSource = objBindingSource;
+            objSqlDataAdapter.Update(objDataTable);
+
+            data.close();
+        }
+
+        private void GetProprietariosByCondominio(decimal condominio)
+        {
+            data.connectToDB();
+
+            SqlCommand com = new SqlCommand("select * from getProprietariosByCond(@condominio)", data.connection());
+            com.Parameters.AddWithValue("@condominio", condominio);
+            SqlDataAdapter objSqlDataAdapter = new SqlDataAdapter(com);
+            DataTable objDataTable = new DataTable();
+            objSqlDataAdapter.Fill(objDataTable);
+            BindingSource objBindingSource = new BindingSource();
+            objBindingSource.DataSource = objDataTable;
+            pessoa_dataGrid.DataSource = objBindingSource;
+            objSqlDataAdapter.Update(objDataTable);
+
+            data.close();
+        }
+
+        private void GetPessoasByCondominio(decimal condominio)
+        {
+            data.connectToDB();
+
+            SqlCommand com = new SqlCommand("select * from getPessoasByCond(@condominio)", data.connection());
+            com.Parameters.AddWithValue("@condominio", condominio);
+            SqlDataAdapter objSqlDataAdapter = new SqlDataAdapter(com);
+            DataTable objDataTable = new DataTable();
+            objSqlDataAdapter.Fill(objDataTable);
+            BindingSource objBindingSource = new BindingSource();
+            objBindingSource.DataSource = objDataTable;
+            pessoa_dataGrid.DataSource = objBindingSource;
+            objSqlDataAdapter.Update(objDataTable);
+
+            data.close();
         }
 
         private void GetPessoasByCasa(string morada)
@@ -122,12 +181,14 @@ namespace BD_Proj
 
         private void inquilinos_Click(object sender, EventArgs e)
         {
-            printInquilinos();
+            //printInquilinos();
+            GetInquilinosByCondominio(cond);
         }
 
         private void proprietarios_Click(object sender, EventArgs e)
         {
-            printProprietarios();
+            //printProprietarios();
+            GetProprietariosByCondominio(cond);
         }
 
         private void fiadores_Click(object sender, EventArgs e)
