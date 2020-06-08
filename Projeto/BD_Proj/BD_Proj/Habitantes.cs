@@ -111,11 +111,6 @@ namespace BD_Proj
             add.ShowDialog();
         }
 
-        private void Pessoa_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pessoa_bt_Click(object sender, EventArgs e)
         {
             AddInquilino add = new AddInquilino(moradaGlobal);

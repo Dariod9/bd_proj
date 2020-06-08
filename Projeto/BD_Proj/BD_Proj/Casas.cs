@@ -17,7 +17,6 @@ namespace BD_Proj
         public Casas()
         {
             InitializeComponent();
-            //Fill_listbox();
             fillDataGrid();
         }
 
@@ -25,20 +24,6 @@ namespace BD_Proj
         {
             InitializeComponent();
             GetCasasByCondominio(condominio);            
-        }
-
-        private void Fill_listbox()
-        {
-            data.connectToDB();
-            String sql = "SELECT morada FROM proj_casa";
-            SqlCommand com = new SqlCommand(sql, data.connection());
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
-            while (reader.Read())
-            {
-                casas_listBox.Items.Add(reader.GetValue(0));
-            }
-            data.close();
         }
 
         private List<CasaModel> GetCasas2()

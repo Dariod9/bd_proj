@@ -24,7 +24,23 @@ namespace BD_Proj
         public Obras(decimal condominio)
         {
             InitializeComponent();
-            GetObrassByCondominio(condominio);
+            GetObrasByCondominio(condominio);
+            ShowGastoTotal(condominio);
+        }
+
+        private void ShowGastoTotal(decimal condominio)
+        {
+            int value;
+
+            data.connectToDB();
+            
+            SqlCommand sql = new SqlCommand("SELECT dbo.gastoTotal(@condominio)", data.connection());
+            sql.Parameters.AddWithValue("@condominio", condominio);
+            value = Int32.Parse(sql.ExecuteScalar().ToString());
+
+            data.close();
+
+            valor_gastoT_label.Text = value.ToString();
         }
 
         private List<ObraModel> GetObras()
@@ -60,12 +76,31 @@ namespace BD_Proj
             setHeaders();
         }
 
-        private void GetObrassByCondominio(decimal condominio)
+        //private void GetObrassByCondominio(decimal condominio)
+        //{
+        //    data.connectToDB();
+
+        //    SqlCommand com = new SqlCommand("getObrassByCondominio", data.connection());
+        //    com.CommandType = CommandType.StoredProcedure;
+        //    com.Parameters.AddWithValue("@condominio", condominio);
+        //    SqlDataAdapter objSqlDataAdapter = new SqlDataAdapter(com);
+        //    DataTable objDataTable = new DataTable();
+        //    objSqlDataAdapter.Fill(objDataTable);
+        //    BindingSource objBindingSource = new BindingSource();
+        //    objBindingSource.DataSource = objDataTable;
+        //    obras_dataGridView1.DataSource = objBindingSource;
+        //    objSqlDataAdapter.Update(objDataTable);
+
+        //    setHeaders();
+
+        //    data.close();
+        //}
+
+        private void GetObrasByCondominio(decimal condominio)
         {
             data.connectToDB();
 
-            SqlCommand com = new SqlCommand("getObrassByCondominio", data.connection());
-            com.CommandType = CommandType.StoredProcedure;
+            SqlCommand com = new SqlCommand("select * from getObras(@condominio)", data.connection());
             com.Parameters.AddWithValue("@condominio", condominio);
             SqlDataAdapter objSqlDataAdapter = new SqlDataAdapter(com);
             DataTable objDataTable = new DataTable();
@@ -79,6 +114,7 @@ namespace BD_Proj
 
             data.close();
         }
+
 
         private void setHeaders()
         {

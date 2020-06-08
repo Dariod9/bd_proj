@@ -23,7 +23,7 @@ namespace BD_Proj
             {
                 NavUtilizador navU = new NavUtilizador();
                 this.Hide();
-                navU.ShowDialog();
+                navU.ShowDialog(this);
             }
             else
             {

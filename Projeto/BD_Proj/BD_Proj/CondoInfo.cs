@@ -95,5 +95,12 @@ namespace BD_Proj
             AddCondominio addCond = new AddCondominio(cond);
             addCond.ShowDialog(this);
         }
+
+        private void CondoForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            NavUtilizador n = (NavUtilizador)Owner;
+            n.Show();
+            this.Close();
+        }
     }
 }

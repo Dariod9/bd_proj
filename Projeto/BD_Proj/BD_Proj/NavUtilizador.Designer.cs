@@ -88,6 +88,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NavUtilizador";
             this.Text = "NextHause";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NavUtilizador_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

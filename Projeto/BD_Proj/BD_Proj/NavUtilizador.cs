@@ -20,19 +20,28 @@ namespace BD_Proj
         private void button1_Click(object sender, EventArgs e)
         {
             CondoForm condoForm = new CondoForm();
-            condoForm.ShowDialog();
+            this.Hide();
+            condoForm.ShowDialog(this);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             CasaInfo casas = new CasaInfo();
-            casas.ShowDialog();
+            this.Hide();
+            casas.ShowDialog(this);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Contratos contratos = new Contratos();
             contratos.ShowDialog();
+        }
+
+        private void NavUtilizador_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1 f = (Form1)Owner;
+            f.Show();
+            this.Close();
         }
     }
 }

@@ -98,5 +98,12 @@ namespace BD_Proj
             Habitantes dados = new Habitantes(casa_selected());
             dados.ShowDialog();
         }
+
+        private void CasaInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            NavUtilizador n = (NavUtilizador)Owner;
+            n.Show();
+            this.Close();
+        }
     }
 }

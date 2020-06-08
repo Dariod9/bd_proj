@@ -121,6 +121,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "CondoForm";
             this.Text = "NextHause";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CondoForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
