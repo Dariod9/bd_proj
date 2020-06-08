@@ -131,6 +131,12 @@
     <Compile Include="Contratos.Designer.cs">
       <DependentUpon>Contratos.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmpInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpInfo.Designer.cs">
+      <DependentUpon>EmpInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Habitantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EmpInfo.resx">
+      <DependentUpon>EmpInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddCondominio.resx">
       <DependentUpon>AddCondominio.cs</DependentUpon>
     </EmbeddedResource>

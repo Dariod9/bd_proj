@@ -69,8 +69,8 @@ namespace BD_Proj
                 MessageBox.Show("Update Successful!");
             }
 
-            Navigation parent = (Navigation)Owner;
-            parent.ShowEmpresas();
+            EmpInfo parent = (EmpInfo)Owner;
+            parent.fillEmpresaslistbox();
             this.Close();
         }
 

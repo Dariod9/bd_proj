@@ -43,5 +43,11 @@ namespace BD_Proj
             f.Show();
             this.Close();
         }
+
+        private void empresa_button_Click(object sender, EventArgs e)
+        {
+            EmpInfo empresaInfo = new EmpInfo();
+            empresaInfo.ShowDialog();
+        }
     }
 }

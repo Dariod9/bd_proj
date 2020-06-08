@@ -65,10 +65,7 @@ namespace BD_Proj
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                CasaView casa = new CasaView();
-                casa.morada = reader.GetString(0);
-
-                c.Add(casa.morada);
+                c.Add(reader.GetString(0));
             }
             data.close();
 
