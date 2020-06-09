@@ -125,15 +125,15 @@ namespace BD_Proj
 
         private void edit_bt_Click(object sender, EventArgs e)
         {
-            string obra_id = obras_dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            int obra_id = Int32.Parse(obras_dataGridView1.CurrentRow.Cells[0].Value.ToString());
 
-            // ir buscar à bd a casa com a morada
             data.connectToDB();
             ObraModel tmp = new ObraModel();
 
-            String sql = String.Format("SELECT * FROM proj_obras WHERE obra_id = '" + obra_id + "'");
-            //MessageBox.Show(sql);
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            //String sql = String.Format("SELECT * FROM proj_obras WHERE obra_id = '" + obra_id + "'");
+            SqlCommand com = new SqlCommand("getObrasById", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@obra_id", obra_id);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())

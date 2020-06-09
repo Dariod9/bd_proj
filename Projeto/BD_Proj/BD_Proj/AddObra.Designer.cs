@@ -40,6 +40,9 @@
             this.fim_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.data_fim_label = new System.Windows.Forms.Label();
             this.data_ini_label = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.empresa_comboBox = new System.Windows.Forms.ComboBox();
+            this.empresa_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ok_bt
@@ -74,11 +77,11 @@
             // condominio_label
             // 
             this.condominio_label.AutoSize = true;
-            this.condominio_label.Location = new System.Drawing.Point(434, 29);
+            this.condominio_label.Location = new System.Drawing.Point(395, 31);
             this.condominio_label.Name = "condominio_label";
-            this.condominio_label.Size = new System.Drawing.Size(82, 17);
+            this.condominio_label.Size = new System.Drawing.Size(86, 17);
             this.condominio_label.TabIndex = 6;
-            this.condominio_label.Text = "Condominio";
+            this.condominio_label.Text = "Condominio:";
             // 
             // id_textBox
             // 
@@ -143,11 +146,30 @@
             this.data_ini_label.TabIndex = 27;
             this.data_ini_label.Text = "Data Início:";
             // 
+            // empresa_comboBox
+            // 
+            this.empresa_comboBox.FormattingEnabled = true;
+            this.empresa_comboBox.Location = new System.Drawing.Point(389, 133);
+            this.empresa_comboBox.Name = "empresa_comboBox";
+            this.empresa_comboBox.Size = new System.Drawing.Size(162, 24);
+            this.empresa_comboBox.TabIndex = 28;
+            // 
+            // empresa_label
+            // 
+            this.empresa_label.AutoSize = true;
+            this.empresa_label.Location = new System.Drawing.Point(395, 113);
+            this.empresa_label.Name = "empresa_label";
+            this.empresa_label.Size = new System.Drawing.Size(68, 17);
+            this.empresa_label.TabIndex = 29;
+            this.empresa_label.Text = "Empresa:";
+            // 
             // AddObra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 246);
+            this.Controls.Add(this.empresa_label);
+            this.Controls.Add(this.empresa_comboBox);
             this.Controls.Add(this.data_ini_label);
             this.Controls.Add(this.data_fim_label);
             this.Controls.Add(this.fim_dateTimePicker);
@@ -181,5 +203,8 @@
         private System.Windows.Forms.DateTimePicker fim_dateTimePicker;
         private System.Windows.Forms.Label data_fim_label;
         private System.Windows.Forms.Label data_ini_label;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ComboBox empresa_comboBox;
+        private System.Windows.Forms.Label empresa_label;
     }
 }
