@@ -41,7 +41,7 @@ namespace BD_Proj
 
             List<ContratoModel> pessoas = new List<ContratoModel>();
 
-            String sql = "SELECT * FROM proj_contrato join proj_pessoa on proj_contrato.proprietario=proj_pessoa.nif";
+            String sql = "SELECT * FROM proj_contrato  join proj_pessoa on proj_contrato.proprietario=proj_pessoa.nif"; // meter left outer mas dá erro quando o prop é null
             SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
@@ -108,12 +108,12 @@ namespace BD_Proj
                 tmp.data_fim = reader.GetDateTime(2);
                 tmp.dia_pagamento = reader.GetInt32(3);
                 tmp.proprietario = reader.GetDecimal(4);
-                tmp.renda = reader.GetInt32(8);
-                tmp.caucao= reader.GetInt32(9);
-                tmp.taxa= reader.GetInt32(10);
-                tmp.fiador= reader.GetDecimal(11);
-                tmp.inquilino= reader.GetDecimal(12);
-                tmp.empresa= reader.GetDecimal(13);
+                tmp.renda = reader.GetInt32(11);
+                tmp.caucao= reader.GetInt32(12);
+                tmp.taxa= reader.GetInt32(13);
+                tmp.fiador= reader.GetDecimal(14);
+                tmp.inquilino= reader.GetDecimal(15);
+                tmp.empresa= reader.GetDecimal(16);
 
 
                 rendas.Add(tmp);
@@ -157,10 +157,10 @@ namespace BD_Proj
                 tmp.data_fim = reader.GetDateTime(2);
                 tmp.dia_pagamento = reader.GetInt32(3);
                 tmp.proprietario = reader.GetDecimal(4);
-                tmp.despesas = reader.GetInt32(8);
-                tmp.seguro = reader.GetString(9);
-                tmp.area = reader.GetInt32(10);
-                tmp.condominio = reader.GetDecimal(11);
+                tmp.despesas = reader.GetInt32(11);
+                tmp.seguro = reader.GetString(12);
+                tmp.area = reader.GetInt32(13);
+                tmp.condominio = reader.GetDecimal(14);
 
 
                 conds.Add(tmp);

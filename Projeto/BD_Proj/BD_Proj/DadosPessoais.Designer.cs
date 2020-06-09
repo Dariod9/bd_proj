@@ -32,10 +32,10 @@ namespace BD_Proj
         private void InitializeComponent()
         {
             this.pessoas_listBox = new System.Windows.Forms.ListBox();
-            this.pessoa_bt = new System.Windows.Forms.Button();
             this.pessoa_dataGrid = new System.Windows.Forms.DataGridView();
             this.inquilinos = new System.Windows.Forms.Button();
             this.proprietarios = new System.Windows.Forms.Button();
+            this.delete_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pessoa_dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,16 +47,6 @@ namespace BD_Proj
             this.pessoas_listBox.Name = "pessoas_listBox";
             this.pessoas_listBox.Size = new System.Drawing.Size(201, 404);
             this.pessoas_listBox.TabIndex = 1;
-            // 
-            // pessoa_bt
-            // 
-            this.pessoa_bt.Location = new System.Drawing.Point(713, 422);
-            this.pessoa_bt.Name = "pessoa_bt";
-            this.pessoa_bt.Size = new System.Drawing.Size(75, 23);
-            this.pessoa_bt.TabIndex = 3;
-            this.pessoa_bt.Text = "Add";
-            this.pessoa_bt.UseVisualStyleBackColor = true;
-            this.pessoa_bt.Click += new System.EventHandler(this.pessoa_bt_Click);
             // 
             // pessoa_dataGrid
             // 
@@ -94,15 +84,25 @@ namespace BD_Proj
             this.proprietarios.UseVisualStyleBackColor = true;
             this.proprietarios.Click += new System.EventHandler(this.proprietarios_Click);
             // 
+            // delete_button
+            // 
+            this.delete_button.Location = new System.Drawing.Point(674, 415);
+            this.delete_button.Name = "delete_button";
+            this.delete_button.Size = new System.Drawing.Size(90, 23);
+            this.delete_button.TabIndex = 14;
+            this.delete_button.Text = "Delete";
+            this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
+            // 
             // DadosPessoais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.delete_button);
             this.Controls.Add(this.proprietarios);
             this.Controls.Add(this.inquilinos);
             this.Controls.Add(this.pessoa_dataGrid);
-            this.Controls.Add(this.pessoa_bt);
             this.Controls.Add(this.pessoas_listBox);
             this.Name = "DadosPessoais";
             this.Text = "Pessoas";
@@ -119,9 +119,9 @@ namespace BD_Proj
 
         #endregion
         private System.Windows.Forms.ListBox pessoas_listBox;
-        private System.Windows.Forms.Button pessoa_bt;
         private System.Windows.Forms.DataGridView pessoa_dataGrid;
         private Button inquilinos;
         private Button proprietarios;
+        private Button delete_button;
     }
 }

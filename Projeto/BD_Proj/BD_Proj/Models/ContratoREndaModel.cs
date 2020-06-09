@@ -16,7 +16,6 @@ namespace BD_Proj.Models
         public int renda { get; set; }
         public int caucao { get; set; }
         public int taxa { get; set; }
-        public string n_renda { get; set; }
         public decimal fiador { get; set; }
         public decimal inquilino { get; set; }
         public decimal empresa { get; set; }

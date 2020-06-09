@@ -196,6 +196,22 @@ namespace BD_Proj
 
         }
 
+        private void delete_button_Click(object sender, EventArgs e)
+        {
+            var nif = Decimal.Parse( pessoa_dataGrid.CurrentRow.Cells[5].Value.ToString());
+
+            data.connectToDB();
+            SqlCommand com = new SqlCommand("deletePerson", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@nif", nif);
+            com.ExecuteNonQuery();
+            data.close();
+
+            if (cond >= 1)
+                GetPessoasByCondominio(cond);
+            else GetPessoas();
+        }
+
 
         //public void printProprietarios()
         //{
