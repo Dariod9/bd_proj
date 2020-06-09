@@ -28,7 +28,7 @@ namespace BD_Proj
             moradaGlobal = morada;
         }
 
-        private void GetPessoasByCasa(string morada)
+        public void GetPessoasByCasa(string morada)
         {
             data.connectToDB();
 
@@ -70,7 +70,7 @@ namespace BD_Proj
         //    data.close();
         //}
 
-        private void GetPessoas()
+        public void GetPessoas()
         {
             data.connectToDB();
 
@@ -98,7 +98,7 @@ namespace BD_Proj
             fillDataGrid(pessoas);
         }
 
-        private void fillDataGrid<T>(List<T> lista)
+        public void fillDataGrid<T>(List<T> lista)
         {
             pessoa_dataGrid.DataSource = lista;
           //  pessoa_dataGrid.Columns["n_quartos"].HeaderText = "Número de quartos";
@@ -114,7 +114,7 @@ namespace BD_Proj
         private void pessoa_bt_Click(object sender, EventArgs e)
         {
             AddInquilino add = new AddInquilino(moradaGlobal);
-            add.ShowDialog();
+            add.ShowDialog(this);
         }
 
         private void DadosPessoais_Load(object sender, EventArgs e)

@@ -204,5 +204,19 @@ namespace BD_Proj
             Proprietario proprietario = new Proprietario(casa_selected());
             proprietario.ShowDialog();
         }
+
+        private void delete_button_Click(object sender, EventArgs e)
+        {
+            CasaModel c= getCasa(casa_selected());
+
+            data.connectToDB();
+            SqlCommand com = new SqlCommand("deleteCasa", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@morada", c.morada);
+            com.ExecuteNonQuery();
+            data.close();
+
+            fillCasaslistbox();
+        }
     }
 }

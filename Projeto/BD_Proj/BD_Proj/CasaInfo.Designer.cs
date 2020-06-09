@@ -49,6 +49,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.delete_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,7 +187,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(344, 360);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(60, 23);
             this.button2.TabIndex = 20;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
@@ -194,9 +195,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(488, 360);
+            this.button3.Location = new System.Drawing.Point(491, 360);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(72, 23);
             this.button3.TabIndex = 21;
             this.button3.Text = "Edit";
             this.button3.UseVisualStyleBackColor = true;
@@ -229,11 +230,22 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // delete_button
+            // 
+            this.delete_button.Location = new System.Drawing.Point(410, 360);
+            this.delete_button.Name = "delete_button";
+            this.delete_button.Size = new System.Drawing.Size(75, 23);
+            this.delete_button.TabIndex = 25;
+            this.delete_button.Text = "Delete";
+            this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
+            // 
             // CasaInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 469);
+            this.Controls.Add(this.delete_button);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox1);
@@ -284,5 +296,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button delete_button;
     }
 }
