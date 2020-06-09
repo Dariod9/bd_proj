@@ -13,5 +13,7 @@ namespace BD_Proj.Models
         public DateTime data_fim { get; set; }
         public int dia_pagamento { get; set; }
         public decimal proprietario { get; set; }
+        public string fname { get; set; }
+        public string lname { get; set; }
     }
 }

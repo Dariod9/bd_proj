@@ -15,7 +15,7 @@ namespace BD_Proj
     {
         DataAccess data = new DataAccess();
         //bool mor;
-        //string moradaGlobal;
+        string moradaGlobal;
 
         public AddInquilino()
         {
@@ -28,6 +28,7 @@ namespace BD_Proj
         {
             InitializeComponent();
             morada_box.Text = morada;
+            moradaGlobal = morada;
         }
 
         private void fillMoradaBox()
@@ -71,6 +72,8 @@ namespace BD_Proj
             
             saveInq(inq);
             MessageBox.Show("Entry Successful!");
+            Habitantes h = (Habitantes)Owner;
+            h.GetPessoasByCasa(moradaGlobal);
             this.Close();
         }
 
