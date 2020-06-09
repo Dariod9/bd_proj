@@ -137,6 +137,7 @@
     <Compile Include="EmpInfo.Designer.cs">
       <DependentUpon>EmpInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\EmpresaView.cs" />
     <Compile Include="Proprietario.cs">
       <SubType>Form</SubType>
     </Compile>

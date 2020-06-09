@@ -31,11 +31,12 @@ namespace BD_Proj
         {
             InitializeComponent();
             cond = condominio;
-            GetPessoasByCondominio(cond);
+            GetProprietariosByCondominio(cond);
         }
 
         private void GetInquilinosByCondominio(decimal condominio)
         {
+            view_label.Text = "Inquilinos";
             data.connectToDB();
 
             SqlCommand com = new SqlCommand("select * from getInquilinosByCond(@condominio)", data.connection());
@@ -53,6 +54,7 @@ namespace BD_Proj
 
         private void GetProprietariosByCondominio(decimal condominio)
         {
+            view_label.Text = "Proprietários";
             data.connectToDB();
 
             SqlCommand com = new SqlCommand("select * from getProprietariosByCond(@condominio)", data.connection());

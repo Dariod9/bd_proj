@@ -13,5 +13,7 @@ namespace BD_Proj.Models
         public DateTime data_fim { get; set; }
         public int orcamento { get; set; }
         public decimal condominio { get; set; }
+
+        public decimal empresa { get; set; }
     }
 }

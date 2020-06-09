@@ -21,6 +21,7 @@ namespace BD_Proj
             InitializeComponent();
             adding = true;
             FillCondominioComboBox();
+            FillEmpresaLisBox();
         }
 
         public AddObra(ObraModel o)
@@ -28,6 +29,7 @@ namespace BD_Proj
             InitializeComponent();
             adding = false;
             FillCondominioComboBox();
+            FillEmpresaLisBox();
             FillObraInfo(o);
         }
 
@@ -39,7 +41,7 @@ namespace BD_Proj
             fim_dateTimePicker.Text = o.data_fim.ToString();
             orcamento_textBox.Text = o.orcamento.ToString();
             condominio_comboBox.Text = getNomeCond(o.condominio);
-
+            //empresa_comboBox.Text = 
         }
 
         private void cancel_bt_Click(object sender, EventArgs e)
@@ -57,6 +59,7 @@ namespace BD_Proj
                 obra.data_fim = DateTime.Parse(fim_dateTimePicker.Text.ToString());
                 obra.orcamento = Int32.Parse(orcamento_textBox.Text.ToString());
                 obra.condominio = getNifCond(condominio_comboBox.Text.ToString());
+                obra.empresa = (empresa_comboBox.SelectedItem as EmpresaView).value;
             }
             catch (Exception ex)
             {
@@ -92,6 +95,7 @@ namespace BD_Proj
             cmd.Parameters.AddWithValue("@data_fim", o.data_fim);
             cmd.Parameters.AddWithValue("@orcamento", o.orcamento);
             cmd.Parameters.AddWithValue("@condominio", o.condominio);
+            cmd.Parameters.AddWithValue("@empresa", o.empresa);
             cmd.Connection = data.connection();
 
             try
@@ -122,6 +126,7 @@ namespace BD_Proj
             cmd.Parameters.AddWithValue("@data_fim", o.data_fim);
             cmd.Parameters.AddWithValue("@orcamento", o.orcamento);
             cmd.Parameters.AddWithValue("@condominio", o.condominio);
+            cmd.Parameters.AddWithValue("empresa", o.empresa);
             cmd.Connection = data.connection();
 
             try
@@ -184,6 +189,35 @@ namespace BD_Proj
             reader.Close();
             data.close();
             return a;
+        }
+
+        private void FillEmpresaLisBox()
+        {
+            empresa_comboBox.DataSource = GetEmpresas();
+            empresa_comboBox.DisplayMember = "text";
+            empresa_comboBox.ValueMember = "value";
+        }
+
+        private List<EmpresaView> GetEmpresas()
+        {
+            List<EmpresaView> e = new List<EmpresaView>();
+
+            data.connectToDB();
+            String sql = "SELECT * FROM Show_Empresas";
+            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                EmpresaView ee = new EmpresaView();
+                ee.value = Decimal.Parse(reader["nif"].ToString());
+                ee.text = reader["nome"].ToString();
+
+                e.Add(ee);
+            }
+            data.close();
+
+            return e;
         }
     }
 }

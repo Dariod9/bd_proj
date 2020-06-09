@@ -41,7 +41,8 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label1.Location = new System.Drawing.Point(257, 121);
+            this.label1.Location = new System.Drawing.Point(319, 111);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(270, 29);
             this.label1.TabIndex = 0;
@@ -49,9 +50,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(42, 296);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.button1.Location = new System.Drawing.Point(48, 352);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 52);
+            this.button1.Size = new System.Drawing.Size(162, 62);
             this.button1.TabIndex = 1;
             this.button1.Text = "Condomínio";
             this.button1.UseVisualStyleBackColor = true;
@@ -59,9 +63,12 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(242, 296);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.button2.Location = new System.Drawing.Point(273, 352);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 52);
+            this.button2.Size = new System.Drawing.Size(162, 62);
             this.button2.TabIndex = 2;
             this.button2.Text = "Casas";
             this.button2.UseVisualStyleBackColor = true;
@@ -69,9 +76,12 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(428, 296);
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.SeaGreen;
+            this.button3.Location = new System.Drawing.Point(481, 352);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 52);
+            this.button3.Size = new System.Drawing.Size(162, 62);
             this.button3.TabIndex = 3;
             this.button3.Text = "Contratos";
             this.button3.UseVisualStyleBackColor = true;
@@ -79,9 +89,12 @@
             // 
             // empresa_button
             // 
-            this.empresa_button.Location = new System.Drawing.Point(622, 296);
+            this.empresa_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.empresa_button.ForeColor = System.Drawing.Color.SeaGreen;
+            this.empresa_button.Location = new System.Drawing.Point(699, 352);
+            this.empresa_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.empresa_button.Name = "empresa_button";
-            this.empresa_button.Size = new System.Drawing.Size(144, 52);
+            this.empresa_button.Size = new System.Drawing.Size(162, 62);
             this.empresa_button.TabIndex = 4;
             this.empresa_button.Text = "Empresas";
             this.empresa_button.UseVisualStyleBackColor = true;
@@ -89,15 +102,17 @@
             // 
             // NavUtilizador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 535);
             this.Controls.Add(this.empresa_button);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Britannic Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NavUtilizador";
             this.Text = "NextHause";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NavUtilizador_FormClosed);
