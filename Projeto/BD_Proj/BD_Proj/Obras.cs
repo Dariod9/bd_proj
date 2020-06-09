@@ -96,7 +96,7 @@ namespace BD_Proj
         //    data.close();
         //}
 
-        private void GetObrasByCondominio(decimal condominio)
+        public void GetObrasByCondominio(decimal condominio)
         {
             data.connectToDB();
 

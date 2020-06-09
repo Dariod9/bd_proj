@@ -74,8 +74,8 @@ namespace BD_Proj
                 MessageBox.Show("Update Successful!");
             }
 
-            Navigation parent = (Navigation) Owner;
-            parent.ShowObras();
+            Obras parent = (Obras) Owner;
+            parent.GetObrasByCondominio(obra.condominio);
             this.Close();
         }
 
