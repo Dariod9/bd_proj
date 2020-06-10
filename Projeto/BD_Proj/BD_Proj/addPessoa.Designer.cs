@@ -37,15 +37,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(278, 40);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.label1.Location = new System.Drawing.Point(254, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 17);
+            this.label1.Size = new System.Drawing.Size(177, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Classe de utilizador";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // addProp
             // 
+            this.addProp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addProp.Location = new System.Drawing.Point(74, 121);
             this.addProp.Name = "addProp";
             this.addProp.Size = new System.Drawing.Size(144, 52);
@@ -56,6 +58,7 @@
             // 
             // addInq
             // 
+            this.addInq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addInq.Location = new System.Drawing.Point(281, 121);
             this.addInq.Name = "addInq";
             this.addInq.Size = new System.Drawing.Size(128, 52);
@@ -66,6 +69,7 @@
             // 
             // addFiador
             // 
+            this.addFiador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addFiador.Location = new System.Drawing.Point(485, 121);
             this.addFiador.Name = "addFiador";
             this.addFiador.Size = new System.Drawing.Size(135, 52);
@@ -85,7 +89,6 @@
             this.Controls.Add(this.label1);
             this.Name = "addPessoa";
             this.Text = "Adicionar Pessoa";
-            this.Load += new System.EventHandler(this.addPessoa_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

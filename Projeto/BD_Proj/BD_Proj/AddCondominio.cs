@@ -63,13 +63,11 @@ namespace BD_Proj
 
             if (adding)
             {
-                SaveCondominio(cond);
-                MessageBox.Show("Entry Successful!");
+                SaveCondominio(cond);                
             }
             else
             {
-                UpdateCondominio(cond);
-                MessageBox.Show("Update Successful!");
+                UpdateCondominio(cond);                
             }
             CondoForm parent = (CondoForm)Owner;
             parent.FillCondominiosLisBox();
@@ -81,8 +79,9 @@ namespace BD_Proj
         {
             data.connectToDB();
 
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT proj_condominio (num_fiscal, gerente_nif, nome) Values(@num_fiscal, @gerente_nif, @nome)";
+            SqlCommand cmd = new SqlCommand("insertCond", data.connection());
+            //cmd.CommandText = "INSERT proj_condominio (num_fiscal, gerente_nif, nome) Values(@num_fiscal, @gerente_nif, @nome)";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@num_fiscal", c.num_fiscal);
             cmd.Parameters.AddWithValue("@gerente_nif", c.gerente_nif);
@@ -92,10 +91,12 @@ namespace BD_Proj
             try
             {
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Entry Successful!");
             }
             catch (Exception ex)
             {
-                throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
+                //throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -107,8 +108,9 @@ namespace BD_Proj
         {
             data.connectToDB();
 
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE proj_condominio SET gerente_nif = @gerente_nif WHERE num_fiscal = @num_fiscal";
+            SqlCommand cmd = new SqlCommand("updateCond", data.connection());
+            //cmd.CommandText = "UPDATE proj_condominio SET gerente_nif = @gerente_nif WHERE num_fiscal = @num_fiscal";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@num_fiscal", c.num_fiscal);
             cmd.Parameters.AddWithValue("@gerente_nif", c.gerente_nif);
@@ -117,10 +119,12 @@ namespace BD_Proj
             try
             {
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Update Successful!");
             }
             catch (Exception ex)
             {
-                throw new Exception("Failed to update in database. \n ERROR MESSAGE: \n" + ex.Message);
+                //throw new Exception("Failed to update in database. \n ERROR MESSAGE: \n" + ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {

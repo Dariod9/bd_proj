@@ -103,5 +103,12 @@ namespace BD_Proj
             n.Show();
             this.Close();
         }
+
+        private void add_bt_Click(object sender, EventArgs e)
+        {
+            AddCondominio cond = new AddCondominio();
+            this.Hide();
+            cond.ShowDialog(this);
+        }
     }
 }

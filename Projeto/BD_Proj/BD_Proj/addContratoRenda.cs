@@ -47,7 +47,6 @@ namespace BD_Proj
             }
 
             save(inq);
-            MessageBox.Show("Entry Successful!");
             this.Close();
         }
 
@@ -88,17 +87,16 @@ namespace BD_Proj
             try
             {
                 cmd.ExecuteNonQuery();
-                //cmd2.ExecuteNonQuery();
+                MessageBox.Show("Entry Successful!");
             }
             catch (Exception ex)
             {
-                throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
+                //throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {
                 data.close();
-                // DadosPessoais.printInquilinos();
-
             }
         }
 

@@ -71,7 +71,7 @@ namespace BD_Proj
             }
             
             saveInq(inq);
-            MessageBox.Show("Entry Successful!");
+            
             Habitantes h = (Habitantes)Owner;
             h.GetPessoasByCasa(moradaGlobal);
             this.Close();
@@ -115,10 +115,12 @@ namespace BD_Proj
             try
             {
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Entry Successful!");
             }
             catch (Exception ex)
             {
-                throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
+                //throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -133,21 +135,8 @@ namespace BD_Proj
 
         }
 
-        private void condominio_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void n_quartos_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void morada_textbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddCasa_Load_1(object sender, EventArgs e)
         {
 
         }

@@ -57,29 +57,30 @@
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(316, 120);
+            this.listBox1.ItemHeight = 18;
+            this.listBox1.Location = new System.Drawing.Point(316, 88);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(231, 180);
+            this.listBox1.Size = new System.Drawing.Size(231, 202);
             this.listBox1.TabIndex = 1;
             // 
             // search_textBox
             // 
-            this.search_textBox.Location = new System.Drawing.Point(360, 81);
+            this.search_textBox.Location = new System.Drawing.Point(395, 53);
             this.search_textBox.Name = "search_textBox";
-            this.search_textBox.Size = new System.Drawing.Size(141, 22);
+            this.search_textBox.Size = new System.Drawing.Size(152, 22);
             this.search_textBox.TabIndex = 2;
             this.search_textBox.TextChanged += new System.EventHandler(this.search_textBox_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(404, 61);
+            this.label1.Location = new System.Drawing.Point(322, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 17);
+            this.label1.Size = new System.Drawing.Size(67, 17);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Search";
+            this.label1.Text = "Procurar:";
             // 
             // Nome
             // 
@@ -151,7 +152,8 @@
             // 
             // edit_button
             // 
-            this.edit_button.Location = new System.Drawing.Point(382, 306);
+            this.edit_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.edit_button.Location = new System.Drawing.Point(325, 306);
             this.edit_button.Name = "edit_button";
             this.edit_button.Size = new System.Drawing.Size(75, 23);
             this.edit_button.TabIndex = 12;
@@ -161,7 +163,8 @@
             // 
             // add_button
             // 
-            this.add_button.Location = new System.Drawing.Point(472, 306);
+            this.add_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.add_button.Location = new System.Drawing.Point(461, 306);
             this.add_button.Name = "add_button";
             this.add_button.Size = new System.Drawing.Size(75, 23);
             this.add_button.TabIndex = 13;
@@ -173,7 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 450);
+            this.ClientSize = new System.Drawing.Size(978, 399);
             this.Controls.Add(this.add_button);
             this.Controls.Add(this.edit_button);
             this.Controls.Add(this.contact_textBox);

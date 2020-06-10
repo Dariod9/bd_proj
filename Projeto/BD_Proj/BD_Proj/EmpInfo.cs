@@ -101,7 +101,7 @@ namespace BD_Proj
         private EmpresaModel getEmpresa(string nome)
         {
             data.connectToDB();
-            String sql = "SELECT nif, email, contacto FROM proj_empresa where nome='" + nome + "'";
+            String sql = "SELECT nif, email, contacto FROM proj_empresa where nome='" + nome + "'"; // nao deviamos procurar por nome (pode haver 2 iguais)
             SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();

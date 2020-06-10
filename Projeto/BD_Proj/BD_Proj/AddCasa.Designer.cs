@@ -71,9 +71,10 @@
             // 
             // submit_bt
             // 
+            this.submit_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submit_bt.Location = new System.Drawing.Point(358, 205);
             this.submit_bt.Name = "submit_bt";
-            this.submit_bt.Size = new System.Drawing.Size(75, 23);
+            this.submit_bt.Size = new System.Drawing.Size(75, 25);
             this.submit_bt.TabIndex = 4;
             this.submit_bt.Text = "Submit";
             this.submit_bt.UseVisualStyleBackColor = true;
@@ -81,9 +82,10 @@
             // 
             // cancel_bt
             // 
+            this.cancel_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancel_bt.Location = new System.Drawing.Point(265, 205);
             this.cancel_bt.Name = "cancel_bt";
-            this.cancel_bt.Size = new System.Drawing.Size(75, 23);
+            this.cancel_bt.Size = new System.Drawing.Size(75, 25);
             this.cancel_bt.TabIndex = 5;
             this.cancel_bt.Text = "Cancel";
             this.cancel_bt.UseVisualStyleBackColor = true;
@@ -129,7 +131,7 @@
             // 
             this.cidade_textbox.Location = new System.Drawing.Point(25, 94);
             this.cidade_textbox.Name = "cidade_textbox";
-            this.cidade_textbox.Size = new System.Drawing.Size(100, 22);
+            this.cidade_textbox.Size = new System.Drawing.Size(158, 22);
             this.cidade_textbox.TabIndex = 10;
             // 
             // descricao_textbox
@@ -184,9 +186,9 @@
             // condominio_comboBox
             // 
             this.condominio_comboBox.FormattingEnabled = true;
-            this.condominio_comboBox.Location = new System.Drawing.Point(316, 163);
+            this.condominio_comboBox.Location = new System.Drawing.Point(297, 163);
             this.condominio_comboBox.Name = "condominio_comboBox";
-            this.condominio_comboBox.Size = new System.Drawing.Size(121, 24);
+            this.condominio_comboBox.Size = new System.Drawing.Size(140, 24);
             this.condominio_comboBox.TabIndex = 16;
             // 
             // AddCasa

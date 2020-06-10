@@ -41,7 +41,8 @@ namespace BD_Proj
             fim_dateTimePicker.Text = o.data_fim.ToString();
             orcamento_textBox.Text = o.orcamento.ToString();
             condominio_comboBox.Text = getNomeCond(o.condominio);
-            //empresa_comboBox.Text = 
+            empresa_comboBox.Text = getNomeEmpresa(o.empresa);
+            empresa_comboBox.Enabled = false;
         }
 
         private void cancel_bt_Click(object sender, EventArgs e)
@@ -69,12 +70,11 @@ namespace BD_Proj
             if (adding)
             {
                 SaveObra(obra);
-                MessageBox.Show("Entry Successful!");
             }
             else
             {
+                MessageBox.Show("update");
                 UpdateObra(obra);
-                MessageBox.Show("Update Successful!");
             }
 
             Obras parent = (Obras) Owner;
@@ -101,10 +101,12 @@ namespace BD_Proj
             try
             {
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Entry Successful!");
             }
             catch (Exception ex)
             {
-                throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
+                //throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -132,10 +134,12 @@ namespace BD_Proj
             try
             {
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Update Successful!");
             }
             catch (Exception ex)
             {
-                throw new Exception("Failed to update in database. \n ERROR MESSAGE: \n" + ex.Message);
+                //throw new Exception("Failed to update in database. \n ERROR MESSAGE: \n" + ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -218,6 +222,22 @@ namespace BD_Proj
             data.close();
 
             return e;
+        }
+
+        private string getNomeEmpresa(decimal empresa)
+        {
+            data.connectToDB();
+            SqlCommand com = new SqlCommand("getNomeEmpresaByNif", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@nif", empresa);
+            SqlDataReader reader;
+            reader = com.ExecuteReader();
+            reader.Read();
+            string nome = reader.GetString(0);
+            reader.Close();
+            data.close();
+            
+            return nome;
         }
     }
 }

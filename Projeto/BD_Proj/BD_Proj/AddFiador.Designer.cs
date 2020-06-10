@@ -49,10 +49,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(22, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.Size = new System.Drawing.Size(101, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "First Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "Primeiro Nome";
             // 
             // fname_textbox
             // 
@@ -65,29 +64,31 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(307, 9);
+            this.label2.Location = new System.Drawing.Point(313, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 17);
+            this.label2.Size = new System.Drawing.Size(19, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Identification";
+            this.label2.Text = "Id";
             // 
             // submit_bt
             // 
+            this.submit_bt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.submit_bt.Location = new System.Drawing.Point(683, 257);
             this.submit_bt.Name = "submit_bt";
-            this.submit_bt.Size = new System.Drawing.Size(75, 23);
+            this.submit_bt.Size = new System.Drawing.Size(75, 25);
             this.submit_bt.TabIndex = 4;
-            this.submit_bt.Text = "Submit";
+            this.submit_bt.Text = "Adicionar";
             this.submit_bt.UseVisualStyleBackColor = true;
             this.submit_bt.Click += new System.EventHandler(this.submit_bt_Click);
             // 
             // cancel_bt
             // 
-            this.cancel_bt.Location = new System.Drawing.Point(602, 257);
+            this.cancel_bt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cancel_bt.Location = new System.Drawing.Point(600, 257);
             this.cancel_bt.Name = "cancel_bt";
-            this.cancel_bt.Size = new System.Drawing.Size(75, 23);
+            this.cancel_bt.Size = new System.Drawing.Size(75, 25);
             this.cancel_bt.TabIndex = 5;
-            this.cancel_bt.Text = "Cancel";
+            this.cancel_bt.Text = "Cancelar";
             this.cancel_bt.UseVisualStyleBackColor = true;
             this.cancel_bt.Click += new System.EventHandler(this.cancel_bt_Click);
             // 
@@ -96,9 +97,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(22, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 17);
+            this.label3.Size = new System.Drawing.Size(88, 17);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Last Name";
+            this.label3.Text = "Último Nome";
             // 
             // label4
             // 
@@ -114,9 +115,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(22, 143);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 17);
+            this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Telephone";
+            this.label5.Text = "Telefone";
             // 
             // lname_textbox
             // 

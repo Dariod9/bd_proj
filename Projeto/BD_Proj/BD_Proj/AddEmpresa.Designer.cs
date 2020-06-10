@@ -106,9 +106,9 @@
             // 
             // add_bt
             // 
-            this.add_bt.Location = new System.Drawing.Point(480, 221);
+            this.add_bt.Location = new System.Drawing.Point(453, 200);
             this.add_bt.Name = "add_bt";
-            this.add_bt.Size = new System.Drawing.Size(88, 23);
+            this.add_bt.Size = new System.Drawing.Size(88, 25);
             this.add_bt.TabIndex = 8;
             this.add_bt.Text = "Adicionar";
             this.add_bt.UseVisualStyleBackColor = true;
@@ -116,9 +116,9 @@
             // 
             // cancel_bt
             // 
-            this.cancel_bt.Location = new System.Drawing.Point(383, 221);
+            this.cancel_bt.Location = new System.Drawing.Point(350, 200);
             this.cancel_bt.Name = "cancel_bt";
-            this.cancel_bt.Size = new System.Drawing.Size(91, 23);
+            this.cancel_bt.Size = new System.Drawing.Size(91, 25);
             this.cancel_bt.TabIndex = 9;
             this.cancel_bt.Text = "Cancelar";
             this.cancel_bt.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 256);
+            this.ClientSize = new System.Drawing.Size(558, 240);
             this.Controls.Add(this.cancel_bt);
             this.Controls.Add(this.add_bt);
             this.Controls.Add(this.contacto_label);

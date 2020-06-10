@@ -57,6 +57,7 @@
             // 
             // addCond_button
             // 
+            this.addCond_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addCond_button.Location = new System.Drawing.Point(399, 270);
             this.addCond_button.Name = "addCond_button";
             this.addCond_button.Size = new System.Drawing.Size(84, 23);
@@ -67,7 +68,8 @@
             // 
             // cancel_button
             // 
-            this.cancel_button.Location = new System.Drawing.Point(281, 270);
+            this.cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cancel_button.Location = new System.Drawing.Point(300, 270);
             this.cancel_button.Name = "cancel_button";
             this.cancel_button.Size = new System.Drawing.Size(85, 23);
             this.cancel_button.TabIndex = 5;
@@ -92,9 +94,9 @@
             this.name_cond_label.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.name_cond_label.Location = new System.Drawing.Point(256, 9);
             this.name_cond_label.Name = "name_cond_label";
-            this.name_cond_label.Size = new System.Drawing.Size(208, 25);
+            this.name_cond_label.Size = new System.Drawing.Size(189, 25);
             this.name_cond_label.TabIndex = 7;
-            this.name_cond_label.Text = "Número Condominio";
+            this.name_cond_label.Text = "Nome Condominio";
             // 
             // nome_cond_textBox
             // 

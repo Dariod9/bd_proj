@@ -110,7 +110,7 @@
             // 
             // seguroBox
             // 
-            this.seguroBox.Location = new System.Drawing.Point(343, 70);
+            this.seguroBox.Location = new System.Drawing.Point(321, 50);
             this.seguroBox.Name = "seguroBox";
             this.seguroBox.Size = new System.Drawing.Size(195, 22);
             this.seguroBox.TabIndex = 8;
@@ -120,12 +120,12 @@
             this.proprietarioBox.FormattingEnabled = true;
             this.proprietarioBox.Location = new System.Drawing.Point(35, 239);
             this.proprietarioBox.Name = "proprietarioBox";
-            this.proprietarioBox.Size = new System.Drawing.Size(121, 24);
+            this.proprietarioBox.Size = new System.Drawing.Size(148, 24);
             this.proprietarioBox.TabIndex = 9;
             // 
             // areaBox
             // 
-            this.areaBox.Location = new System.Drawing.Point(343, 132);
+            this.areaBox.Location = new System.Drawing.Point(321, 112);
             this.areaBox.Name = "areaBox";
             this.areaBox.Size = new System.Drawing.Size(100, 22);
             this.areaBox.TabIndex = 10;
@@ -134,28 +134,28 @@
             // 
             this.despesaBox.Location = new System.Drawing.Point(35, 304);
             this.despesaBox.Name = "despesaBox";
-            this.despesaBox.Size = new System.Drawing.Size(100, 22);
+            this.despesaBox.Size = new System.Drawing.Size(91, 22);
             this.despesaBox.TabIndex = 11;
             // 
             // diaBox
             // 
-            this.diaBox.Location = new System.Drawing.Point(343, 304);
+            this.diaBox.Location = new System.Drawing.Point(321, 241);
             this.diaBox.Name = "diaBox";
-            this.diaBox.Size = new System.Drawing.Size(100, 22);
+            this.diaBox.Size = new System.Drawing.Size(68, 22);
             this.diaBox.TabIndex = 12;
             // 
             // condoBox
             // 
             this.condoBox.FormattingEnabled = true;
-            this.condoBox.Location = new System.Drawing.Point(343, 195);
+            this.condoBox.Location = new System.Drawing.Point(321, 175);
             this.condoBox.Name = "condoBox";
-            this.condoBox.Size = new System.Drawing.Size(121, 24);
+            this.condoBox.Size = new System.Drawing.Size(163, 24);
             this.condoBox.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(340, 111);
+            this.label1.Location = new System.Drawing.Point(318, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 17);
             this.label1.TabIndex = 14;
@@ -164,7 +164,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(340, 50);
+            this.label6.Location = new System.Drawing.Point(318, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 17);
             this.label6.TabIndex = 15;
@@ -173,7 +173,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(340, 284);
+            this.label7.Location = new System.Drawing.Point(318, 221);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(166, 17);
             this.label7.TabIndex = 16;
@@ -182,7 +182,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(340, 175);
+            this.label9.Location = new System.Drawing.Point(318, 155);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(82, 17);
             this.label9.TabIndex = 18;
@@ -199,7 +199,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(628, 356);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(346, 321);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 20;
@@ -209,7 +210,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(709, 356);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Location = new System.Drawing.Point(441, 321);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 21;
@@ -219,7 +221,7 @@
             // 
             // addContratoCondo
             // 
-            this.ClientSize = new System.Drawing.Size(796, 391);
+            this.ClientSize = new System.Drawing.Size(545, 356);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label10);

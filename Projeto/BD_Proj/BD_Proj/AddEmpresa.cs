@@ -26,7 +26,7 @@ namespace BD_Proj
         {
             InitializeComponent();
             FillEmpresaInfo(emp);
-            adding = false;      // insert
+            adding = false;      // update
         }
 
         private void FillEmpresaInfo(EmpresaModel e)
@@ -60,13 +60,11 @@ namespace BD_Proj
 
             if (adding)
             {
-                SaveEmpresa(empresa);
-                MessageBox.Show("Entry Successful!");
+                SaveEmpresa(empresa);                
             }
             else
             {
-                UpdateEmpresa(empresa);
-                MessageBox.Show("Update Successful!");
+                UpdateEmpresa(empresa);                
             }
 
             EmpInfo parent = (EmpInfo)Owner;
@@ -91,10 +89,12 @@ namespace BD_Proj
             try
             {
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Entry Successful!");
             }
             catch (Exception ex)
             {
-                throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
+                //throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -121,10 +121,12 @@ namespace BD_Proj
             try
             {
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Update Successful!");
             }
             catch (Exception ex)
             {
-                throw new Exception("Failed to update in database. \n ERROR MESSAGE: \n" + ex.Message);
+                //throw new Exception("Failed to update in database. \n ERROR MESSAGE: \n" + ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {

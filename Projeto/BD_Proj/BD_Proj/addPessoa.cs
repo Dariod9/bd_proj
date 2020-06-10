@@ -17,20 +17,10 @@ namespace BD_Proj
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void addInq_Click(object sender, EventArgs e)
         {
             AddInquilino add = new AddInquilino();
             add.ShowDialog();
-        }
-
-        private void addPessoa_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void addProp_Click(object sender, EventArgs e)

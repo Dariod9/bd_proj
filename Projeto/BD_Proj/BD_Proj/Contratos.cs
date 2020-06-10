@@ -67,8 +67,14 @@ namespace BD_Proj
         private void fillDataGrid()
         {
             pessoa_dataGrid.DataSource = GetContratos();
+            setLabelText("Todos os Contratos");
           //  pessoa_dataGrid.Columns["n_quartos"].HeaderText = "Número de quartos";
             //pessoa_dataGrid.Columns["max_hab"].HeaderText = "N máximo de habitantes";
+        }
+
+        private void setLabelText(string text)
+        {
+            view_contratos_label.Text = text;
         }
 
         private void fillDataGrid(List<ContratoModel> lista)
@@ -125,6 +131,7 @@ namespace BD_Proj
         private void FillRendas()
         {
             pessoa_dataGrid.DataSource = printRendas();
+            setLabelText("Contratos de Renda");
             //  pessoa_dataGrid.Columns["n_quartos"].HeaderText = "Número de quartos";
             //pessoa_dataGrid.Columns["max_hab"].HeaderText = "N máximo de habitantes";
         }
@@ -132,6 +139,7 @@ namespace BD_Proj
         private void FillCondos()
         {
             pessoa_dataGrid.DataSource = printCondos();
+            setLabelText("Contratos de Condomínio");
             //  pessoa_dataGrid.Columns["n_quartos"].HeaderText = "Número de quartos";
             //pessoa_dataGrid.Columns["max_hab"].HeaderText = "N máximo de habitantes";
         }
@@ -212,9 +220,10 @@ namespace BD_Proj
             fillDataGrid(pessoas.Where(x => x.fname.ToLower().Contains(pessoa_textBox.Text.ToLower()) || x.lname.ToLower().Contains(pessoa_textBox.Text.ToLower())).ToList());
         }
 
-        private void delete_button_Click(object sender, EventArgs e)
+        private void todos_bt_Click(object sender, EventArgs e)
         {
-            //var a= contrato_selected();
+            fillDataGrid();
+            setLabelText("Todos os Contratos");
         }
     }
 }

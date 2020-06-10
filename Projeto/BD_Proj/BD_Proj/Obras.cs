@@ -146,6 +146,8 @@ namespace BD_Proj
             }
             data.close();
 
+            tmp.empresa = Decimal.Parse(obras_dataGridView1.CurrentRow.Cells[2].Value.ToString());            
+
             AddObra o = new AddObra(tmp);
             o.ShowDialog(this);
         }
@@ -155,5 +157,6 @@ namespace BD_Proj
             AddObra obra = new AddObra();
             obra.ShowDialog(this);
         }
+
     }
 }

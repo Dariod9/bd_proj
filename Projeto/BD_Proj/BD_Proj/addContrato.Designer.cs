@@ -35,7 +35,8 @@
             // 
             // button_addRenda
             // 
-            this.button_addRenda.Location = new System.Drawing.Point(169, 206);
+            this.button_addRenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_addRenda.Location = new System.Drawing.Point(47, 116);
             this.button_addRenda.Name = "button_addRenda";
             this.button_addRenda.Size = new System.Drawing.Size(134, 56);
             this.button_addRenda.TabIndex = 0;
@@ -45,7 +46,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(490, 206);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(293, 116);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(134, 56);
             this.button2.TabIndex = 1;
@@ -56,15 +58,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(339, 86);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.label1.Location = new System.Drawing.Point(125, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 17);
+            this.label1.Size = new System.Drawing.Size(248, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Tipo de Contrato";
+            this.label1.Text = "Selecione o tipo de Contrato";
             // 
             // addContrato
             // 
-            this.ClientSize = new System.Drawing.Size(796, 391);
+            this.ClientSize = new System.Drawing.Size(495, 239);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button_addRenda);
