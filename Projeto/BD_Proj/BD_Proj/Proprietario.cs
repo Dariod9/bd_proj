@@ -28,28 +28,30 @@ namespace BD_Proj
             moradaGlobal = morada;
         }
 
-        private void GetPessoasByCasa(string morada)
+        public void GetPessoasByCasa(string morada)
         {
             data.connectToDB();
 
             List<ProprietarioModel> pessoas = new List<ProprietarioModel>();
 
-            String sql = "SELECT * FROM (proj_pessoa join proj_tem_casa on proj_tem_casa.nif=proj_pessoa.nif) where morada='" + morada+"'";
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            //String sql = "SELECT * FROM (proj_pessoa join proj_tem_casa on proj_tem_casa.nif=proj_pessoa.nif) where morada='" + morada+"'";
+            SqlCommand com = new SqlCommand("getPropsByCasa", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@morada", morada);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
             {
                 ProprietarioModel tmp = new ProprietarioModel();
 
-                tmp.fname = reader.GetString(0);
-                tmp.lname = reader.GetString(1);
-                tmp.telefone = reader.GetDecimal(2);
-                tmp.id = reader.GetDecimal(3);
-                tmp.nif = reader.GetDecimal(4);
+                tmp.fname = reader["fname"].ToString();
+                tmp.lname = reader["lname"].ToString();
+                tmp.telefone = Decimal.Parse(reader["telefone"].ToString());
+                tmp.id = Decimal.Parse(reader["id"].ToString());
+                tmp.nif = Decimal.Parse(reader["nif"].ToString());
                 tmp.morada = morada;
-                tmp.ini = reader.GetDateTime(7);
-                tmp.fim = reader.GetDateTime(8);
+                tmp.ini = DateTime.Parse(reader["data_ini"].ToString());
+                tmp.fim = DateTime.Parse(reader["data_fim"].ToString());
 
                 pessoas.Add(tmp);
             }
@@ -97,120 +99,18 @@ namespace BD_Proj
             }
             data.close();
 
-            //return pessoas;
             fillDataGrid(pessoas);
         }
 
         private void fillDataGrid<T>(List<T> lista)
         {
             pessoa_dataGrid.DataSource = lista;
-          //  pessoa_dataGrid.Columns["n_quartos"].HeaderText = "Número de quartos";
-            //pessoa_dataGrid.Columns["max_hab"].HeaderText = "N máximo de habitantes";
-        }
-
-        private void add_bt_Click(object sender, EventArgs e)
-        {
-            AddCasa add = new AddCasa();
-            add.ShowDialog();
         }
 
         private void pessoa_bt_Click(object sender, EventArgs e)
         {
             AddProprietario add = new AddProprietario(moradaGlobal);
-            add.ShowDialog();
-        }
-
-        private void DadosPessoais_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        public void printFiadores()
-        {
-            data.connectToDB();
-
-            List<FiadorModel> fiadores = new List<FiadorModel>();
-
-            String sql = "SELECT * FROM (proj_pessoa join proj_fiador on proj_pessoa.nif=proj_fiador.nif)";
-            SqlCommand com = new SqlCommand(sql, data.connection());
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
-            while (reader.Read())
-            {
-                FiadorModel tmp = new FiadorModel();
-
-                tmp.fname = reader.GetString(0);
-                tmp.lname = reader.GetString(1);
-                tmp.telefone = reader.GetDecimal(2);
-                tmp.id = reader.GetDecimal(3);
-                tmp.nif = reader.GetDecimal(4);
-
-
-                fiadores.Add(tmp);
-            }
-            data.close();
-
-            fillDataGrid(fiadores);
-        }
-
-
-
-        public void printProprietarios()
-        {
-            data.connectToDB();
-
-            List<ProprietarioModel> props = new List<ProprietarioModel>();
-
-            String sql = "SELECT * FROM (proj_pessoa join proj_proprietario on proj_pessoa.nif=proj_proprietario.nif)";
-            SqlCommand com = new SqlCommand(sql, data.connection());
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
-            while (reader.Read())
-            {
-                ProprietarioModel tmp = new ProprietarioModel();
-
-                tmp.fname = reader.GetString(0);
-                tmp.lname = reader.GetString(1);
-                tmp.telefone = reader.GetDecimal(2);
-                tmp.id = reader.GetDecimal(3);
-                tmp.nif = reader.GetDecimal(4);
-
-
-                props.Add(tmp);
-            }
-            data.close();
-
-            fillDataGrid(props);
-        }
-
-        public void printInquilinos()
-        {
-            data.connectToDB();
-
-            List<InquilinoModel> inqs = new List<InquilinoModel>();
-
-            String sql = "SELECT * FROM (proj_pessoa join proj_inquilino on proj_pessoa.nif=proj_inquilino.nif)";
-            SqlCommand com = new SqlCommand(sql, data.connection());
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
-            while (reader.Read())
-            {
-                InquilinoModel tmp = new InquilinoModel();
-
-                tmp.fname = reader.GetString(0);
-                tmp.lname = reader.GetString(1);
-                tmp.telefone = reader.GetDecimal(2);
-                tmp.id = reader.GetDecimal(3);
-                tmp.nif = reader.GetDecimal(4);
-                tmp.certificado = reader.GetString(6);
-                tmp.reg_criminal = reader.GetString(7);
-
-
-                inqs.Add(tmp);
-            }
-            data.close();
-
-            fillDataGrid(inqs);
+            add.ShowDialog(this);
         }
     }
 }

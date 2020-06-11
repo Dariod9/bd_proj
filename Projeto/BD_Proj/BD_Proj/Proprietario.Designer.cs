@@ -71,7 +71,7 @@ namespace BD_Proj
             this.pessoa_dataGrid.TabIndex = 11;
             this.pessoa_dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pessoa_dataGrid_CellContentClick);
             // 
-            // Habitantes
+            // Proprietario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -79,9 +79,8 @@ namespace BD_Proj
             this.Controls.Add(this.pessoa_dataGrid);
             this.Controls.Add(this.pessoa_bt);
             this.Controls.Add(this.pessoas_listBox);
-            this.Name = "Habitantes";
+            this.Name = "Proprietario";
             this.Text = "Pessoas";
-            this.Load += new System.EventHandler(this.DadosPessoais_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pessoa_dataGrid)).EndInit();
             this.ResumeLayout(false);
 

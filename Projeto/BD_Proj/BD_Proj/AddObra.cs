@@ -105,7 +105,8 @@ namespace BD_Proj
             catch (Exception ex)
             {
                 //throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
-                MessageBox.Show("Não foi possível guardar os dados! Verifique os campos inseridos!");
+                //MessageBox.Show("Não foi possível guardar os dados! Verifique os campos inseridos!");
+                MessageBox.Show(ex.Message);
             }
             finally
             {

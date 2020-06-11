@@ -175,7 +175,7 @@
             this.Controls.Add(this.fname_textbox);
             this.Controls.Add(this.label1);
             this.Name = "AddFiador";
-            this.Text = "Adicionar Proprietário";
+            this.Text = "Adicionar Fiador";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

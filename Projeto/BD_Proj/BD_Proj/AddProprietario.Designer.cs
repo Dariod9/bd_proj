@@ -78,9 +78,9 @@
             // submit_bt
             // 
             this.submit_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submit_bt.Location = new System.Drawing.Point(683, 256);
+            this.submit_bt.Location = new System.Drawing.Point(683, 254);
             this.submit_bt.Name = "submit_bt";
-            this.submit_bt.Size = new System.Drawing.Size(75, 25);
+            this.submit_bt.Size = new System.Drawing.Size(75, 27);
             this.submit_bt.TabIndex = 4;
             this.submit_bt.Text = "OK";
             this.submit_bt.UseVisualStyleBackColor = true;
@@ -89,9 +89,9 @@
             // cancel_bt
             // 
             this.cancel_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancel_bt.Location = new System.Drawing.Point(602, 256);
+            this.cancel_bt.Location = new System.Drawing.Point(601, 254);
             this.cancel_bt.Name = "cancel_bt";
-            this.cancel_bt.Size = new System.Drawing.Size(75, 25);
+            this.cancel_bt.Size = new System.Drawing.Size(75, 27);
             this.cancel_bt.TabIndex = 5;
             this.cancel_bt.Text = "Cancelar";
             this.cancel_bt.UseVisualStyleBackColor = true;

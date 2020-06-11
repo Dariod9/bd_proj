@@ -80,8 +80,7 @@ namespace BD_Proj
             this.Controls.Add(this.pessoa_bt);
             this.Controls.Add(this.pessoas_listBox);
             this.Name = "Habitantes";
-            this.Text = "Pessoas";
-            this.Load += new System.EventHandler(this.DadosPessoais_Load);
+            this.Text = "Habitantes";
             ((System.ComponentModel.ISupportInitialize)(this.pessoa_dataGrid)).EndInit();
             this.ResumeLayout(false);
 
