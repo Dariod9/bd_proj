@@ -83,54 +83,13 @@ namespace BD_Proj
             }
             catch (Exception ex)
             {
-                throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
+                //throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
+                MessageBox.Show("Não foi possível guardar os dados! Verifique os campos inseridos!");
             }
             finally
             {
                 data.close();
-                //DadosPessoais n = new DadosPessoais();
-                //n.printProprietarios();
-
             }
-        }
-
-        private void AddCasa_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void condominio_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void n_quartos_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void morada_textbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddCasa_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddInquilino_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

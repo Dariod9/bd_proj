@@ -68,7 +68,7 @@ namespace BD_Proj
             }
 
             EmpInfo parent = (EmpInfo)Owner;
-            parent.fillEmpresaslistbox();
+            parent.FillEmpresaLisBox();
             this.Close();
         }
 
@@ -94,7 +94,7 @@ namespace BD_Proj
             catch (Exception ex)
             {
                 //throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Não foi possível guardar os dados! Verifique os campos inseridos!");
             }
             finally
             {
@@ -126,7 +126,7 @@ namespace BD_Proj
             catch (Exception ex)
             {
                 //throw new Exception("Failed to update in database. \n ERROR MESSAGE: \n" + ex.Message);
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Não foi possível atualizar os dados! Verifique os campos inseridos!");
             }
             finally
             {

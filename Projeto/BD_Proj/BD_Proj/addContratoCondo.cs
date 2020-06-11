@@ -18,13 +18,8 @@ namespace BD_Proj
         public addContratoCondo()
         {
             InitializeComponent();
-            FillCondoBox();
+            FillCondominioBox();
             FillPropBox();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,7 +37,7 @@ namespace BD_Proj
                 inq.data_fim = DateTime.Parse(data2.Text.ToString());
                 inq.dia_pagamento = Int32.Parse(diaBox.Text.ToString());
                 inq.proprietario = getNifProp(proprietarioBox.Text.ToString());
-                inq.condominio = getNifCond(condoBox.Text.ToString());
+                inq.condominio = (condominio_comboBox.SelectedItem as CondominioView).value;
                 inq.despesas = Int32.Parse(despesaBox.Text.ToString());
                 inq.area = Int32.Parse(areaBox.Text.ToString());
                 inq.seguro = seguroBox.Text.ToString();
@@ -93,7 +88,7 @@ namespace BD_Proj
             catch (Exception ex)
             {
                 //throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Não foi possível guardar os dados! Verifique os campos inseridos!");
             }
             finally
             {
@@ -101,20 +96,33 @@ namespace BD_Proj
             }
         }
 
-        private void FillCondoBox()
+        private void FillCondominioBox()
         {
-            List<Decimal> conds = new List<Decimal>();
+            condominio_comboBox.DataSource = GetConds();
+            condominio_comboBox.DisplayMember = "text";
+            condominio_comboBox.ValueMember = "value";
+        }
+
+        private List<CondominioView> GetConds()
+        {
+            List<CondominioView> e = new List<CondominioView>();
 
             data.connectToDB();
-            String sql = "SELECT DISTINCT num_fiscal FROM proj_condominio";
+            String sql = "SELECT * FROM Show_Condominios";
             SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                condoBox.Items.Add(getNomeCond(reader.GetDecimal(0)));
+                CondominioView ee = new CondominioView();
+                ee.value = Decimal.Parse(reader["num_fiscal"].ToString());
+                ee.text = reader["nome"].ToString();
+
+                e.Add(ee);
             }
             data.close();
+
+            return e;
         }
 
         private void FillPropBox()
@@ -134,25 +142,13 @@ namespace BD_Proj
             data.close();
         }
 
-        private string getNomeCond(decimal nif)
-        {
-            data.connectToDB();
-            String sql = "SELECT nome FROM proj_condominio where num_fiscal=" + nif + "";
-            SqlCommand com = new SqlCommand(sql, data.connection());
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
-            reader.Read();
-            var a = reader.GetString(0);
-            reader.Close();
-            data.close();
-            return a;
-        }
-
         private string getNomeProp(decimal nif)
         {
             data.connectToDB();
-            String sql = "SELECT fname, lname FROM proj_pessoa where nif=" + nif + "";
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            //String sql = "SELECT fname, lname FROM proj_pessoa where nif=" + nif + "";
+            SqlCommand com = new SqlCommand("getFnameLname", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@nif", nif);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             reader.Read();
@@ -166,8 +162,11 @@ namespace BD_Proj
         {
             data.connectToDB();
             String[] tmp = nome.Split(' ');
-            String sql = "SELECT nif FROM proj_pessoa where lname='" + tmp[1] + "' and fname='"+tmp[0]+"'";
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            //String sql = "SELECT nif FROM proj_pessoa where lname='" + tmp[1] + "' and fname='" + tmp[0] + "'";
+            SqlCommand com = new SqlCommand("getNifByFnameLname", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@fname", tmp[0]);
+            com.Parameters.AddWithValue("@lname", tmp[1]);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             reader.Read();
@@ -177,21 +176,36 @@ namespace BD_Proj
             return a;
         }
 
-        private decimal getNifCond(string nome)
-        {
-            data.connectToDB();
-            String[] tmp = nome.Split(' ');
-            String sql = "SELECT num_fiscal FROM proj_condominio where nome='"+nome+"'";
-            SqlCommand com = new SqlCommand(sql, data.connection());
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
-            reader.Read();
-            var a = reader.GetDecimal(0);
-            reader.Close();
-            data.close();
-            return a;
-        }
+        //private decimal getNifCond(string nome)
+        //{
+        //    data.connectToDB();
+        //    String[] tmp = nome.Split(' ');
+        //    String sql = "SELECT num_fiscal FROM proj_condominio where nome='"+nome+"'";
+        //    SqlCommand com = new SqlCommand(sql, data.connection());
+        //    SqlDataReader reader;
+        //    reader = com.ExecuteReader();
+        //    reader.Read();
+        //    var a = reader.GetDecimal(0);
+        //    reader.Close();
+        //    data.close();
+        //    return a;
+        //}
 
+        //private string getNomeCond(decimal nif)
+        //{
+        //    data.connectToDB();
+        //    //String sql = "SELECT nome FROM proj_condominio where num_fiscal=" + nif + "";
+        //    SqlCommand com = new SqlCommand("getNomeCond", data.connection());
+        //    com.CommandType = CommandType.StoredProcedure;
+        //    com.Parameters.AddWithValue("@num_fiscal", nif);
+        //    SqlDataReader reader;
+        //    reader = com.ExecuteReader();
+        //    reader.Read();
+        //    var a = reader.GetString(0);
+        //    reader.Close();
+        //    data.close();
+        //    return a;
+        //}
 
     }
 }

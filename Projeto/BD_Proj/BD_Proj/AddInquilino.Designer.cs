@@ -59,7 +59,6 @@
             this.label1.Size = new System.Drawing.Size(101, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Primeiro Nome";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // fname_textbox
             // 
@@ -67,7 +66,6 @@
             this.fname_textbox.Name = "fname_textbox";
             this.fname_textbox.Size = new System.Drawing.Size(231, 22);
             this.fname_textbox.TabIndex = 1;
-            this.fname_textbox.TextChanged += new System.EventHandler(this.morada_textbox_TextChanged);
             // 
             // label2
             // 
@@ -187,7 +185,6 @@
             this.label7.Size = new System.Drawing.Size(110, 17);
             this.label7.TabIndex = 21;
             this.label7.Text = "Registo Criminal";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // cert_textBox
             // 
@@ -239,7 +236,6 @@
             this.Controls.Add(this.label1);
             this.Name = "AddInquilino";
             this.Text = "Adicionar Inquilino";
-            this.Load += new System.EventHandler(this.AddCasa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

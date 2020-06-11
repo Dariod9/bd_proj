@@ -99,7 +99,7 @@
             this.editar.Name = "editar";
             this.editar.Size = new System.Drawing.Size(75, 25);
             this.editar.TabIndex = 5;
-            this.editar.Text = "editar";
+            this.editar.Text = "Editar";
             this.editar.UseVisualStyleBackColor = true;
             this.editar.Click += new System.EventHandler(this.editar_Click);
             // 
@@ -115,9 +115,9 @@
             // add_bt
             // 
             this.add_bt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.add_bt.Location = new System.Drawing.Point(474, 417);
+            this.add_bt.Location = new System.Drawing.Point(470, 417);
             this.add_bt.Name = "add_bt";
-            this.add_bt.Size = new System.Drawing.Size(75, 25);
+            this.add_bt.Size = new System.Drawing.Size(90, 25);
             this.add_bt.TabIndex = 7;
             this.add_bt.Text = "Adicionar";
             this.add_bt.UseVisualStyleBackColor = true;

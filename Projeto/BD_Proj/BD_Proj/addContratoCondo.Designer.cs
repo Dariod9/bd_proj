@@ -40,7 +40,7 @@
             this.areaBox = new System.Windows.Forms.TextBox();
             this.despesaBox = new System.Windows.Forms.TextBox();
             this.diaBox = new System.Windows.Forms.TextBox();
-            this.condoBox = new System.Windows.Forms.ComboBox();
+            this.condominio_comboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,7 +58,6 @@
             this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Código";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -144,13 +143,13 @@
             this.diaBox.Size = new System.Drawing.Size(68, 22);
             this.diaBox.TabIndex = 12;
             // 
-            // condoBox
+            // condominio_comboBox
             // 
-            this.condoBox.FormattingEnabled = true;
-            this.condoBox.Location = new System.Drawing.Point(321, 175);
-            this.condoBox.Name = "condoBox";
-            this.condoBox.Size = new System.Drawing.Size(163, 24);
-            this.condoBox.TabIndex = 13;
+            this.condominio_comboBox.FormattingEnabled = true;
+            this.condominio_comboBox.Location = new System.Drawing.Point(321, 175);
+            this.condominio_comboBox.Name = "condominio_comboBox";
+            this.condominio_comboBox.Size = new System.Drawing.Size(163, 24);
+            this.condominio_comboBox.TabIndex = 13;
             // 
             // label1
             // 
@@ -229,7 +228,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.condoBox);
+            this.Controls.Add(this.condominio_comboBox);
             this.Controls.Add(this.diaBox);
             this.Controls.Add(this.despesaBox);
             this.Controls.Add(this.areaBox);
@@ -262,7 +261,7 @@
         private System.Windows.Forms.TextBox areaBox;
         private System.Windows.Forms.TextBox despesaBox;
         private System.Windows.Forms.TextBox diaBox;
-        private System.Windows.Forms.ComboBox condoBox;
+        private System.Windows.Forms.ComboBox condominio_comboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

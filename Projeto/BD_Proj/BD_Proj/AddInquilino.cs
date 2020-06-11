@@ -120,7 +120,7 @@ namespace BD_Proj
             catch (Exception ex)
             {
                 //throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Não foi possível guardar os dados! Verifique os campos inseridos!");
             }
             finally
             {
@@ -129,27 +129,5 @@ namespace BD_Proj
 
             }
         }
-
-        private void AddCasa_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void morada_textbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

@@ -68,8 +68,6 @@ namespace BD_Proj
         {
             pessoa_dataGrid.DataSource = GetContratos();
             setLabelText("Todos os Contratos");
-          //  pessoa_dataGrid.Columns["n_quartos"].HeaderText = "Número de quartos";
-            //pessoa_dataGrid.Columns["max_hab"].HeaderText = "N máximo de habitantes";
         }
 
         private void setLabelText(string text)
@@ -79,9 +77,7 @@ namespace BD_Proj
 
         private void fillDataGrid(List<ContratoModel> lista)
         {
-            pessoa_dataGrid.DataSource = lista ;
-            //  pessoa_dataGrid.Columns["n_quartos"].HeaderText = "Número de quartos";
-            //pessoa_dataGrid.Columns["max_hab"].HeaderText = "N máximo de habitantes";
+            pessoa_dataGrid.DataSource = lista;
         }
 
         private void pessoa_bt_Click(object sender, EventArgs e)
@@ -132,16 +128,12 @@ namespace BD_Proj
         {
             pessoa_dataGrid.DataSource = printRendas();
             setLabelText("Contratos de Renda");
-            //  pessoa_dataGrid.Columns["n_quartos"].HeaderText = "Número de quartos";
-            //pessoa_dataGrid.Columns["max_hab"].HeaderText = "N máximo de habitantes";
         }
 
         private void FillCondos()
         {
             pessoa_dataGrid.DataSource = printCondos();
             setLabelText("Contratos de Condomínio");
-            //  pessoa_dataGrid.Columns["n_quartos"].HeaderText = "Número de quartos";
-            //pessoa_dataGrid.Columns["max_hab"].HeaderText = "N máximo de habitantes";
         }
 
 

@@ -93,8 +93,10 @@ namespace BD_Proj
 
             List<PessoaModel> pessoas = new List<PessoaModel>();
 
-            String sql = "SELECT * FROM proj_pessoa join proj_casa_inquilino on proj_pessoa.nif=proj_casa_inquilino.nif where morada='"+morada+"'";
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            //String sql = "SELECT * FROM proj_pessoa join proj_casa_inquilino on proj_pessoa.nif=proj_casa_inquilino.nif where morada='"+morada+"'";
+            SqlCommand com = new SqlCommand("getPessoasByCasa", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@morada", morada);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
@@ -160,8 +162,6 @@ namespace BD_Proj
         private void fillDataGrid<T>(List<T> lista)
         {
             pessoa_dataGrid.DataSource = lista;
-          //  pessoa_dataGrid.Columns["n_quartos"].HeaderText = "Número de quartos";
-            //pessoa_dataGrid.Columns["max_hab"].HeaderText = "N máximo de habitantes";
         }
 
         private void add_bt_Click(object sender, EventArgs e)
@@ -186,11 +186,6 @@ namespace BD_Proj
         {
             //printProprietarios();
             GetProprietariosByCondominio(cond);
-        }
-
-        private void DadosPessoais_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void delete_button_Click(object sender, EventArgs e)

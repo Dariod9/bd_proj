@@ -18,77 +18,128 @@ namespace BD_Proj
         public EmpInfo()
         {
             InitializeComponent();
-            fillEmpresaslistbox();
+            FillEmpresaLisBox();
             listBox1.SelectedValueChanged += new EventHandler(listBox1_SelectedValueChanged);
 
         }
 
+        private void FillEmpresaInfo(EmpresaModel emp)
+        {
+            name_textBox.Text = emp.nome;
+            nif_textBox.Text = emp.nif.ToString();
+            mail_textBox.Text = emp.email;
+            contact_textBox.Text = emp.contacto.ToString();
+        }
+
         private void listBox1_SelectedValueChanged(object sender, EventArgs e)
         {
+            FillEmpresaInfo(GetEmpresaInfo(empresa_selected()));
+        }
+
+        private EmpresaModel GetEmpresaInfo(decimal nif)
+        {
             data.connectToDB();
-            String sql = "SELECT * FROM proj_empresa where nome='" + empresa_selected() + "'";
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            SqlCommand com = new SqlCommand("getEmpresaByNif", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@nif", empresa_selected());
+
             SqlDataReader reader;
             reader = com.ExecuteReader();
             reader.Read();
 
-            name_textBox.Text = reader.GetString(0);
-            nif_textBox.Text = "" + reader.GetDecimal(1);
-            mail_textBox.Text = reader.GetString(2);
-            contact_textBox.Text = ""+reader.GetDecimal(3);
+            EmpresaModel emp = new EmpresaModel();
+            emp.nif = empresa_selected();
+            emp.nome = reader["nome"].ToString();
+            emp.contacto = Decimal.Parse(reader["contacto"].ToString());
+            emp.email = reader["email"].ToString();
 
             data.close();
+
+            return emp;
         }
 
-        private string empresa_selected()
+        private decimal empresa_selected()
         {
-            return listBox1.SelectedItem.ToString();
+            return (listBox1.SelectedItem as EmpresaView).value;
         }
 
-        public void fillEmpresaslistbox()
+        //public void fillEmpresaslistbox()
+        //{
+        //    listBox1.DataSource = GetEmpresas();
+        //}
+
+        //private List<String> GetEmpresas()
+        //{
+        //    List<String> c = new List<String>();
+
+        //    data.connectToDB();
+        //    String sql = "SELECT * FROM nomesEmpresas";
+        //    SqlCommand com = new SqlCommand(sql, data.connection());
+        //    SqlDataReader reader;
+        //    reader = com.ExecuteReader();
+        //    while (reader.Read())
+        //    {
+        //        c.Add(reader.GetString(0));
+        //    }
+        //    data.close();
+
+        //    return c;
+        //}
+
+
+        public void FillEmpresaLisBox()
         {
             listBox1.DataSource = GetEmpresas();
-        }
-        private void fillEmpresaslistbox(List<String> lista)
-        {
-            listBox1.DataSource = lista;
+            listBox1.DisplayMember = "text";
+            listBox1.ValueMember = "value";
         }
 
-        private List<String> GetEmpresas()
+        private List<EmpresaView> GetEmpresas()
         {
-            List<String> c = new List<String>();
+            List<EmpresaView> e = new List<EmpresaView>();
 
             data.connectToDB();
-            String sql = "SELECT * FROM nomesEmpresas";
+            String sql = "SELECT * FROM Show_Empresas";
             SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                c.Add(reader.GetString(0));
+                EmpresaView ee = new EmpresaView();
+                ee.value = Decimal.Parse(reader["nif"].ToString());
+                ee.text = reader["nome"].ToString();
+
+                e.Add(ee);
             }
             data.close();
 
-            return c;
+            return e;
+        }
+
+        private void FillEmpresaLisBox(List<EmpresaView> lista)
+        {
+            listBox1.DataSource = lista;
+            listBox1.DisplayMember = "text";
+            listBox1.ValueMember = "value";
         }
 
         private void search_textBox_TextChanged(object sender, EventArgs e)
         {
             if (search_textBox.Text == "")
             {
-                fillEmpresaslistbox();
+                FillEmpresaLisBox();
             }
             else
             {
                 var a = GetEmpresas();
 
-                fillEmpresaslistbox(a.Where(x => x.ToLower().Contains(search_textBox.Text.ToLower())).ToList());
+                FillEmpresaLisBox(a.Where(x => x.ToLower().Contains(search_textBox.Text.ToLower())).ToList());
             }
         }
 
         private void edit_button_Click(object sender, EventArgs e)
         {
-            AddEmpresa add = new AddEmpresa(getEmpresa(empresa_selected()));
+            AddEmpresa add = new AddEmpresa(GetEmpresaInfo(empresa_selected()));
             add.ShowDialog(this);
         }
 
@@ -98,22 +149,22 @@ namespace BD_Proj
             add.ShowDialog(this);
         }
 
-        private EmpresaModel getEmpresa(string nome)
-        {
-            data.connectToDB();
-            String sql = "SELECT nif, email, contacto FROM proj_empresa where nome='" + nome + "'"; // nao deviamos procurar por nome (pode haver 2 iguais)
-            SqlCommand com = new SqlCommand(sql, data.connection());
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
-            reader.Read();
-            EmpresaModel c = new EmpresaModel();
-            c.nome = nome;
-            c.nif = reader.GetDecimal(0);
-            c.email = reader.GetString(1);
-            c.contacto = reader.GetDecimal(2);
-            reader.Close();
-            data.close();
-            return c;
-        }
+        //private EmpresaModel getEmpresa(string nome)
+        //{
+        //    data.connectToDB();
+        //    String sql = "SELECT nif, email, contacto FROM proj_empresa where nome='" + nome + "'"; 
+        //    SqlCommand com = new SqlCommand(sql, data.connection());
+        //    SqlDataReader reader;
+        //    reader = com.ExecuteReader();
+        //    reader.Read();
+        //    EmpresaModel c = new EmpresaModel();
+        //    c.nome = nome;
+        //    c.nif = reader.GetDecimal(0);
+        //    c.email = reader.GetString(1);
+        //    c.contacto = reader.GetDecimal(2);
+        //    reader.Close();
+        //    data.close();
+        //    return c;
+        //}
     }
 }

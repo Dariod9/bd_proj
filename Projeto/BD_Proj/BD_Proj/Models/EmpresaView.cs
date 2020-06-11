@@ -10,5 +10,10 @@ namespace BD_Proj.Models
     {
         public decimal value { get; set; }
         public string text { get; set; }
+    
+        public string ToLower()
+        {
+            return text.ToLower();
+        }
     }
 }

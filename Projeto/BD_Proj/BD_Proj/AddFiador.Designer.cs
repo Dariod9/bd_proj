@@ -59,7 +59,6 @@
             this.fname_textbox.Name = "fname_textbox";
             this.fname_textbox.Size = new System.Drawing.Size(231, 22);
             this.fname_textbox.TabIndex = 1;
-            this.fname_textbox.TextChanged += new System.EventHandler(this.morada_textbox_TextChanged);
             // 
             // label2
             // 
@@ -177,7 +176,6 @@
             this.Controls.Add(this.label1);
             this.Name = "AddFiador";
             this.Text = "Adicionar Proprietário";
-            this.Load += new System.EventHandler(this.AddCasa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

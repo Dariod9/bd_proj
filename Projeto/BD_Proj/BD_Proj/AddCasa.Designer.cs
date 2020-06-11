@@ -76,7 +76,7 @@
             this.submit_bt.Name = "submit_bt";
             this.submit_bt.Size = new System.Drawing.Size(75, 25);
             this.submit_bt.TabIndex = 4;
-            this.submit_bt.Text = "Submit";
+            this.submit_bt.Text = "OK";
             this.submit_bt.UseVisualStyleBackColor = true;
             this.submit_bt.Click += new System.EventHandler(this.submit_bt_Click);
             // 
@@ -87,7 +87,7 @@
             this.cancel_bt.Name = "cancel_bt";
             this.cancel_bt.Size = new System.Drawing.Size(75, 25);
             this.cancel_bt.TabIndex = 5;
-            this.cancel_bt.Text = "Cancel";
+            this.cancel_bt.Text = "Cancelar";
             this.cancel_bt.UseVisualStyleBackColor = true;
             this.cancel_bt.Click += new System.EventHandler(this.cancel_bt_Click);
             // 

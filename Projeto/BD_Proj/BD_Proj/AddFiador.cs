@@ -76,23 +76,13 @@ namespace BD_Proj
             catch (Exception ex)
             {
                 //throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Não foi possível guardar os dados! Verifique os campos inseridos!");
             }
             finally
             {
                 data.close();
                // DadosPessoais.printFiadores();
             }
-        }
-
-        private void AddCasa_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void morada_textbox_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

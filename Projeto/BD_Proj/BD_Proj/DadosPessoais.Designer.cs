@@ -123,7 +123,6 @@ namespace BD_Proj
             this.Controls.Add(this.pessoas_listBox);
             this.Name = "DadosPessoais";
             this.Text = "Pessoas";
-            this.Load += new System.EventHandler(this.DadosPessoais_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pessoa_dataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BD_Proj.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,14 +20,14 @@ namespace BD_Proj
         public AddCasa()
         {
             InitializeComponent();
-            FillCondominioComboBox();
+            FillCondominioBox();
             adding = true;      // insert
         }
 
         public AddCasa(CasaModel c)
         {
             InitializeComponent();
-            FillCondominioComboBox();
+            FillCondominioBox();
             FillCasaInformation(c);
             adding = false;     // update
         }
@@ -57,7 +58,7 @@ namespace BD_Proj
                 casa.descricao = descricao_textbox.Text;
                 casa.n_quartos = Int32.Parse(n_quartos_comboBox.Text.ToString());
                 casa.max_hab = Int32.Parse(max_hab_comboBox.Text.ToString());
-                casa.condominio = getNIF(condominio_comboBox.Text.ToString());
+                casa.condominio = (condominio_comboBox.SelectedItem as CondominioView).value;
             }
             catch (Exception ex)
             {
@@ -102,7 +103,7 @@ namespace BD_Proj
             catch (Exception ex)
             {
                 //throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Não foi possível guardar os dados! Verifique os campos inseridos!");
             }
             finally
             {
@@ -136,7 +137,7 @@ namespace BD_Proj
             catch (Exception ex)
             {
                 //throw new Exception("Failed to insert in database. \n ERROR MESSAGE: \n" + ex.Message);
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Não foi possível atualizar os dados! Verifique os campos inseridos!");
             }
             finally
             {
@@ -144,43 +145,74 @@ namespace BD_Proj
             }
         }
 
-        private void FillCondominioComboBox()
+        //private void FillCondominioComboBox()
+        //{
+        //    List<Decimal> conds = new List<Decimal>();
+
+        //    data.connectToDB();
+        //    String sql = "SELECT DISTINCT nome FROM proj_condominio";
+        //    SqlCommand com = new SqlCommand(sql, data.connection());
+        //    SqlDataReader reader;
+        //    reader = com.ExecuteReader();
+        //    while (reader.Read())
+        //    {
+        //        condominio_comboBox.Items.Add(reader.GetString(0));
+        //    }
+        //    data.close();
+        //}
+
+        //private decimal getNIF(string cond)
+        //{
+        //    data.connectToDB();
+        //    //String sql = "SELECT num_fiscal FROM proj_condominio where nome='"+cond+"' ";
+        //    SqlCommand com = new SqlCommand("getNumFiscalCond", data.connection());
+        //    com.CommandType = CommandType.StoredProcedure;
+        //    com.Parameters.AddWithValue("@nome", cond);
+        //    SqlDataReader reader;
+        //    reader = com.ExecuteReader();
+        //    reader.Read();
+        //    var a = reader.GetDecimal(0);
+        //    reader.Close();
+        //    data.close();
+        //    return a;
+        //}
+
+        private void FillCondominioBox()
         {
-            List<Decimal> conds = new List<Decimal>();
+            condominio_comboBox.DataSource = GetConds();
+            condominio_comboBox.DisplayMember = "text";
+            condominio_comboBox.ValueMember = "value";
+        }
+
+        private List<CondominioView> GetConds()
+        {
+            List<CondominioView> e = new List<CondominioView>();
 
             data.connectToDB();
-            String sql = "SELECT DISTINCT nome FROM proj_condominio";
+            String sql = "SELECT * FROM Show_Condominios";
             SqlCommand com = new SqlCommand(sql, data.connection());
             SqlDataReader reader;
             reader = com.ExecuteReader();
             while (reader.Read())
             {
-                condominio_comboBox.Items.Add(reader.GetString(0));
+                CondominioView ee = new CondominioView();
+                ee.value = Decimal.Parse(reader["num_fiscal"].ToString());
+                ee.text = reader["nome"].ToString();
+
+                e.Add(ee);
             }
             data.close();
-        }
 
-        private decimal getNIF(string cond)
-        {
-            data.connectToDB();
-            //String sql = "SELECT num_fiscal FROM proj_condominio where nome='"+cond+"' ";
-            SqlCommand com = new SqlCommand("getNumFiscalCond", data.connection());
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@nome", cond);
-            SqlDataReader reader;
-            reader = com.ExecuteReader();
-            reader.Read();
-            var a = reader.GetDecimal(0);
-            reader.Close();
-            data.close();
-            return a;
+            return e;
         }
 
         private string getNomeCond(decimal nif)
         {
             data.connectToDB();
-            String sql = "SELECT nome FROM proj_condominio where num_fiscal=" + nif + "";
-            SqlCommand com = new SqlCommand(sql, data.connection());
+            //String sql = "SELECT nome FROM proj_condominio where num_fiscal=" + nif + "";
+            SqlCommand com = new SqlCommand("getNomeCond", data.connection());
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@num_fiscal", nif);
             SqlDataReader reader;
             reader = com.ExecuteReader();
             reader.Read();
