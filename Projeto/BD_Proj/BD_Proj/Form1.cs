@@ -19,7 +19,7 @@ namespace BD_Proj
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.ToString() == textBox2.Text.ToString())
+            if (!(textBox1.Text.ToString() == textBox2.Text.ToString() && textBox1.Text.ToString() == "admin"))
             {
                 NavUtilizador navU = new NavUtilizador();
                 this.Hide();

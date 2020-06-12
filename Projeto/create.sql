@@ -62,11 +62,10 @@ create table proj_tem_casa(
 
 create table proj_condominio(
 		num_fiscal			int				not null,
-		casa				varchar(50)		not null,
+		nome				varchar(50)		not null,
 		gerente_nif			int				not null
 		primary key(num_fiscal),
-		foreign key(gerente_nif) references proj_pessoa(nif),
-		foreign key(casa) references proj_casa(morada));
+		foreign key(gerente_nif) references proj_pessoa(nif));
 
 create table proj_obras(
 		obra_id				int				not null,
@@ -82,7 +81,7 @@ create table proj_contrato(
 		data_ini			date			not null,
 		data_fim			date,
 		dia_pagamento		int				not null,
-		proprietario		int				not null,
+		proprietario		int				,
 		primary key(codigo),
 		foreign key(proprietario) references proj_proprietario(nif));
 
@@ -99,10 +98,9 @@ create table proj_contrato_renda(
 		renda				int				not null,
 		caucao				int				not null,
 		taxa				int				not null,
-		n_renda				int				not null,
-		fiador				int				not null,
-		inquilino			int				not null,
-		empresa				int				not null,
+		fiador				int				,
+		inquilino			int				,
+		empresa				int				,
 		primary key(codigo),
 		foreign key(codigo) references proj_contrato(codigo),
 		foreign key(fiador) references proj_fiador(nif),
