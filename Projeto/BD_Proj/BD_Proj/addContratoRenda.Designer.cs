@@ -54,6 +54,7 @@
             this.empresaBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.addFiador_bt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -265,9 +266,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // addFiador_bt
+            // 
+            this.addFiador_bt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.addFiador_bt.Location = new System.Drawing.Point(491, 32);
+            this.addFiador_bt.Name = "addFiador_bt";
+            this.addFiador_bt.Size = new System.Drawing.Size(75, 25);
+            this.addFiador_bt.TabIndex = 28;
+            this.addFiador_bt.Text = "Novo";
+            this.addFiador_bt.UseVisualStyleBackColor = true;
+            this.addFiador_bt.Click += new System.EventHandler(this.addFiador_bt_Click);
+            // 
             // addContratoRenda
             // 
             this.ClientSize = new System.Drawing.Size(730, 287);
+            this.Controls.Add(this.addFiador_bt);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.empresaBox2);
@@ -326,5 +339,6 @@
         private System.Windows.Forms.ComboBox empresaBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button addFiador_bt;
     }
 }

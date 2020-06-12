@@ -65,16 +65,16 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(313, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 17);
+            this.label2.Size = new System.Drawing.Size(21, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Id";
+            this.label2.Text = "ID";
             // 
             // submit_bt
             // 
             this.submit_bt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.submit_bt.Location = new System.Drawing.Point(683, 257);
+            this.submit_bt.Location = new System.Drawing.Point(681, 257);
             this.submit_bt.Name = "submit_bt";
-            this.submit_bt.Size = new System.Drawing.Size(75, 25);
+            this.submit_bt.Size = new System.Drawing.Size(79, 25);
             this.submit_bt.TabIndex = 4;
             this.submit_bt.Text = "Adicionar";
             this.submit_bt.UseVisualStyleBackColor = true;
@@ -83,9 +83,9 @@
             // cancel_bt
             // 
             this.cancel_bt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancel_bt.Location = new System.Drawing.Point(600, 257);
+            this.cancel_bt.Location = new System.Drawing.Point(596, 257);
             this.cancel_bt.Name = "cancel_bt";
-            this.cancel_bt.Size = new System.Drawing.Size(75, 25);
+            this.cancel_bt.Size = new System.Drawing.Size(77, 25);
             this.cancel_bt.TabIndex = 5;
             this.cancel_bt.Text = "Cancelar";
             this.cancel_bt.UseVisualStyleBackColor = true;

@@ -20,7 +20,6 @@ namespace BD_Proj
             InitializeComponent();
             FillInquilinoBox();
             FillFiadorBox();
-            //FillEmpresaBox();
             FillEmpresaBox();
             FillPropBox();
         }
@@ -101,7 +100,7 @@ namespace BD_Proj
             }
         }
 
-        private void FillFiadorBox()
+        public void FillFiadorBox()
         {
             List<Decimal> fiad = new List<Decimal>();
 
@@ -256,6 +255,12 @@ namespace BD_Proj
             data.close();
 
             return e;
+        }
+
+        private void addFiador_bt_Click(object sender, EventArgs e)
+        {
+            AddFiador f = new AddFiador();
+            f.ShowDialog(this);
         }
     }
 }

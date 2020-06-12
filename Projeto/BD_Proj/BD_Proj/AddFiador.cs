@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,25 +26,27 @@ namespace BD_Proj
 
         private void submit_bt_Click(object sender, EventArgs e)
         {
-            FiadorModel inq = new FiadorModel();
+            FiadorModel fiador = new FiadorModel();
             try
             {
-                inq.fname=fname_textbox.Text.ToString();
-                inq.lname = lname_textbox.Text.ToString();
-                inq.telefone = Decimal.Parse(tel_textbox.Text.ToString());
-                inq.id = Decimal.Parse(id_textBox.Text.ToString());
-                inq.nif = Decimal.Parse(nif_textBox.Text.ToString());
+                fiador.fname=fname_textbox.Text.ToString();
+                fiador.lname = lname_textbox.Text.ToString();
+                fiador.telefone = Decimal.Parse(tel_textbox.Text.ToString());
+                fiador.id = Decimal.Parse(id_textBox.Text.ToString());
+                fiador.nif = Decimal.Parse(nif_textBox.Text.ToString());
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             
-            saveInq(inq);
+            savefiador(fiador);
+            addContratoRenda parent = (addContratoRenda) Owner;
+            parent.FillFiadorBox();
             this.Close();
         }
 
-        private void saveInq(FiadorModel inq)
+        private void savefiador(FiadorModel fiador)
         {
             data.connectToDB();
 
@@ -53,11 +54,11 @@ namespace BD_Proj
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "exec inserirFiador @fname, @lname, @telefone, @id, @nif";// "INSERT proj_pessoa (fname, lname, telefone, id, nif) values(@fname, @lname, @telefone, @id, @nif)";
             cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@lname", inq.lname);
-            cmd.Parameters.AddWithValue("@fname", inq.fname);
-            cmd.Parameters.AddWithValue("@telefone", inq.telefone);
-            cmd.Parameters.AddWithValue("@id", inq.id);
-            cmd.Parameters.AddWithValue("@nif", inq.nif);
+            cmd.Parameters.AddWithValue("@lname", fiador.lname);
+            cmd.Parameters.AddWithValue("@fname", fiador.fname);
+            cmd.Parameters.AddWithValue("@telefone", fiador.telefone);
+            cmd.Parameters.AddWithValue("@id", fiador.id);
+            cmd.Parameters.AddWithValue("@nif", fiador.nif);
            // cmd.Connection = data.connection();
 
 
@@ -65,7 +66,7 @@ namespace BD_Proj
             //SqlCommand cmd2 = new SqlCommand();
             //cmd2.CommandText = "INSERT proj_fiador (nif) values(@nif)";
            // cmd2.Parameters.Clear();
-            //cmd2.Parameters.AddWithValue("@nif", inq.nif);
+            //cmd2.Parameters.AddWithValue("@nif", fiador.nif);
             cmd.Connection = data.connection();
 
             try
